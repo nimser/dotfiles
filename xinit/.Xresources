@@ -1,0 +1,11 @@
+URxvt.font: xft:DejaVu Sans Mono:size=10
+URxvt.scrollBar: false
+Xcursor.theme: whiteglass
+Xcursor.size: 24
+
+!! Term output and scrolling
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
+!! TODO Scroll to adjust terminal font size

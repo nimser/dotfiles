@@ -1,0 +1,10 @@
+[user]
+	email = nicolas.wormser@gmail.com
+	name = Nicolas Wormser
+[push]
+	default = simple
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
