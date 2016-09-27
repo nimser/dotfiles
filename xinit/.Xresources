@@ -1,6 +1,7 @@
 URxvt.font: xft:DejaVu Sans Mono:size=10
 URxvt.scrollBar: false
-Xcursor.theme: whiteglass
+Xcursor.theme: Simple-and-Soft
+#Xcursor.theme: Vanilla-DMZ
 Xcursor.size: 24
 
 !! Term output and scrolling
