@@ -1,0 +1,8 @@
+## Commands useful to run after install
+
+localectl set-x11-keymap fr pc105 bepo ctrl:nocaps,terminate:ctrl_alt_bksp
+
+
+## Useful tools
+# UZBL browser - super lightweight Webkit web browser [github](https://github.com/uzbl/uzbl)
+
