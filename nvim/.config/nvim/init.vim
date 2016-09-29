@@ -2,9 +2,9 @@
 "       PLUGIN MANAGEMENT
 " --------------------------------
 " vim-plug, pathogen, vundle, neobundle
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'jpo/vim-railscasts-theme'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 "" --------------------------------
@@ -27,9 +27,16 @@ colorscheme railscasts
 " --------------------------------
 
 " NertTree - remap for bepo layout
+" Open Nerdtree at startup if no files are specified 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * wincmd p
 let NERDTreeMapOpenInTab='<leader>t'
 let NERDTreeMapOpenInTabSilent='<leader>T'
 let NERDTreeMapOpenVSplit='<leader>s'
+nmap <leader>n :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = 'v'
 
 " --------------------------------
 "       BEPO LAYOUT
