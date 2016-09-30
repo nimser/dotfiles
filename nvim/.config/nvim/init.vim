@@ -41,3 +41,4 @@ let g:NERDTreeDirArrowCollapsible = 'v'
 " --------------------------------
 "       BEPO LAYOUT
 " --------------------------------
+source ~/.config/nvim/bepo.vim
