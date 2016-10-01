@@ -5,7 +5,15 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'jpo/vim-railscasts-theme'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax' 
 call plug#end()
+
+" Fuzzy file searching
+" commandt, fuzzyfinder, CtrlP
+
+" Autocomplete and snippets: YouCompleteMe, NeoComplete
+" Vim Easymotion: Vim motions on speed
 
 "" --------------------------------
 ""     MAIN CONFIGURATION
@@ -16,11 +24,6 @@ let mapleader=","
 " TODO See this post for good colorschemes (e.g. molokai, base16, wombat256mod): https://github.com/neovim/neovim/issues/793
 colorscheme railscasts
 
-" Fuzzy file searching
-" commandt, fuzzyfinder, CtrlP
-
-" Autocomplete and snippets
-" YouCompleteMe, NeoComplete
 
 " --------------------------------
 "       PLUGINS OPTIONS
