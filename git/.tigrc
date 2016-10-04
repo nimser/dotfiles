@@ -1,0 +1,12 @@
+# A few keybindings
+bind generic s move-up
+bind generic t move-down
+bind generic T view-tree
+bind generic F !git fetch
+
+# variables
+set show-author = abbreviated   # Show abbreviated author names.
+set show-date = relative        # Show relative commit date.
+set show-refs = yes             # Show references?
+set show-line-numbers = yes     # Show line numbers?
+set line-number-interval = 5    # Interval between line numbers
