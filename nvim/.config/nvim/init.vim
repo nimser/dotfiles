@@ -19,6 +19,10 @@ call plug#end()
 ""     MAIN CONFIGURATION
 "" --------------------------------
 let mapleader=","
+" -----> Indentation <------      
+set expandtab           " spaces instead of tabs
+set softtabstop=2       " size of one tab in spaces
+set shiftwidth=2
 " TODO Get inspiration from previous .vimrc Sensible, spf13, janus
 
 " TODO See this post for good colorschemes (e.g. molokai, base16, wombat256mod): https://github.com/neovim/neovim/issues/793
