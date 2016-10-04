@@ -3,9 +3,13 @@
 " --------------------------------
 " vim-plug, pathogen, vundle, neobundle
 call plug#begin('~/.config/nvim/plugged')
-Plug 'jpo/vim-railscasts-theme'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
+Plug 'jpo/vim-railscasts-theme'
+Plug 'chriskempson/base16-vim'
+Plug 'tomasr/molokai'
+Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 call plug#end()
@@ -45,8 +49,9 @@ inoremap <S-Tab> <Tab>
 vnoremap <S-Tab> <Tab>
 
 " TODO Get inspiration from previous .vimrc Sensible, spf13, janus
-" TODO See this post for good colorschemes (e.g. molokai, base16, wombat256mod): https://github.com/neovim/neovim/issues/793
-colorscheme railscasts
+" TODO See this post for good colorschemes (e.g. tomorrow, molokai, base16, jellybeans, wombat256mod): https://github.com/neovim/neovim/issues/793
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-default-dark
 
 
 " --------------------------------
