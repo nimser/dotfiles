@@ -2,6 +2,8 @@
 
 localectl set-x11-keymap fr pc105 bepo ctrl:nocaps,terminate:ctrl_alt_bksp
 
+# Fonts (including korean, japanese, simplified chinese)
+yaourt -S ttf-bitstream-vera ttf-inconsolata ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-linux-libertine ttf-liberation noto-fonts-cjk
 
 ## Useful tools
 # UZBL browser - super lightweight Webkit web browser [github](https://github.com/uzbl/uzbl)

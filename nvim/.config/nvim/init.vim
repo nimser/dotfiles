@@ -65,6 +65,10 @@ nmap <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = 'v'
 
+" Goyo.vim Limelight integration
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 " Vim-Markdown
 "let g:vim_markdown_new_list_item_indent = 2
 
