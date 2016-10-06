@@ -1,10 +1,10 @@
 System information
 ==================
 
-Linux flavor: [Arch Linux ARM](https://archlinuxarm.org/)
-Window manager: [i3wm](https://github.com/i3/i3)
-Terminal emulator: [rxvt-unicode](https://archlinuxarm.org/)
-Text editor: [Neovim](https://github.com/neovim/neovim)
+- Linux flavor: [Arch Linux ARM](https://archlinuxarm.org/)
+- Window manager: [i3wm](https://github.com/i3/i3)
+- Terminal emulator: [rxvt-unicode](https://archlinuxarm.org/)
+- Text editor: [Neovim](https://github.com/neovim/neovim)
 
 File management
 ===============
