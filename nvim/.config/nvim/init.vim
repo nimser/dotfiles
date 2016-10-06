@@ -5,11 +5,9 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'jpo/vim-railscasts-theme'
 Plug 'chriskempson/base16-vim'
-Plug 'tomasr/molokai'
-Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 call plug#end()
@@ -73,7 +71,10 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 " Vim airline
+
 let g:airline_powerline_fonts = 1
+let g:airline_extensions = ['branch']
+
 
 " --------------------------------
 "       BEPO LAYOUT
