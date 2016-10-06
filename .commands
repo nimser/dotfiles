@@ -1,10 +1,10 @@
 ## Commands useful to run after install
 
+localectl set-locale LANG=en_US.UTF-8; sudo locale-gen;locale
 localectl set-x11-keymap fr pc105 bepo ctrl:nocaps,terminate:ctrl_alt_bksp
 
 # Fonts (including korean, japanese, simplified chinese)
 yaourt -S ttf-bitstream-vera ttf-inconsolata ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-linux-libertine ttf-liberation noto-fonts-cjk
 
-## Useful tools
-# UZBL browser - super lightweight Webkit web browser [github](https://github.com/uzbl/uzbl)
+## Useful tools UZBL browser - super lightweight Webkit web browser [github](https://github.com/uzbl/uzbl)
 

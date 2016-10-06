@@ -1,24 +1,34 @@
-URxvt.perl-ext-common:  resize-font
-
-URxvt.font: xft:inconsolata:bold:size=13
-URxvt.letterSpace: -1
 URxvt.scrollBar: false
-!Xcursor.theme: Simple-and-Soft
-Xcursor.theme: Vanilla-DMZ
-Xcursor.size: 24
 
-!! Term output and scrolling
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyKeypress: true
+Xcursor.theme: Vanilla-DMZ
+
+!! Prefered fonts: Hack, PragmataPro
+URxvt.font:                xft:Hack:size=11
+URxvt.boldFont:            xft:Hack:size=11:bold
+URxvt.italicFont:          xft:Hack:size=11:italic
+URxvt.boldItalicFont:      xft:Hack:size=11:bold:italic
+URxvt.letterSpace:         -1
+
+URxvt.internalBorder:      0
+URxvt.externalBorder:      0
+
+URxvt*fading:              30
+
+URxvt.perl-ext-common:     default,matcher,resize-font
 
 !! Adjust terminal font size
 URxvt.resize-font.smaller: C-Down
-URxvt.resize-font.bigger: C-Up
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+URxvt.resize-font.bigger:  C-Up
 
+!! Term output and scrolling
+URxvt*scrollTtyOutput:     false
+URxvt*scrollWithBuffer:    true
+URxvt*scrollTtyKeypress:   true
 
+URxvt.url-launcher:        /usr/bin/chromium
+URxvt.keysym.M-Delete:     perl:matcher:list
+URxvt.matcher.button:      1
+URxvt.colorUL:             #7780a1
 
 ! Base16 Default Dark
 ! Scheme: Chris Kempson (http://chriskempson.com)

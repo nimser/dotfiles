@@ -23,7 +23,6 @@ call plug#end()
 "" --------------------------------
 ""     MAIN CONFIGURATION
 "" --------------------------------
-
 let mapleader=","
 set number
 
@@ -57,12 +56,11 @@ colorscheme base16-default-dark
 " --------------------------------
 "       PLUGINS OPTIONS
 " --------------------------------
-
-" NertTree - remap for bepo layout
 " Open Nerdtree at startup if no files are specified 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * wincmd p
+" NertTree - remap for bepo layout
 let NERDTreeMapOpenInTab='<leader>t'
 let NERDTreeMapOpenInTabSilent='<leader>T'
 let NERDTreeMapOpenVSplit='<leader>s'
@@ -74,8 +72,8 @@ let g:NERDTreeDirArrowCollapsible = 'v'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-" Vim-Markdown
-"let g:vim_markdown_new_list_item_indent = 2
+" Vim airline
+let g:airline_powerline_fonts = 1
 
 " --------------------------------
 "       BEPO LAYOUT
