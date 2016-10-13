@@ -40,10 +40,8 @@ exec urxvt
 ## General Configuration
 font pango:Hack 9
 floating_modifier $mod
-# i3bar with i3status info
-bar {
-  status_command i3status
-}
+hide_edge_borders both
+new_window none
 
 ## Application keybindings
 # kill focused window
@@ -127,6 +125,21 @@ mode "  " {
   bindsym Escape mode "default"
 }
 bindsym $mod+o mode "  "
+
+## i3bar
+bar {
+  colors {
+    separator $base03
+    background $base01
+    statusline $base05
+#                      border  background text
+    focused_workspace  $base01 $base01    $base07
+    active_workspace   $base01 $base02    $base03
+    inactive_workspace $base01 $base01    $base03
+    urgent_workspace   $base01 $base01    $base08
+  }
+  status_command i3blocks
+}
 
 ## Colors
 # class                   border  backgr. text    indicator
