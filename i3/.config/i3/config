@@ -81,10 +81,15 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $workspace1 "1: Web "
+set $workspace2 "2: Code "
+set $workspace3 "3: Wild "
+
+
 # switch to workspace
-bindsym $mod+quotedbl workspace 1
-bindsym $mod+guillemotleft workspace 2
-bindsym $mod+guillemotright workspace 3
+bindsym $mod+quotedbl workspace $workspace1
+bindsym $mod+guillemotleft workspace $workspace2
+bindsym $mod+guillemotright workspace $workspace3
 bindsym $mod+parenleft workspace 4
 bindsym $mod+parenright workspace 5
 bindsym $mod+at workspace 6
@@ -94,9 +99,9 @@ bindsym $mod+slash workspace 9
 bindsym $mod+asterisk workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+quotedbl move container to workspace 1
-bindsym $mod+Shift+guillemotleft move container to workspace 2
-bindsym $mod+Shift+guillemotright move container to workspace 3
+bindsym $mod+Shift+quotedbl move container to $workspace1
+bindsym $mod+Shift+guillemotleft move container to $workspace2
+bindsym $mod+Shift+guillemotright move container to $workspace3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+at move container to workspace 6
@@ -143,3 +148,18 @@ bindsym $mod+o mode "resize"
 bar {
         status_command i3status
 }
+
+# Lock the screen
+bindsym $mod+l exec i3lock
+
+# Default workspace assignments
+
+assign [class="chromium"] $workspace1
+assign [class="URxvt"] $workspace2
+
+# Loads some apps when i3 starts
+
+exec chromium
+exec urxvt
+exec urxvt
+
