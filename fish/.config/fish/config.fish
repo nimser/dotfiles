@@ -1,5 +1,6 @@
-set -x fish_user_paths $fish_user_paths ~/.rbenv/bin
-set -x EDITOR 'nvim'
+set -gx fish_user_paths $fish_user_paths ~/.rbenv/bin
+set -gx fish_user_paths $fish_user_paths ~/.node_modules/bin
+set -gx EDITOR 'nvim'
 status --is-interactive; and . (rbenv init -|psub)
 
 # Base16 Shell
