@@ -98,16 +98,17 @@ bindsym $mod+minus workspace $workspace8
 bindsym $mod+slash workspace $workspace9
 bindsym $mod+asterisk workspace $workspace10
 # move focused container to workspace
-bindsym $mod+Shift+quotedbl move container to $workspace1
-bindsym $mod+Shift+guillemotleft move container to $workspace2
-bindsym $mod+Shift+guillemotright move container to $workspace3
-bindsym $mod+Shift+4 move container to $workspace4
-bindsym $mod+Shift+5 move container to $workspace5
-bindsym $mod+Shift+at move container to $workspace6
-bindsym $mod+Shift+plus move container to $workspace7
-bindsym $mod+Shift+minus move container to $workspace8
-bindsym $mod+Shift+slash move container to $workspace9
-bindsym $mod+Shift+asterisk move container to $workspace10
+bindsym $mod+Shift+quotedbl move container to workspace $workspace1
+bindsym $mod+Shift+guillemotleft move container to workspace $workspace2
+bindsym $mod+Shift+guillemotright move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+at move container to workspace $workspace6
+bindsym $mod+Shift+plus move container to workspace $workspace7
+bindsym $mod+Shift+minus move container to workspace $workspace8
+bindsym $mod+Shift+slash move container to workspace $workspace9
+
+bindsym $mod+Shift+asterisk move container to workspace $workspace10
 # reload the configuration file
 bindsym $mod+Shift+x reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
