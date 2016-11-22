@@ -3,14 +3,15 @@
 " --------------------------------
 " vim-plug, pathogen, vundle, neobundle
 call plug#begin('~/.config/nvim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'elixir-lang/vim-elixir'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'scrooloose/nerdtree'       " Browse files within vim
+Plug 'vim-airline/vim-airline'   " A powerful status bar for vim
+Plug 'elixir-lang/vim-elixir'    " Elixir syntax highlighting
+Plug 'posva/vim-vue'             " Vue.js syntax highlighting
+Plug 'tpope/vim-fugitive'        " A Git wrapper for vim (displays branch in airline)
+Plug 'airblade/vim-gitgutter'    " Shows which lines have VC changes in the gutter column
+Plug 'chriskempson/base16-vim'   " A theming framework
+Plug 'junegunn/goyo.vim'         " Clear up your interface from distractions
+Plug 'junegunn/limelight.vim'    " Highlight the current parts of a file you are working on
 call plug#end()
 
 " Fuzzy file searching
