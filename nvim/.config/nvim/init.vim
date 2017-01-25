@@ -15,6 +15,7 @@ Plug 'airblade/vim-gitgutter'                 " Shows which lines have VC change
 Plug 'chriskempson/base16-vim'                " A theming framework
 Plug 'junegunn/goyo.vim'                      " Clear up your interface from distractions
 Plug 'junegunn/limelight.vim'                 " Highlight the current parts of a file you are working on
+Plug 'chilicuil/vim-sml-coursera'             " Sml plugin
 call plug#end()
 
 " Fuzzy file searching
