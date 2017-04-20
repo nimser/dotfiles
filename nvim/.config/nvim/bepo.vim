@@ -7,6 +7,9 @@ noremap É W
 " (attention, cela diminue la réactivité du {A}…)
 noremap aé aw
 noremap aÉ aW
+" Corollaire, pour effacer/remplacer un mot quand on n’est pas au début (dié / lié).
+noremap ié iw
+noremap iÉ iW
 " Pour faciliter les manipulations de fenêtres, on utilise {è} comme un Ctrl+W :
 noremap è <c-w>
 noremap èè <c-w><c-w>
@@ -56,6 +59,9 @@ noremap K S
 " Corollaire : correction orthographique
 noremap ]k ]s
 noremap [k [s
+" Corollaire : used for plugin `surround`
+noremap lk ls
+noremap lK lS
  
 " Désambiguation de {g}
 " —————————————————————

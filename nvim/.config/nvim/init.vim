@@ -3,11 +3,14 @@
 " --------------------------------
 " vim-plug, pathogen, vundle, neobundle
 call plug#begin('~/.config/nvim/plugged')
+Plug 'tpope/vim-surround'                     " Adds verb `surround` to target surrounding characters
+Plug 'tpope/commentary'                     " Comments using vim's expressive language
 Plug 'scrooloose/nerdtree'                    " Browse files within vim
 Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
 Plug 'elixir-lang/vim-elixir'                 " Elixir syntax highlighting
 Plug 'othree/html5.vim'                       " HTML5 omnicomplete and syntax
-Plug 'othree/javascript-libraries-syntax.vim' " Syntax files for common JS libraries
+Plug 'othree/javascript-libraes-syntax.vim' " Syntax files for common JS libraries
+Plug 'digitaltoad/vim-pug'                    " Syntax files for jade templates
 Plug 'othree/yajs.vim'                        " Syntax for JS including ES6
 Plug 'othree/es.next.syntax.vim'              " Syntax for ESnext
 Plug 'tpope/vim-fugitive'                     " A Git wrapper for vim (displays branch in airline)
@@ -29,6 +32,7 @@ call plug#end()
 "" --------------------------------
 let mapleader=","
 set number
+set relativenumber
 
 " -----> Persistent undo <------ 
 if has("persistent_undo")
