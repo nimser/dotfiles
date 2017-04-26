@@ -33,7 +33,7 @@ set $workspace10 "10: Sys "
 assign [class="chromium"] $workspace1
 assign [class="URxvt"] $workspace2
 # Make some apps launch when i3 first starts
-exec chromium
+exec chromium --process-per-site
 exec urxvt
 exec urxvt
 
