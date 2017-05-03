@@ -6,6 +6,26 @@ System information
 - Terminal emulator: [rxvt-unicode](https://archlinuxarm.org/)
 - Text editor: [Neovim](https://github.com/neovim/neovim)
 
+Do this first
+================
+Install
+-------
+i3-wm i3status i3lock
+ttf-hack
+nodm
+stow
+rxvt-unicode
+nvim
+Configure
+---------
+user: clone `dotfiles` rep and `stow` all relevant conf
+root: `stow` all root conf from `dotfiles`
+ssh:
+- copy and decrypt key from backup
+- configure gpg as the ssh agent and enable the systemctl service + enable the pin-entry mode
+fonts: make sure Hack and Font-Awesome are installed
+
+
 File management
 ===============
 
