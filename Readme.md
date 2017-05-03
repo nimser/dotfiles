@@ -10,3 +10,9 @@ File management
 ===============
 
 I use [stow](http://www.gnu.org/software/stow/) to install files present in this repository. You can use it to choose what you'd like to pick for my configuration by doing for example `stow nvim`
+
+
+Services I disable under low memory conditions (reenable as needed)
+==============================================
+- haveged: an enthropy generator useful for ensuring cryptographic apps can work properly (warning: could impact daily use of encrypted apps on the web?)
+- upower: a middleware to monitor power usage 
