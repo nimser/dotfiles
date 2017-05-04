@@ -10,7 +10,7 @@ Do this first
 ================
 Install
 -------
-i3-wm i3status i3lock
+i3-wm i3blocks i3lock
 ttf-hack
 nodm
 stow
@@ -19,10 +19,16 @@ nvim
 Configure
 ---------
 user: clone `dotfiles` rep and `stow` all relevant conf
-root: `stow` all root conf from `dotfiles`
-ssh:
-- copy and decrypt key from backup
-- configure gpg as the ssh agent and enable the systemctl service + enable the pin-entry mode
+root: 
+- `sudo stow -t /root` all root conf from `dotfiles`
+- `sudo ln -s /home/{user}/.ssh .`
+dhcpcd:
+- copy file from stow/_system to allow faster dhcp leases
+ssh: copy and decrypt key from backup
+gpg: copy and decrypt key from backup
+wifi: 
+- copy/decrypt/rename `wpa_supplicant-wlan0.conf.enc` to `/etc/wpa_supplicant/`
+- enable the systemd service
 fonts: make sure Hack and Font-Awesome are installed
 
 
