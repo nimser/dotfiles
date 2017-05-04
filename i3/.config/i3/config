@@ -48,7 +48,7 @@ new_window none
 bindsym $mod+Shift+b kill
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
-bindsym $mod+l exec i3lock
+bindsym $mod+Shift+l exec i3lock
 bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 ## i3 keybindings

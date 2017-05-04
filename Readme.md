@@ -10,7 +10,7 @@ Do this first
 ================
 Install
 -------
-i3-wm i3blocks i3lock
+i3-wm i3blocks i3lock dmenu
 ttf-hack
 nodm
 stow
