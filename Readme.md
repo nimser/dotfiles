@@ -29,6 +29,10 @@ gpg: copy and decrypt key from backup
 wifi: 
 - copy/decrypt/rename `wpa_supplicant-wlan0.conf.enc` to `/etc/wpa_supplicant/`
 - enable the systemd service
+zswap:
+- add `lz4 lz4_compress` in `MODULES` in `/etc/mkinitcpio.conf`
+- add `zswap.enabled=1 zswap.max_pool_percent=25 zswap.compressor=lz4` to the list of boot parameters (grub: /etc/default/grub)
+- reload boot configuration (grub: `sudo grub-mkconfig -o /boot/grub/grub.cfg`)
 fonts: make sure Hack and Font-Awesome are installed
 
 
