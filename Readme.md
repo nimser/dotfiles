@@ -19,6 +19,17 @@ nvim
 Configure
 ---------
 user: clone `dotfiles` rep and `stow` all relevant conf
+nodm:
+- ensure xinit config is set
+- (necessary for pulseaudio to work) ensure a /etc/pam.d/nodm exists containing the following:
+```
+#%PAM-1.0
+
+auth      include   system-local-login
+account   include   system-local-login
+password  include   system-local-login
+session   include   system-local-login
+```
 root: 
 - `sudo stow -t /root` all root conf from `dotfiles`
 - `sudo ln -s /home/{user}/.ssh .`
@@ -34,6 +45,8 @@ zswap:
 - add `zswap.enabled=1 zswap.max_pool_percent=25 zswap.compressor=lz4` to the list of boot parameters (grub: /etc/default/grub)
 - reload boot configuration (grub: `sudo grub-mkconfig -o /boot/grub/grub.cfg`)
 fonts: make sure Hack and Font-Awesome are installed
+others:
+- make boot verbose by removing the `quiet` boot param (grub: in /etc/default/grub)
 
 
 File management
