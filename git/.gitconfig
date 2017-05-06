@@ -11,3 +11,8 @@
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
 	ui = true
+
+; List of usefull git commands (bash version)
+; ============================
+; git stash show -p [stash@{0}]               ; shows a diff of the last stash with the current branch
+; git diff --name-only stash@{0} master       ; lists files changed in the last stash compared to master's HEAD
