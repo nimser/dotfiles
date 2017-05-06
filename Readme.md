@@ -10,14 +10,28 @@ Do this first
 ================
 Install
 -------
-i3-wm i3blocks i3lock dmenu
-ttf-hack
-nodm
-stow
-rxvt-unicode
-nvim
+system:
+- i3-wm i3blocks i3lock dmenu
+- ttf-hack
+- nodm
+- stow
+- rxvt-unicode
+- nvim
+dev:
+- yarn
+- mongo mongodb-tools
+- sbt
+- jdk8-openjdk
+- ack
+comms:
+- maim (captures d'écran)
+others:
+- keybase keybase-git[aur]
 Configure
 ---------
+time:
+- `timedatectl status` to ensure NTP is enabled
+- `timedatectl list-timezone` then `timedatectl set-timezone Zone/SubZone` to set the proper time
 user: clone `dotfiles` rep and `stow` all relevant conf
 nodm:
 - ensure xinit config is set
