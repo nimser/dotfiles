@@ -19,9 +19,9 @@ set $base0E #c0b7f9
 set $base0F #fcc09e
 # Workspaces
 set $workspace1 "1: Web "
-set $workspace2 "2: Terms "
-set $workspace3 "3: Code "
-set $workspace4 "4: Wild "
+set $workspace2 "2: Code "
+set $workspace3 "3: Terms "
+set $workspace3 "4: Wild "
 set $workspace5 "5: Wild "
 set $workspace6 "6: Wild "
 set $workspace7 "7: Wild "
@@ -31,7 +31,7 @@ set $workspace10 "10: Sys "
 
 ## Workspace-specific apps
 assign [class="chromium"] $workspace1
-assign [class="URxvt"] $workspace2
+assign [class="URxvt"] $workspace3
 # Make some apps launch when i3 first starts
 exec chromium --process-per-site
 exec urxvt
@@ -80,14 +80,14 @@ bindsym $mod+h split h
 # split in vertical orientation
 bindsym $mod+v split v
 # enter fullscreen mode for the focused container
-bindsym $mod+e fullscreen toggle
+bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+u layout stacking
 bindsym $mod+eacute layout tabbed
 bindsym $mod+p layout toggle split
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-# change focus between tiling / floating windows
+bindsym $mod+Shift+f floating toggle
+# change focus between tiling / floating windows: FIXME: doesn't work?
 bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
