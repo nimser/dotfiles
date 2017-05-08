@@ -21,7 +21,7 @@ set $base0F #fcc09e
 set $workspace1 "1: Web "
 set $workspace2 "2: Code "
 set $workspace3 "3: Terms "
-set $workspace3 "4: Wild "
+set $workspace4 "4: Wild "
 set $workspace5 "5: Wild "
 set $workspace6 "6: Wild "
 set $workspace7 "7: Wild "

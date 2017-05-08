@@ -4,12 +4,12 @@
 " vim-plug, pathogen, vundle, neobundle
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'                     " Adds verb `surround` to target surrounding characters
-Plug 'tpope/commentary'                     " Comments using vim's expressive language
+Plug 'tpope/vim-commentary'                   " Comments using vim's expressive language
 Plug 'scrooloose/nerdtree'                    " Browse files within vim
 Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
 Plug 'elixir-lang/vim-elixir'                 " Elixir syntax highlighting
 Plug 'othree/html5.vim'                       " HTML5 omnicomplete and syntax
-Plug 'othree/javascript-libraes-syntax.vim' " Syntax files for common JS libraries
+Plug 'othree/javascript-libraries-syntax.vim' " Syntax files for common JS libraries
 Plug 'digitaltoad/vim-pug'                    " Syntax files for jade templates
 Plug 'othree/yajs.vim'                        " Syntax for JS including ES6
 Plug 'othree/es.next.syntax.vim'              " Syntax for ESnext
@@ -19,6 +19,8 @@ Plug 'chriskempson/base16-vim'                " A theming framework
 Plug 'junegunn/goyo.vim'                      " Clear up your interface from distractions
 Plug 'junegunn/limelight.vim'                 " Highlight the current parts of a file you are working on
 Plug 'chilicuil/vim-sml-coursera'             " Sml plugin
+Plug 'leafgarland/typescript-vim'             " Typescript syntax
+Plug 'bronson/vim-trailing-whitespace'        " Mark trailing spaces in red + add `!command` :FixWhitespace
 call plug#end()
 
 " Fuzzy file searching
@@ -34,7 +36,7 @@ let mapleader=","
 set number
 set relativenumber
 
-" -----> Persistent undo <------ 
+" -----> Persistent undo <------
 if has("persistent_undo")
     set undodir=~/.config/nvim/runtime/undodir
     set undofile
