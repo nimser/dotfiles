@@ -11,6 +11,7 @@ Do this first
 Install
 -------
 system:
+- fish
 - i3-wm i3blocks i3lock dmenu
 - ttf-hack
 - nodm
@@ -45,14 +46,14 @@ account   include   system-local-login
 password  include   system-local-login
 session   include   system-local-login
 ```
-root: 
+root:
 - `sudo stow -t /root` all root conf from `dotfiles`
 - `sudo ln -s /home/{user}/.ssh .`
 dhcpcd:
 - copy file from stow/_system to allow faster dhcp leases
 ssh: copy and decrypt key from backup
 gpg: copy and decrypt key from backup
-wifi: 
+wifi:
 - copy/decrypt/rename `wpa_supplicant-wlan0.conf.enc` to `/etc/wpa_supplicant/`
 - enable the systemd service
 zswap:
@@ -62,6 +63,16 @@ zswap:
 fonts: make sure Hack and Font-Awesome are installed
 others:
 - make boot verbose by removing the `quiet` boot param (grub: in /etc/default/grub)
+fish:
+- stow fish
+- run fish_config and pick the proper theme / shell prompt
+- mkdir -p ~/.local/bin
+- install oh-my-fish
+
+ruby:
+- git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+- git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+- rbenv install -l
 
 
 File management
@@ -73,4 +84,4 @@ I use [stow](http://www.gnu.org/software/stow/) to install files present in this
 Services I disable under low memory conditions (reenable as needed)
 ==============================================
 - haveged: an enthropy generator useful for ensuring cryptographic apps can work properly (warning: could impact daily use of encrypted apps on the web?)
-- upower: a middleware to monitor power usage 
+- upower: a middleware to monitor power usage
