@@ -7,3 +7,6 @@ if test -d ~/.local/bin
 end
 set -gx JAVA_OPTS "-Xms512m -Xmx512m"
 set -gx UD_RUBY_VERSION "2.4.1"
+
+eval sh $HOME/.config/base16-shell/scripts/base16-default-dark.sh
+
