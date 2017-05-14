@@ -66,13 +66,14 @@ others:
 fish:
 - stow fish
 - run fish_config and pick the proper theme / shell prompt
-- mkdir -p ~/.local/bin
+- `mkdir -p ~/.local/bin`
 - install oh-my-fish
 
 ruby:
-- git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-- git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-- rbenv install -l
+- `git clone https://github.com/rbenv/rbenv.git ~/.rbenv`
+- `git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build`
+- `bash -c "cd ~/.rbenv && src/configure && make -C src"`
+- `rbenv install $UD_RUBY_VERSION` (-l to see list all versions)
 
 
 File management
