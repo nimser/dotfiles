@@ -21,6 +21,7 @@ Plug 'junegunn/limelight.vim'                 " Highlight the current parts of a
 Plug 'chilicuil/vim-sml-coursera'             " Sml plugin
 Plug 'leafgarland/typescript-vim'             " Typescript syntax
 Plug 'bronson/vim-trailing-whitespace'        " Mark trailing spaces in red + add `!command` :FixWhitespace
+Plug 'vim-scripts/vim-stylus'                 " Syntax highliting for stylus
 call plug#end()
 
 " Fuzzy file searching
@@ -35,6 +36,7 @@ call plug#end()
 let mapleader=","
 set number
 set relativenumber
+set clipboard+=unnamedplus
 
 " -----> Persistent undo <------
 if has("persistent_undo")
@@ -42,13 +44,13 @@ if has("persistent_undo")
     set undofile
 endif
 
-" -----> Indentation <------      
+" -----> Indentation <------
 set expandtab           " spaces instead of tabs
 set softtabstop=2       " size of one tab in spaces
 set shiftwidth=2
 set mousehide           " cache la souris quand on se sert du clavier
 
-" -----> Command mappings <------      
+" -----> Command mappings <------
 cnoreabbrev W w
 
 inoremap <Tab> <Esc>
@@ -66,7 +68,7 @@ colorscheme base16-default-dark
 " --------------------------------
 "       PLUGINS OPTIONS
 " --------------------------------
-" Open Nerdtree at startup if no files are specified 
+" Open Nerdtree at startup if no files are specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * wincmd p

@@ -17,6 +17,7 @@ system:
 - stow
 - rxvt-unicode
 - nvim
+- xsel (clipboard)
 dev:
 - yarn
 - mongo mongodb-tools
