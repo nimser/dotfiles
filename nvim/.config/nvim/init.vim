@@ -7,6 +7,7 @@ Plug 'tpope/vim-surround'                     " Adds verb `surround` to target s
 Plug 'tpope/vim-commentary'                   " Comments using vim's expressive language
 Plug 'scrooloose/nerdtree'                    " Browse files within vim
 Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
+Plug 'vim-syntastic/syntastic'                " Syntax checker for vim
 Plug 'elixir-lang/vim-elixir'                 " Elixir syntax highlighting
 Plug 'othree/html5.vim'                       " HTML5 omnicomplete and syntax
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax files for common JS libraries
@@ -88,10 +89,19 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 " Vim airline
-
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = ['branch']
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_typescript_checkers = ['tslint']
 
 " --------------------------------
 "    FILE TYPES OVERRIDES

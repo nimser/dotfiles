@@ -60,7 +60,10 @@ zswap:
 - add `lz4 lz4_compress` in `MODULES` in `/etc/mkinitcpio.conf`
 - add `zswap.enabled=1 zswap.max_pool_percent=25 zswap.compressor=lz4` to the list of boot parameters (grub: /etc/default/grub)
 - reload boot configuration (grub: `sudo grub-mkconfig -o /boot/grub/grub.cfg`)
-fonts: make sure Hack and Font-Awesome are installed
+fonts:
+- make sure Hack
+- install noto-fonts-cjk for Chinese/Korean/JP
+- font-awesome (required by the i3blocks config) should be in `~/.local/share/fonts/fontawesome-webfonts.ttf`
 others:
 - make boot verbose by removing the `quiet` boot param (grub: in /etc/default/grub)
 fish:
@@ -68,7 +71,8 @@ fish:
 - run fish_config and pick the proper theme / shell prompt
 - `mkdir -p ~/.local/bin`
 - install oh-my-fish
-
+yarn:
+- `yarn config set prefix ~/.local/` to have `yarn global add xxx` to add xxx in `~/.local/bin/`
 ruby:
 - `git clone https://github.com/rbenv/rbenv.git ~/.rbenv`
 - `git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build`
