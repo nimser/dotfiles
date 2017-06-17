@@ -8,6 +8,7 @@ System information
 
 Do this first
 ================
+
 Install
 -------
 system:
@@ -29,6 +30,7 @@ comms:
 - maim (captures d'écran)
 others:
 - keybase keybase-git[aur]
+
 Configure
 ---------
 time:
@@ -78,6 +80,7 @@ ruby:
 - `git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build`
 - `bash -c "cd ~/.rbenv && src/configure && make -C src"`
 - `rbenv install $UD_RUBY_VERSION` (-l to see list all versions)
+- `rbenv global $UD_RUBY_VERSION`
 
 
 File management
