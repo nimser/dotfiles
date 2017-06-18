@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdtree'                    " Browse files within vim
 Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
 Plug 'vim-syntastic/syntastic'                " Syntax checker for vim
 Plug 'elixir-lang/vim-elixir'                 " Elixir syntax highlighting
+Plug 'dag/vim-fish'                           " Syntax for fish scripts
 Plug 'othree/html5.vim'                       " HTML5 omnicomplete and syntax
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax files for common JS libraries
 Plug 'digitaltoad/vim-pug'                    " Syntax files for jade templates
