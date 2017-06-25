@@ -81,6 +81,9 @@ ruby:
 - `bash -c "cd ~/.rbenv && src/configure && make -C src"`
 - `rbenv install $UD_RUBY_VERSION` (-l to see list all versions)
 - `rbenv global $UD_RUBY_VERSION`
+elm:
+- yarn global install elm
+- yarn global install elm-format@exp elm-test elm-reactor elm-oracle
 
 
 File management

@@ -8,6 +8,7 @@ Plug 'tpope/vim-commentary'                   " Comments using vim's expressive 
 Plug 'scrooloose/nerdtree'                    " Browse files within vim
 Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
 Plug 'vim-syntastic/syntastic'                " Syntax checker for vim
+Plug 'ElmCast/elm-vim'                        " Syntax, indentation, completion etc.. for Elm
 Plug 'elixir-lang/vim-elixir'                 " Elixir syntax highlighting
 Plug 'dag/vim-fish'                           " Syntax for fish scripts
 Plug 'othree/html5.vim'                       " HTML5 omnicomplete and syntax
@@ -103,6 +104,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_typescript_checkers = ['tslint']
+let g:elm_syntastic_show_warnings = 1
+
+" elm-vim, elm-format
+let g:elm_format_autosave = 1
+
 
 " --------------------------------
 "    FILE TYPES OVERRIDES
