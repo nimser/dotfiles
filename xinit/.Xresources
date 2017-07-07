@@ -3,7 +3,7 @@ URxvt.scrollBar: false
 Xcursor.theme: Vanilla-DMZ
 
 !! Prefered fonts: Hack, PragmataPro
-!! To know what fonts provide a glyph use `gycharmap`
+!! To know what fonts provide a glyph use `gucharmap`
 URxvt.font:                xft:Hack:size=11
 URxvt.boldFont:            xft:Hack:size=11:bold
 URxvt.italicFont:          xft:Hack:size=11:italic
