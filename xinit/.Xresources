@@ -3,6 +3,7 @@ URxvt.scrollBar: false
 Xcursor.theme: Vanilla-DMZ
 
 !! Prefered fonts: Hack, PragmataPro
+!! To know what fonts provide a glyph use `gycharmap`
 URxvt.font:                xft:Hack:size=11
 URxvt.boldFont:            xft:Hack:size=11:bold
 URxvt.italicFont:          xft:Hack:size=11:italic
@@ -30,8 +31,7 @@ URxvt.keysym.M-Delete:     perl:matcher:list
 URxvt.matcher.button:      1
 URxvt.colorUL:             #7780a1
 
-! Base16 Default Dark
-! Scheme: Chris Kempson (http://chriskempson.com)
+! Base16 Default Dark Scheme: Chris Kempson (http://chriskempson.com)
 
 #define base00 #181818
 #define base01 #282828
