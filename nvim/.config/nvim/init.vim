@@ -38,7 +38,13 @@ call plug#end()
 "" --------------------------------
 let mapleader=","
 set number
-set relativenumber
+"set relativenumber
+" Preserve absolute numbers in normal mode
+"augroup numbertoggle
+"  autocmd!
+"  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+"augroup END
 set clipboard+=unnamedplus
 
 " -----> Persistent undo <------
