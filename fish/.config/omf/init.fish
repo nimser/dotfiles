@@ -9,12 +9,7 @@ end
 
 set -gx EDITOR "nvim"
 set -gx JAVA_OPTS "-Xms512m -Xmx512m"
-set -gx UD_RUBY_VERSION "2.4.1"
+set -gx UD_RUBY_VERSION "2.5.0"
 
 eval sh $HOME/.config/base16-shell/scripts/base16-default-dark.sh
 
-# Aliases
-alias bi="bundle install"
-alias mms="bundle exec middleman server"
-alias mmb="bundle exec middleman build"
-alias mmd="bundle exec middleman deploy"
