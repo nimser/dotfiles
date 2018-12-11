@@ -7,9 +7,5 @@ if test -d ~/.local/bin
   set -gx fish_user_paths $fish_user_paths ~/.local/bin
 end
 
-set -gx EDITOR "nvim"
-set -gx JAVA_OPTS "-Xms512m -Xmx512m"
-set -gx UD_RUBY_VERSION "2.5.0"
-
 eval sh $HOME/.config/base16-shell/scripts/base16-default-dark.sh
 
