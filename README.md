@@ -57,6 +57,7 @@ others:
 - make boot verbose by removing the `quiet` boot param (grub: in /etc/default/grub)
 
 
+
 File management
 ===============
 
