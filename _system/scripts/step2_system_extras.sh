@@ -3,7 +3,7 @@ sudo pacman -Syu
 
 # SETTING DESCENT MIRRORS
 yay -S --noconfirm reflector
-reflector --save
+sudo reflector -n 10 --save /etc/pacman.d/mirrorlist
 ##
 # INSTALL
 #
@@ -19,7 +19,7 @@ sudo pacman -S --noconfirm stow
 sudo pacman -S --noconfirm ttf-hack noto-fonts-cjk adobe-source-code-pro-fonts
 sudo pacman -S --noconfirm maim # screenshots / screencasting
 sudo pacman -S --noconfirm yarn
-sudo pacman -S chromium firefox
+sudo pacman -S --noconfirm chromium firefox
 
 # PERFORMANCE IMPROVMENTS
 yay -S --noconfirm zramswap
@@ -41,10 +41,14 @@ sudo systemctl start earlyoom
 # CONFIGURE
 #
 echo "Installing and configuring Spacemacs...\n"
+mv ~/.emacs.d ~/.emacs.d.bkp
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 
 echo "Stowing configuration files...\n"
+mv ~/.bashrc ~/.bashrc.bkp
+mv ~/.config/conf.d/omf.fish ~/.config/conf.d/omf.fish.bkp
+mv ~/.config/psd/psd.conf ~/.config/psd/psd.conf.bkp
 cd ~/dotfiles
 stow -R alacritty
 stow -R browsing
@@ -58,7 +62,7 @@ stow -R spacemacs
 stow -R xinit
 
 echo "Installing and configuring NVM...\n"
-yay -S nvm
+yay -S --noconfirm nvm
 yarn config set prefix ~/.local/
 
 echo "TODO - Installing and configuring Rbenv...\n"
@@ -72,6 +76,6 @@ echo "Installing and configuring Elm..."
 yarn global install elm
 # TODO - update the list of used elm plugins to install here
 
-echo "\nInstalling fish...\n"
+echo "Installing fish...\n"
 curl -L https://get.oh-my.fish | fish
 omf install

@@ -20,11 +20,11 @@ Elementary setup
 
 3. Checks things are working properly
 
-(TODO: to be converted in a script)
+(TODO: to be converted into a script)
 
 - Chromium/Firefox is configured to store its cache in RAM
 - ZRAM is configured
-- [Avahi](https://wiki.archlinux.org/index.php/avahi is used for zero-configuration networking
+- [Avahi](https://wiki.archlinux.org/index.php/avahi) is used for zero-configuration networking
 
 
 Manual configuration (optional)
