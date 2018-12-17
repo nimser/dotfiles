@@ -1,6 +1,9 @@
 #!/bin/bash
 sudo pacman -Syu
 
+# SETTING DESCENT MIRRORS
+yay -S --noconfirm reflector
+reflector --save
 ##
 # INSTALL
 #
@@ -8,7 +11,7 @@ echo "Installing essentials...\n"
 
 sudo pacman -S --noconfirm i3-wm i3blocks i3lock dmenu nodm # window manager
 sudo pacman -S --noconfirm alacritty fish
-sudo pacman -S --noconfirm nvim xsel ack
+sudo pacman -S --noconfirm neovim xsel ack
 sudo pacman -S --noconfirm emacs
 sudo pacman -S --noconfirm stow
 # NOTE: FiraCode would be grate but no ligature support in alacritty for now. See https://github.com/jwilm/alacritty/issues/50
@@ -22,7 +25,7 @@ sudo pacman -S chromium firefox
 yay -S --noconfirm zramswap
 sudo systemctl start zramswap.service
 sudo systemctl enable zramswap.service
-yay -S profile-sync-daemon # syncs browser profiles to ram
+yay -S --noconfirm profile-sync-daemon # syncs browser profiles to ram
 systemctl --user start psd.service
 systemctl --user enable psd.service
 # chromium has the `disk-cache-dir` flag to set  where to store cache (see ~/.config/chromium-flags.conf) but firefox needs manual setup in about:config. A better alternative is to set the whole ~/.cache directory as a tmpfs as below
@@ -40,26 +43,22 @@ sudo systemctl start earlyoom
 echo "Installing and configuring Spacemacs...\n"
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-echo "\nInstalling fish...\n"
-curl -L https://get.oh-my.fish | fish
 
 echo "Stowing configuration files...\n"
-mv ~/.bashrc ~/.bashrc.bkp
-cd ~/stow
-stow alacritty
-stow browsing
+cd ~/dotfiles
+stow -R alacritty
+stow -R browsing
 mkdir -p ~/.local/bin #needed for some custom stowed scripts
-stow fish
-stow git
-stow i3
-stow nvim
-stow scripts
-stow spacemacs
-stow xinit
+stow -R fish
+stow -R git
+stow -R i3
+stow -R nvim
+stow -R scripts
+stow -R spacemacs
+stow -R xinit
 
 echo "Installing and configuring NVM...\n"
 yay -S nvm
-omf install
 yarn config set prefix ~/.local/
 
 echo "TODO - Installing and configuring Rbenv...\n"
@@ -73,3 +72,6 @@ echo "Installing and configuring Elm..."
 yarn global install elm
 # TODO - update the list of used elm plugins to install here
 
+echo "\nInstalling fish...\n"
+curl -L https://get.oh-my.fish | fish
+omf install
