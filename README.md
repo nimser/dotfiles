@@ -1,42 +1,40 @@
 System information
 ==================
 
-- Linux flavor: [Arch Linux ARM](https://archlinuxarm.org/)
+- Linux flavor: Arch Linux
+- Architecture: x86 and aarch64
 - Window manager: [i3wm](https://github.com/i3/i3)
-- Terminal emulator: [rxvt-unicode](https://archlinuxarm.org/)
+- Terminal emulator: [alacritty](https://github.com/jwilm/alacritty)
 - Text editor: [Neovim](https://github.com/neovim/neovim)
 
-Do this first
+Elementary setup
 ================
 
-Install
--------
-system:
-- fish
-- i3-wm i3blocks i3lock dmenu
-- ttf-hack
-- nodm
-- stow
-- rxvt-unicode
-- nvim
-- xsel (clipboard)
-dev:
-- yarn
-- mongo mongodb-tools
-- sbt
-- jdk8-openjdk
-- ack
-comms:
-- maim (captures d'écran)
-others:
-- keybase keybase-git[aur]
+1. Launch the aui script from the cloned repositiory
 
-Configure
+`sh _system/scripts/step1_aui_lilo.sh`
+
+2. Install additional system tools
+
+`sh _system/scripts/step2_system_extras.sh`
+
+3. Checks things are working properly
+
+(TODO: to be converted in a script)
+
+- Chromium/Firefox is configured to store its cache in RAM
+- ZRAM is configured
+- [Avahi](https://wiki.archlinux.org/index.php/avahi is used for zero-configuration networking
+
+
+Manual configuration (optional)
 ---------
+root:
+- `sudo stow -t /root` all root conf from `dotfiles`
+- `sudo ln -s /home/{user}/.ssh .`
 time:
 - `timedatectl status` to ensure NTP is enabled
 - `timedatectl list-timezone` then `timedatectl set-timezone Zone/SubZone` to set the proper time
-user: clone `dotfiles` rep and `stow` all relevant conf
 nodm:
 - ensure xinit config is set
 - (necessary for pulseaudio to work) ensure a /etc/pam.d/nodm exists containing the following:
@@ -48,9 +46,6 @@ account   include   system-local-login
 password  include   system-local-login
 session   include   system-local-login
 ```
-root:
-- `sudo stow -t /root` all root conf from `dotfiles`
-- `sudo ln -s /home/{user}/.ssh .`
 dhcpcd:
 - copy file from stow/_system to allow faster dhcp leases
 ssh: copy and decrypt key from backup
@@ -58,32 +53,8 @@ gpg: copy and decrypt key from backup
 wifi:
 - copy/decrypt/rename `wpa_supplicant-wlan0.conf.enc` to `/etc/wpa_supplicant/`
 - enable the systemd service
-zswap:
-- add `lz4 lz4_compress` in `MODULES` in `/etc/mkinitcpio.conf`
-- add `zswap.enabled=1 zswap.max_pool_percent=25 zswap.compressor=lz4` to the list of boot parameters (grub: /etc/default/grub)
-- reload boot configuration (grub: `sudo grub-mkconfig -o /boot/grub/grub.cfg`)
-fonts:
-- make sure Hack
-- install noto-fonts-cjk for Chinese/Korean/JP
-- font-awesome (required by the i3blocks config) should be in `~/.local/share/fonts/fontawesome-webfonts.ttf`
 others:
 - make boot verbose by removing the `quiet` boot param (grub: in /etc/default/grub)
-fish:
-- stow fish
-- run fish_config and pick the proper theme / shell prompt
-- `mkdir -p ~/.local/bin`
-- install oh-my-fish
-yarn:
-- `yarn config set prefix ~/.local/` to have `yarn global add xxx` to add xxx in `~/.local/bin/`
-ruby:
-- `git clone https://github.com/rbenv/rbenv.git ~/.rbenv`
-- `git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build`
-- `bash -c "cd ~/.rbenv && src/configure && make -C src"`
-- `rbenv install $UD_RUBY_VERSION` (-l to see list all versions)
-- `rbenv global $UD_RUBY_VERSION`
-elm:
-- yarn global install elm
-- yarn global install elm-format@exp elm-test elm-reactor elm-oracle
 
 
 File management

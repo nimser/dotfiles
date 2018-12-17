@@ -24,7 +24,8 @@ Plug 'junegunn/limelight.vim'                 " Highlight the current parts of a
 Plug 'chilicuil/vim-sml-coursera'             " Sml plugin
 Plug 'leafgarland/typescript-vim'             " Typescript syntax
 Plug 'bronson/vim-trailing-whitespace'        " Mark trailing spaces in red + add `!command` :FixWhitespace
-Plug 'vim-scripts/vim-stylus'                 " Syntax highliting for stylus
+Plug 'vim-scripts/vim-stylus'                 " Syntax highlighting for stylus
+Plug 'tomlion/vim-solidity'                   " Syntax highlighting for solidity
 call plug#end()
 
 " Fuzzy file searching
