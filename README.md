@@ -12,11 +12,11 @@ Elementary setup
 
 1. Launch the aui script from the cloned repositiory
 
-`sh _system/scripts/step1_aui_lilo.sh`
+`bash _system/scripts/step1_aui_lilo.sh`
 
 2. Install additional system tools
 
-`sh _system/scripts/step2_system_extras.sh`
+`bash _system/scripts/step2_system_extras.sh`
 
 3. Checks things are working properly
 
