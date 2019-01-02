@@ -69,6 +69,7 @@ stow -R xinit
 
 echo "Installing and configuring NVM...\n"
 aur_package_install "nvm"
+mkdir ~/.nvm
 yarn config set prefix ~/.local/
 
 echo "TODO - Installing and configuring Rbenv...\n"
@@ -84,6 +85,10 @@ echo "Installing and configuring Elm..."
 yarn global add elm
 # TODO - update the list of used elm plugins to install here
 
+echo "Adding javascript development tools"
+yarn global add tern
+
 echo "Installing fish...\n"
 rm -rf ~/.local/share/omf
 curl -L https://get.oh-my.fish | fish
+
