@@ -41,7 +41,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (keyboard-layout :variables kl-layout 'bepo)
-     ivy
+     helm
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
