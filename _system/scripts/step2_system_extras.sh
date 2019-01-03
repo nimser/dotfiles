@@ -51,7 +51,7 @@ sudo systemctl start earlyoom
 echo "Installing and configuring Spacemacs...\n"
 rm -rf ~/.emacs.d
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-
+mkdir ~/.spacemacs.d/
 
 echo "Stowing configuration files...\n"
 rm -rf ~/.bashrc ~/.config/conf.d/omf.fish ~/.config/psd ~/.config/fish ~/.config/omf ~/.config/alacritty ~/.config/base16-shell ~/.config/psd ~/.config/nvim ~/.spacemacs.d ~/.config/i3 ~/.3blocks.conf ~/.gitconfig ~/.tigrc ~/.xinitrc ~/.Xresources ~/.i3blocks.conf ~/.local/share/fonts/.uuid
