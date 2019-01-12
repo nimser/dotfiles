@@ -1,0 +1,4 @@
+** Issues related to keyboard-layout
+
+*** In visual mode pressing the 's' goes up instead of surrounding
+*** In org mode the command to add todo fails and cursor goes down
