@@ -111,17 +111,6 @@ This function should only modify configuration layer settings."
 
 (defun dotspacemacs/user-config ()
 
-  ; FIXME: HACK - Fixing the keyboard-layout issue referenced here: https://github.com/syl20bnr/spacemacs/issues/10358
-  (kl/leader-correct-keys
-        "wh"
-        "wj"
-        "wk"
-        "wl"
-        ;;
-        "wH"
-        "wJ"
-        "wK"
-        "wL")
   (defun setup-tide-mode ()
     (require 'web-mode))
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
@@ -146,4 +135,4 @@ This function should only modify configuration layer settings."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-)
+
