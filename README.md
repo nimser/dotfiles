@@ -32,11 +32,13 @@ Manual configuration (optional)
 root:
 - `sudo stow -t /root` all root conf from `dotfiles`
 - `sudo ln -s /home/{user}/.ssh .`
+- 'sudo ln -s /home/{user}/.local/share/omf /root/.local/share/
 time:
 - `timedatectl status` to ensure NTP is enabled
 - `timedatectl list-timezone` then `timedatectl set-timezone Zone/SubZone` to set the proper time
 nodm:
 - ensure xinit config is set
+- copy configuration file from dotfiles/_system
 - (necessary for pulseaudio to work) ensure a /etc/pam.d/nodm exists containing the following:
 ```
 #%PAM-1.0

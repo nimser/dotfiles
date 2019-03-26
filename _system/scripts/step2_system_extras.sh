@@ -29,6 +29,9 @@ package_install "yarn"
 package_install "chromium firefox"
 aur_package_install "nomachine" # remote access
 
+# INTERNATIONALISATION
+package_install "fcitx fcitx-sunpinyin fcitx-chewing fcitx-im" #i18n input for pinyin, zhuyin etc...
+
 # PERFORMANCE IMPROVMENTS
 aur_package_install "zramswap"
 sudo systemctl start zramswap.service
