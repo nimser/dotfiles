@@ -27,7 +27,6 @@ package_install "ttf-hack noto-fonts-cjk adobe-source-code-pro-fonts"
 package_install "maim" # screenshots / screencasting
 package_install "yarn"
 package_install "chromium firefox"
-aur_package_install "nomachine" # remote access
 
 # INTERNATIONALISATION
 package_install "fcitx fcitx-sunpinyin fcitx-chewing fcitx-im" #i18n input for pinyin, zhuyin etc...
