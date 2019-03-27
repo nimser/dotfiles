@@ -1,6 +1,6 @@
 ########################
 # Tips to configure i3 can be found in the Code Cast youtube tutorial
-# 
+#
 ###
 
 ## Constants definitions
@@ -39,8 +39,10 @@ assign [class="chromium"] $workspace1
 assign [class="Alacritty"] $workspace3
 # Make some apps launch when i3 first starts
 exec chromium --process-per-site
-exec alacritty 
-exec alacritty 
+exec alacritty
+exec alacritty
+exec --no-startup-id nm-applet
+exec --no-startup-id "sleep 2s & kalu"
 
 ## General Configuration
 font pango:Hack 11
@@ -55,10 +57,21 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
 bindsym $mod+Shift+l exec i3lock
 bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Floating windows
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Kalu"] floating enable
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
 # pulseaudio bindings
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# brightness adjustments
+bindsym XF86MonBrightnessUp exec "xbacklight + 5"
+bindsym XF86MonBrightnessDown exec "xbacklight - 5"
 
 
 ## i3 keybindings
@@ -149,7 +162,7 @@ bar {
     inactive_workspace $base01 $base01    $base03
     urgent_workspace   $base01 $base01    $base08
   }
-  status_command i3blocks
+  status_command i3status
 }
 
 ## Colors
