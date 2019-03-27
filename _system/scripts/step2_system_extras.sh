@@ -29,7 +29,7 @@ package_install "yarn"
 package_install "chromium firefox"
 
 # INTERNATIONALISATION
-package_install "fcitx fcitx-sunpinyin fcitx-chewing fcitx-im" #i18n input for pinyin, zhuyin etc...
+package_install "ibus ibus-libpinyin ibus-chewing" #i18n input for pinyin, zhuyin etc...
 
 # PERFORMANCE IMPROVMENTS
 aur_package_install "zramswap"
@@ -69,6 +69,8 @@ stow -R nvim
 stow -R scripts
 stow -R spacemacs
 stow -R xinit
+stow -R ibus
+stow -R conf
 
 echo "Installing and configuring NVM...\n"
 aur_package_install "nvm"
