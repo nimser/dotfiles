@@ -43,6 +43,7 @@ exec alacritty
 exec alacritty
 exec --no-startup-id nm-applet
 exec --no-startup-id "sleep 2s & kalu"
+exec --no-startup-id fcitx -d
 
 ## General Configuration
 font pango:Hack 11

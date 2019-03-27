@@ -16,7 +16,7 @@ sudo reflector -n 10 --save /etc/pacman.d/mirrorlist
 #
 echo "Installing essentials...\n"
 
-package_install "i3-wm i3blocks i3lock dmenu nodm" # window manager
+package_install "i3-wm i3lock dmenu nodm" # window manager
 package_install "alacritty fish"
 package_install "neovim xsel ack"
 package_install "emacs"
