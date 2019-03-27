@@ -107,8 +107,8 @@ bindsym $mod+eacute layout tabbed
 bindsym $mod+p layout toggle split
 # toggle tiling / floating
 bindsym $mod+e floating toggle
-# change focus between tiling / floating windows: FIXME: doesn't work?
-bindsym $mod+space focus mode_toggle
+# change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 # switch to workspace
