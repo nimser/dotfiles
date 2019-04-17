@@ -71,6 +71,7 @@ stow -R spacemacs
 stow -R xinit
 stow -R ibus
 stow -R conf
+stow -R compton
 
 echo "Installing and configuring NVM...\n"
 aur_package_install "nvm"

@@ -45,6 +45,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id "sleep 2s & kalu"
 #exec --no-startup-id fcitx -d
 exec --no-startup-id ibus-daemon --xim -d -r
+exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id gromit-mpx
+exec --no-startup-id /usr/bin/blueman-applet
 
 ## General Configuration
 font pango:Hack 11
@@ -60,7 +63,7 @@ bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
 bindsym $mod+Shift+l exec i3lock
 bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Floating windows
+# Floating windows - findout the classname using  `xprop`
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kalu"] floating enable
 
