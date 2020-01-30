@@ -1,0 +1,61 @@
+# We source our color theme
+source ~/.config/neomutt/colors.linux
+# we can source as many files as needed if you like to divide configuration pieces by file instead
+# of having a long configuration file.
+#source ~/.config/neomutt/sidebar
+
+
+# Here we run the local password manager and get the password for imap and smtp into a mutt variable
+set mailcap_path = ~/.config/neomutt/mailcap
+set my_pass="`pass neomutt/nicolas`"
+
+# Here are the general settings
+set realname="Nicolas"
+set from="nicolas@cybercrumbs.net"
+set mail_check=90
+set timeout=15
+
+
+# IMAP
+set imap_user="nicolas.wormser@gmail.com"
+set imap_pass=$my_pass
+set folder=imaps://imap.gmail.com:993
+set spoolfile="+INBOX"
+
+set sort=reverse-date
+set sort_aux=last-date-received
+
+#sidebar
+set sidebar_visible = no
+set sidebar_format = "%B%* %n"
+set mail_check_stats
+set sidebar_new_mail_only = no
+set sidebar_width = 15
+set sidebar_short_path = no
+
+# --------------------------------------------------------------------------
+# Note: All color operations are of the form:
+#       color OBJECT FOREGROUND BACKGROUND
+# Color of the current, open, mailbox
+# Note: This is a general NeoMutt option which colors all selected items.
+#color indicator cyan white
+# Color of the highlighted, but not open, mailbox.
+color sidebar_highlight white color8
+# Color of the divider separating the Sidebar from NeoMutt panels
+color sidebar_divider color8 white
+# Color to give mailboxes containing flagged mail
+color sidebar_flagged red white
+# Color to give mailboxes containing new mail
+color sidebar_new green white
+# Color to give mailboxes containing no new/flagged mail, etc.
+color sidebar_ordinary color245 default
+
+
+# SMTP
+set smtp_url="smtps://nicolas.wormser@gmail.com@smtp.gmail.com:465/"
+set smtp_pass=$my_pass
+
+# Source GNUPG settings to encrypt/decrypt/sign email
+source ~/.config/neomutt/gpg.rc
+
+auto_view text/html

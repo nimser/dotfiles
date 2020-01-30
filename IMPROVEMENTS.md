@@ -6,4 +6,6 @@
 # ITEM 2 - Ansible provisioning
 - Use ansible provisioning instead of the setup script
 - Look for this example: https://github.com/pigmonkey/spark
-
+# ITEM 3 - Use aconfmgr instead of stow
+- will help track changes in /etc/
+- recommended by Ced
