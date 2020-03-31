@@ -59,6 +59,9 @@ others:
 - make boot verbose by removing the `quiet` boot param (grub: in /etc/default/grub)
 
 
+Getting MacOS on QEMU
+=====================
+https://sick.codes/how-to-install-macos-virtual-machine-on-linux-arch-manjaro-catalina-mojave-or-high-sierra-xcode-working/
 
 File management
 ===============
