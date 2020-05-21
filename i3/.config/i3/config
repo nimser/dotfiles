@@ -32,28 +32,34 @@ set $workspace6 "6: Wild "
 set $workspace7 "7: Wild "
 set $workspace8 "8: Tea "
 set $workspace9 "9: Chat "
-set $workspace10 "10: Sys "
+set $workspace10 "10: Notes "
 
-## Workspace-specific apps
+## General Configuration
+font pango:Hack 11
+floating_modifier $mod
+# borders
+hide_edge_borders smart
+default_border pixel 6
+default_floating_border pixel 0
+focus_on_window_activation focus
+
+## Workspace-specific apps - findout the classname using  `xprop`
 assign [class="chromium"] $workspace1
+assign [class="firefox"] $workspace1
 assign [class="Alacritty"] $workspace3
+assign [class="Typora"] $workspace10
 # Make some apps launch when i3 first starts
-exec chromium --process-per-site
+exec firefox
 exec alacritty
 exec alacritty
+exec typora ~/Sync
 exec --no-startup-id nm-applet
-exec --no-startup-id "sleep 2s & kalu"
+exec xrandr --output DP1 --mode 1920x1080 --above  eDP1 --primary --mode 1920x1080
 #exec --no-startup-id fcitx -d
 exec --no-startup-id ibus-daemon --xim -d -r
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-
-## General Configuration
-font pango:Hack 11
-floating_modifier $mod
-hide_edge_borders both
-new_window none
 
 ## Application keybindings
 # kill focused window
@@ -98,6 +104,15 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+# move focused window
+bindsym $mod+Alt+c move workspace to output left
+bindsym $mod+Alt+t move workspace to output down
+bindsym $mod+Alt+s move workspace to output up
+bindsym $mod+Alt+r move workspace to output right
+bindsym $mod+Alt+Left move workspace to output left
+bindsym $mod+Alt+Down move workspace to output down
+bindsym $mod+Alt+Up move workspace to output up
+bindsym $mod+Alt+Right move workspace to output right
 # split in horizontal orientation
 bindsym $mod+h split h
 # split in vertical orientation
@@ -172,8 +187,8 @@ bar {
 
 ## Colors
 # class                   border  backgr. text    indicator
-  client.focused          $base01 $base01    $base07 $base0F
-  client.focused_inactive $base02 $base02    $base03 $base0F
-  client.unfocused        $base02 $base02    $base03 $base0F
+  client.focused          $base03 $base01    $base07 $base0F
+  client.focused_inactive $base01 $base01    $base07 $base0F
+  client.unfocused        $base01 $base02    $base03 $base0F
   client.urgent           $base02 $base08    $base00 $base0F
 

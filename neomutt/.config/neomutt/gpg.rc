@@ -4,7 +4,7 @@ set crypt_verify_sig=yes
 set crypt_replysign=yes
 set crypt_replyencrypt=yes
 set crypt_replysignencrypted=yes
-set crypt_autoencrypt = no
+set crypt_autoencrypt = yes
 
 
 set pgp_default_key="43F478A488EF7D42F545DD9A2F90FBF43FAF5520"
