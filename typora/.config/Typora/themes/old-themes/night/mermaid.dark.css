@@ -409,10 +409,14 @@ g.classGroup line {
   fill: #eee;
 }
 
+.slice {
+   }
+
 g.stateGroup text {
+  fill: #eee;
   stroke: none;
   font-size: 10px;
-}
+   }
 
 g.stateGroup circle {
   fill: white !important;
@@ -458,71 +462,4 @@ g.stateGroup line {
   fill: black;
   font-size: 10px;
   font-weight: bold;
-}
-
-.cluster-label {
-  color:black;
-}
-
-.statediagram-cluster rect {
-  fill: #BDD5EA;
-  stroke: #9370DB; 
-  stroke-width: 1px;
-}
-.statediagram-cluster rect.outer {
-  rx: 5px;
-  ry: 5px;
-}
-.statediagram-state .divider {
-  stroke: #9370DB; 
-}
-
-.statediagram-state .title-state {
-  rx: 5px;
-  ry: 5px;
-}
-.statediagram-cluster.statediagram-cluster .inner {
-  fill: white;
-}
-.statediagram-cluster.statediagram-cluster-alt .inner {
-  fill: #e0e0e0;
-}
-
-.statediagram-cluster .inner {
-  rx:0;
-  ry:0;
-}
-
-.statediagram-state rect.basic {
-  rx: 5px;
-  ry: 5px;
-}
-.statediagram-state rect.divider {
-  stroke-dasharray: 10,10;
-  fill: #efefef;
-}
-
-.note-edge {
-  stroke-dasharray: 5;
-}
-
-.statediagram-note rect {
-  stroke: var(--cluster-border);
-  fill: #fff5ad;
-  stroke-width: 1px;
-  rx: 0;
-  ry: 0;
-}
-
-.node circle.state-start {
-  fill: black;
-  stroke: black;
-}
-.node circle.state-end {
-  fill: black;
-  stroke: white;
-  stroke-width: 1.5
-}
-#statediagram-barbEnd {
-  fill: #9370DB; 
-}
+   }
