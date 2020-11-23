@@ -43,7 +43,7 @@
   "ui.dark_theme_variant": true,
   "ui.rendered_tile_cache_size": 16384,
   "saving.default_format": "openraster",
-  "brushmanager.selected_brush": "Dieterle/Flat2#1",
+  "brushmanager.selected_brush": "ramon/Dirty_Noise",
   "brushmanager.selected_groups": [],
   "frame.color_rgba": [
     0.12,
@@ -89,7 +89,7 @@
         }
       ],
       "w": 309,
-      "h": 1004
+      "h": 938
     },
     "right_sidebar": {
       "groups": [
@@ -137,7 +137,7 @@
             ]
           ],
           "active_page": 0,
-          "w": 525,
+          "w": 222,
           "h": 312
         },
         {
@@ -147,7 +147,7 @@
             ]
           ],
           "active_page": 0,
-          "w": 525,
+          "w": 222,
           "h": 522
         },
         {
@@ -155,18 +155,18 @@
           "active_page": -1
         }
       ],
-      "w": 525,
-      "h": 1004
+      "w": 222,
+      "h": 938
     },
     "floating": [],
     "position": {
-      "x": 960,
+      "x": 576,
       "y": 0,
-      "w": 948,
+      "w": 1332,
       "h": 1044
     },
     "autohide": false,
-    "fullscreen": true,
+    "fullscreen": false,
     "maximized": false
   },
   "input.button_mapping": {
@@ -513,10 +513,10 @@
   ],
   "colors.current": "#292929",
   "colors.history": [
-    "#ee3333",
-    "#336699",
     "#44aa66",
     "#aa6633",
+    "#292929",
+    "#292929",
     "#292929"
   ],
   "ui.support_smooth_scrolling": true,
@@ -533,7 +533,7 @@
   "ui.blink_layers": true,
   "ui.file_compat_warning_mild": true,
   "ui.file_compat_warning_severe": true,
-  "devbrush.last_used": "Elan TrackPoint",
+  "devbrush.last_used": "Elan Touchpad",
   "brush_chooser.default.window_size": [
     256,
     512
