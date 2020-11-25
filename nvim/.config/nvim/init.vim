@@ -2,50 +2,80 @@
 "       PLUGIN MANAGEMENT
 " --------------------------------
 " vim-plug, pathogen, vundle, neobundle
-call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-surround'                     " Adds verb `surround` to target surrounding characters
-Plug 'tpope/vim-commentary'                   " Comments using vim's expressive language
-Plug 'scrooloose/nerdtree'                    " Browse files within vim
-Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
-Plug 'vim-syntastic/syntastic'                " Syntax checker for vim
-Plug 'ElmCast/elm-vim'                        " Syntax, indentation, completion etc.. for Elm
-Plug 'elixir-lang/vim-elixir'                 " Elixir syntax highlighting
-Plug 'dag/vim-fish'                           " Syntax for fish scripts
-Plug 'othree/html5.vim'                       " HTML5 omnicomplete and syntax
-Plug 'othree/javascript-libraries-syntax.vim' " Syntax files for common JS libraries
-Plug 'digitaltoad/vim-pug'                    " Syntax files for jade templates
-Plug 'othree/yajs.vim'                        " Syntax for JS including ES6
-Plug 'othree/es.next.syntax.vim'              " Syntax for ESnext
-Plug 'tpope/vim-fugitive'                     " A Git wrapper for vim (displays branch in airline)
-Plug 'airblade/vim-gitgutter'                 " Shows which lines have VC changes in the gutter column
-Plug 'chriskempson/base16-vim'                " A theming framework
-Plug 'junegunn/goyo.vim'                      " Clear up your interface from distractions
-Plug 'junegunn/limelight.vim'                 " Highlight the current parts of a file you are working on
-Plug 'chilicuil/vim-sml-coursera'             " Sml plugin
-Plug 'leafgarland/typescript-vim'             " Typescript syntax
-Plug 'bronson/vim-trailing-whitespace'        " Mark trailing spaces in red + add `!command` :FixWhitespace
-Plug 'vim-scripts/vim-stylus'                 " Syntax highlighting for stylus
-Plug 'tomlion/vim-solidity'                   " Syntax highlighting for solidity
+call plug#begin('~/.config/nvim/autoload/plugged')
+  Plug 'jiangmiao/auto-pairs'                   " Auto pairs for '(' '[' '{'
+  Plug 'romgrk/barbar.nvim'                     " Better tabline
+  Plug 'chriskempson/base16-vim'                " A theming framework
+  Plug 'norcalli/nvim-colorizer.lua'            " Colorizer
+  Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+  Plug 'mattn/emmet-vim'                        " Snippets
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " FZF
+  Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/goyo.vim'                      " Clear up your interface from distractions
+  Plug 'junegunn/gv.vim'                        " Git history viewer
+  Plug 'junegunn/limelight.vim'                 " Highlight the current parts of a file you are working on
+  Plug 'unblevable/quick-scope'                 " Text Navigation
+  Plug 'scrooloose/nerdtree'                    " Browse files within vim
+  Plug 'kevinhwang91/rnvimr'                    " Use ranger in a floating window
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  } " Markdown Preview
+  Plug 'szw/vim-maximizer'                      " Maximize/reduce a window among many splits
+  Plug 'nvim-treesitter/nvim-treesitter'        " Treesitter
+  Plug 'kyazdani42/nvim-web-devicons'           " Cool Icons
+  Plug 'AndrewRadev/tagalong.vim'               " Auto change html tags
+  Plug 'mbbill/undotree'                        " undo time travel
+  Plug 'sheerun/vim-polyglot'                   " Better Syntax Support
+  Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
+  Plug 'alvan/vim-closetag'                     " Closetags
+  Plug 'tpope/vim-commentary'                   " Comments using vim's expressive language
+  Plug 'easymotion/vim-easymotion'              " Easymotion
+  Plug 'tpope/vim-fugitive'                     " A Git wrapper for vim (displays branch in airline)
+  Plug 'airblade/vim-gitgutter'                 " Shows which lines have VC changes in the gutter column
+  Plug 'airblade/vim-rooter'                    " Have the file system follow you around
+  Plug 'tpope/vim-sleuth'                       " auto set indent settings
+  Plug 'psliwka/vim-smoothie'                   " Smooth scroll
+  Plug 'tpope/vim-surround'                     " Adds verb `surround` to target surrounding characters
+  Plug 'chilicuil/vim-sml-coursera'             " Sml plugin
+  Plug 'bronson/vim-trailing-whitespace'        " Mark trailing spaces in red + add `!command` :FixWhitespace
+  Plug 'liuchengxu/vim-which-key'               " See what keys do like in emacs
+
+" Activate if need be...
+  "Plug 'ChristianChiarulli/far.vim'             " Find and replace across files
+  "Plug 'tomlion/vim-solidity'                   " Syntax highlighting for solidity
+
+" Seen on other's config, to try out:
+  "Plug 'christianchiarulli/nvcode-color-schemes.vim' " Themes
+  "Plug 'tpope/vim-speeddating' "Change dates fast
+  "Plug 'glts/vim-radical' "Convert binary, hex, etc..
+  "Plug 'tpope/vim-repeat' "Repeat stuff
+  "Plug 'glepnir/galaxyline.nvim' "Lightweight Status Line
+  "Plug 'rhysd/git-messenger.vim' "Shows message for the last commit of any line
+  "Plug 'voldikss/vim-floaterm' "Terminal
+  "Plug 'mhinz/vim-startify' "Start Screen
+  "Plug 'honza/vim-snippets' "Snippets
+  "Plug 'skywind3000/asynctasks.vim'  "async tasks
+  "Plug 'skywind3000/asyncrun.vim' "async tasks
+  "Plug 'moll/vim-bbye' " Intuitive buffer closing
+  "Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "Neovim in Browser
 call plug#end()
 
-" Fuzzy file searching
-" commandt, fuzzyfinder, CtrlP
-
-" Autocomplete and snippets: YouCompleteMe, NeoComplete
-" Vim Easymotion: Vim motions on speed
 
 "" --------------------------------
 ""     MAIN CONFIGURATION
 "" --------------------------------
+let g:loaded_python_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
+let g:node_host_prog = expand("~/.nvm/versions/node/v12.19.0/bin/node")
 let mapleader=","
 set number
-"set relativenumber
-" Preserve absolute numbers in normal mode
-"augroup numbertoggle
-"  autocmd!
-"  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-"  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-"augroup END
+" Preserve absolute numbers in insert mode
+" TODO Fix lag in displaying absolute numbers
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 set clipboard+=unnamedplus
 
 " -----> Persistent undo <------
@@ -55,9 +85,7 @@ if has("persistent_undo")
 endif
 
 " -----> Indentation <------
-set expandtab           " spaces instead of tabs
-set softtabstop=2       " size of one tab in spaces
-set shiftwidth=2
+" Note: (expandtab,softtabstop,shiftwidth,smarttab etc...) managed by vim-sleuth
 set mousehide           " cache la souris quand on se sert du clavier
 
 " -----> Command mappings <------
@@ -90,9 +118,6 @@ nmap <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = 'v'
 
-" javascript-libraries-syntax
-let g:used_javascript_libs = 'vue,react,jasmine'
-
 " Goyo.vim Limelight integration
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -101,27 +126,12 @@ autocmd! User GoyoLeave Limelight!
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = ['branch']
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_typescript_checkers = ['tslint']
-let g:elm_syntastic_show_warnings = 1
-
-" elm-vim, elm-format
-let g:elm_format_autosave = 1
-
-
 " --------------------------------
 "    FILE TYPES OVERRIDES
 " --------------------------------
 
-au BufRead,BufNewFile *.vue set ft=html
+"example:
+"au BufRead,BufNewFile *.vue set ft=html
 
 
 " --------------------------------
