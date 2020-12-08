@@ -1,10 +1,9 @@
 " --------------------------------
 "       PLUGIN MANAGEMENT
 " --------------------------------
-" vim-plug, pathogen, vundle, neobundle
 call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'jiangmiao/auto-pairs'                   " Auto pairs for '(' '[' '{'
-  Plug 'romgrk/barbar.nvim'                     " Better tabline
+  "Plug 'romgrk/barbar.nvim'                     " Better tabline
   Plug 'chriskempson/base16-vim'                " A theming framework
   Plug 'norcalli/nvim-colorizer.lua'            " Colorizer
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
@@ -31,7 +30,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'easymotion/vim-easymotion'              " Easymotion
   Plug 'tpope/vim-fugitive'                     " A Git wrapper for vim (displays branch in airline)
   Plug 'airblade/vim-gitgutter'                 " Shows which lines have VC changes in the gutter column
-  Plug 'airblade/vim-rooter'                    " Have the file system follow you around
   Plug 'tpope/vim-sleuth'                       " auto set indent settings
   Plug 'psliwka/vim-smoothie'                   " Smooth scroll
   Plug 'tpope/vim-surround'                     " Adds verb `surround` to target surrounding characters
@@ -59,43 +57,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   "Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "Neovim in Browser
 call plug#end()
 
+" Load plugin-specific configurations
+source  ~/.config/nvim/plugins_config/coc.vim
+" Load general configurations
+source ~/.config/nvim/general/settings.vim
+source ~/.config/nvim/general/mappings.vim
 
-"" --------------------------------
-""     MAIN CONFIGURATION
-"" --------------------------------
-let g:loaded_python_provider = 0
-let g:loaded_ruby_provider = 0
-let g:loaded_perl_provider = 0
-let g:node_host_prog = expand("~/.nvm/versions/node/v12.19.0/bin/node")
-let mapleader=","
-set number
-" Preserve absolute numbers in insert mode
-" TODO Fix lag in displaying absolute numbers
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
-set clipboard+=unnamedplus
-
-" -----> Persistent undo <------
-if has("persistent_undo")
-    set undodir=~/.config/nvim/runtime/undodir
-    set undofile
-endif
-
-" -----> Indentation <------
-" Note: (expandtab,softtabstop,shiftwidth,smarttab etc...) managed by vim-sleuth
-set mousehide           " cache la souris quand on se sert du clavier
-
-" -----> Command mappings <------
-cnoreabbrev W w
-
-inoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>
-
-inoremap <S-Tab> <Tab>
-vnoremap <S-Tab> <Tab>
 
 " TODO Get inspiration from previous .vimrc Sensible, spf13, janus
 " TODO See this post for good colorschemes (e.g. tomorrow, molokai, base16, jellybeans, wombat256mod): https://github.com/neovim/neovim/issues/793
