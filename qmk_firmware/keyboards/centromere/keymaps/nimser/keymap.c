@@ -1,12 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#define BASE 0 // bepo to qwerty base compat layer, for qwerty systems
-#define SPEC 1 // bepo with ALTGR to qwerty compat layer
-#define SHFT 2 // bepo with SHIFT to qwerty compat layer
-#define NNUM 3 // navigation + numeric keypad layer
-
-
-
 /* transparent template for putting keys
  [???] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -22,11 +15,11 @@
 
 enum centromere_layers
 {
-	BASE,
-	SHFT,
-  NNUM,
-	SPEC,
-  FUN
+	BASE, // Base layer
+	SHFT, // Shifted letters
+  NNUM, // Navigation and numbers
+	SPEC, // Special characters
+  FUN   // FN keys and function controls
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -35,37 +28,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // FIXME Use composition for accents and special charecters,
   // see https://math.dartmouth.edu/~sarunas/Linux_Compose_Key_Sequences.html
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_B,    KC_W,    KC_P,    KC_O, KC_DEL,                      KC_BSPC,    KC_V,    KC_D,    KC_L,    KC_J,  KC_Z,\
+      KC_TAB,    KC_B,    KC_W,    KC_P,     KC_O,  KC_DEL,                      KC_BSPC,    KC_V,    KC_D,    KC_L,    KC_J,  KC_Z,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_A,    KC_U,    KC_I,    KC_E,KC_COMMA,                         KC_C,    KC_T,    KC_S,    KC_R,    KC_N,   KC_M,\
+      KC_ESC,    KC_A,    KC_U,    KC_I,    KC_E, KC_COMMA,                         KC_C,    KC_T,    KC_S,    KC_R,    KC_N,   KC_M,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,MO(SHFT),    KC_Y,    KC_X,  KC_DOT,    KC_K,                      KC_ENT,    KC_Q,    KC_G,    KC_H,    KC_F, XXXXXXX,\
+      XXXXXXX,OSM(MOD_LSFT),KC_Y,   KC_X,MT(MOD_LALT,KC_DOT),KC_K,               KC_QUOT,    KC_Q,    KC_G,    KC_H,    KC_F, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,MO(SPEC), KC_LCTL,     KC_SPC,MO(NNUM), MO(FUN)\
+                                          KC_LGUI,MO(SPEC), KC_LCTL,  LT(FUN,KC_SPC),TT(NNUM), KC_RALT\
                                       //`--------------------------'  `--------------------------'
   ),
-
- [SHFT] = LAYOUT_split_3x6_3( \
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, S(KC_B), S(KC_W), S(KC_P), S(KC_O), _______,                      _______, S(KC_V), S(KC_D), S(KC_L), S(KC_J), S(KC_Z),\
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, S(KC_A), S(KC_U), S(KC_I), S(KC_E),KC_COMMA,                      S(KC_C), S(KC_T), S(KC_S), S(KC_R), S(KC_N), S(KC_M),\
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, _______, S(KC_Y), S(KC_X), _______,S(KC_K ),                      _______, S(KC_Q), S(KC_G), S(KC_H), S(KC_F), XXXXXXX,\
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, _______, _______ \
-                                      //`--------------------------'  `--------------------------'
-  ),
-
 
 
  [NNUM] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, _______,                      XXXXXXX, KC_HOME,   KC_UP,  KC_END, XXXXXXX, XXXXXXX,\
+      XXXXXXX,    KC_4,    KC_5,    KC_6, XXXXXXX, _______,                      XXXXXXX, KC_HOME, XXXXXXX,  KC_END, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_4,    KC_5,    KC_6,    KC_0, _______,                      XXXXXXX, KC_LEFT, KC_DOWN,KC_RIGHT, XXXXXXX, XXXXXXX,\
+      XXXXXXX,    KC_1,    KC_2,    KC_3,    KC_0, _______,                      KC_LEFT, KC_DOWN,   KC_UP, KC_RIGHT, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_1,    KC_2,    KC_3, _______, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+      XXXXXXX,    KC_7,    KC_8,    KC_9, _______, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
@@ -73,11 +53,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [SPEC] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_DLR, KC_PIPE,   KC_GT,   KC_LT, KC_AMPR, XXXXXXX,                      KC_CIRC, KC_EXLM, KC_UNDS, KC_BSLS, KC_PERC, XXXXXXX,\
+       KC_DLR, KC_PIPE,   KC_LT,   KC_GT, KC_AMPR, XXXXXXX,                      XXXXXXX, KC_EXLM, KC_UNDS, KC_BSLS, KC_PERC, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_DQUO, KC_LPRN, KC_LCBR, KC_RCBR, KC_RPRN, KC_SCLN,                        KC_AT, KC_PLUS, KC_MINS,KC_SLASH, KC_ASTR,  KC_EQL,\
+      KC_HASH, KC_LPRN, KC_LCBR, KC_RCBR, KC_RPRN, KC_SCLN,                      KC_QUES, KC_PLUS, KC_MINS,KC_SLASH, KC_ASTR,  KC_EQL,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_COLON,KC_TILDE,                     XXXXXXX, KC_QUES, KC_QUOT,  KC_GRV, XXXXXXX, XXXXXXX,\
+      XXXXXXX, KC_AT, KC_LBRC, KC_RBRC, KC_COLON,KC_TILDE,                     XXXXXXX, KC_QUOT, KC_DQUO,  KC_GRV, KC_CIRC, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
@@ -86,11 +66,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [FUN] = LAYOUT_split_3x6_3( \
   // backspace, enter, arrows...
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F12, XXXXXXX,                      KC_BRIU, KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, XXXXXXX,\
+       KC_ESC,   KC_F4,   KC_F5,   KC_F6,  KC_F12, XXXXXXX,                      KC_BRIU, KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11, XXXXXXX,                      KC_BRID,  KC_CUT, KC_COPY,KC_PASTE, XXXXXXX, XXXXXXX,\
+      XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F11, XXXXXXX,                      KC_BRID,  KC_ENT,  KC_CUT, KC_COPY,KC_PASTE, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F10, XXXXXXX,                      XXXXXXX, KC_UNDO, XXXXXXX,KC_AGAIN, XXXXXXX, XXXXXXX,\
+      XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10, XXXXXXX,                      XXXXXXX, KC_UNDO, XXXXXXX,KC_AGAIN, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
@@ -102,13 +82,13 @@ void matrix_scan_user(void) {
     uint8_t layer = get_highest_layer(layer_state);
 
     switch (layer) {
-    	case _STD:
+    	case BASE:
     		set_led_off;
     		break;
-        case _FN:
+        case FUN:
             set_led_blue;
             break;
-        case _NUM:
+        case NNUM:
             set_led_red;
             break;
         default:

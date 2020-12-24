@@ -63,11 +63,11 @@ exec --no-startup-id /usr/bin/blueman-applet
 
 ## Application keybindings
 # kill focused window
-bindsym $mod+Shift+b kill
+bindsym $mod+Mod1+q kill
 bindsym $mod+Return exec alacritty
 bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
-bindsym $mod+Shift+l exec i3lock
-bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Mod1+l exec i3lock
+bindsym $mod+Mod1+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Floating windows - findout the classname using  `xprop`
 for_window [class="Pavucontrol"] floating enable
@@ -96,23 +96,23 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 # move focused window
-bindsym $mod+Shift+c move left
-bindsym $mod+Shift+t move down
-bindsym $mod+Shift+s move up
-bindsym $mod+Shift+r move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Mod1+c move left
+bindsym $mod+Mod1+t move down
+bindsym $mod+Mod1+s move up
+bindsym $mod+Mod1+r move right
+bindsym $mod+Mod1+Left move left
+bindsym $mod+Mod1+Down move down
+bindsym $mod+Mod1+Up move up
+bindsym $mod+Mod1+Right move right
 # move focused window
-bindsym $mod+Alt+c move workspace to output left
-bindsym $mod+Alt+t move workspace to output down
-bindsym $mod+Alt+s move workspace to output up
-bindsym $mod+Alt+r move workspace to output right
-bindsym $mod+Alt+Left move workspace to output left
-bindsym $mod+Alt+Down move workspace to output down
-bindsym $mod+Alt+Up move workspace to output up
-bindsym $mod+Alt+Right move workspace to output right
+bindsym $mod+mod1+Shift+c move workspace to output left
+bindsym $mod+mod1+Shift+t move workspace to output down
+bindsym $mod+mod1+Shift+s move workspace to output up
+bindsym $mod+mod1+Shift+r move workspace to output right
+bindsym $mod+mod1+Shift+left move workspace to output left
+bindsym $mod+mod1+Shift+down move workspace to output down
+bindsym $mod+mod1+Shift+up move workspace to output up
+bindsym $mod+mod1+Shift+right move workspace to output right
 # split in horizontal orientation
 bindsym $mod+h split h
 # split in vertical orientation
@@ -121,56 +121,55 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+u layout stacking
-bindsym $mod+eacute layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+p layout toggle split
 # toggle tiling / floating
 bindsym $mod+e floating toggle
 # change focus between tiling / floating windows
-bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+mod1+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 # switch to workspace
-bindsym $mod+quotedbl workspace $workspace1
-bindsym $mod+guillemotleft workspace $workspace2
-bindsym $mod+guillemotright workspace $workspace3
-bindsym $mod+parenleft workspace $workspace4
-bindsym $mod+parenright workspace $workspace5
-bindsym $mod+at workspace $workspace6
-bindsym $mod+plus workspace $workspace7
-bindsym $mod+minus workspace $workspace8
-bindsym $mod+slash workspace $workspace9
-bindsym $mod+asterisk workspace $workspace10
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 # move focused container to workspace
-bindsym $mod+Shift+quotedbl move container to workspace $workspace1
-bindsym $mod+Shift+guillemotleft move container to workspace $workspace2
-bindsym $mod+Shift+guillemotright move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+at move container to workspace $workspace6
-bindsym $mod+Shift+plus move container to workspace $workspace7
-bindsym $mod+Shift+minus move container to workspace $workspace8
-bindsym $mod+Shift+slash move container to workspace $workspace9
-
-bindsym $mod+Shift+asterisk move container to workspace $workspace10
+bindsym $mod+mod1+1 move container to workspace $workspace1
+bindsym $mod+mod1+2 move container to workspace $workspace2
+bindsym $mod+mod1+3 move container to workspace $workspace3
+bindsym $mod+mod1+4 move container to workspace $workspace4
+bindsym $mod+mod1+5 move container to workspace $workspace5
+bindsym $mod+mod1+6 move container to workspace $workspace6
+bindsym $mod+mod1+7 move container to workspace $workspace7
+bindsym $mod+mod1+8 move container to workspace $workspace8
+bindsym $mod+mod1+9 move container to workspace $workspace9
+bindsym $mod+mod1+0 move container to workspace $workspace10
 # reload the configuration file
-bindsym $mod+Shift+x reload
+bindsym $mod+mod1+x reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+o restart
+bindsym $mod+mod1+o restart
 mode "  " {
   bindsym c resize shrink width 2 px or 2 ppt
   bindsym t resize grow height 2 px or 2 ppt
   bindsym s resize shrink height 2 px or 2 ppt
   bindsym r resize grow width 2 px or 2 ppt
-  bindsym Left resize shrink width 2 px or 2 ppt
-  bindsym Down resize grow height 2 px or 2 ppt
-  bindsym Up resize shrink height 2 px or 2 ppt
-  bindsym Right resize grow width 2 px or 2 ppt
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
+  bindsym left resize shrink width 2 px or 2 ppt
+  bindsym down resize grow height 2 px or 2 ppt
+  bindsym up resize shrink height 2 px or 2 ppt
+  bindsym right resize grow width 2 px or 2 ppt
+  bindsym return mode "default"
+  bindsym escape mode "default"
 }
 bindsym $mod+o mode "  "
 
-## i3bar
+## i3ba_Lr
 bar {
   colors {
     separator $base03

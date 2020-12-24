@@ -1,15 +1,3 @@
-" {W} -> [É]
-" ——————————
-" On remappe W sur É :
-noremap é w
-noremap É W
-" Corollaire, pour effacer/remplacer un mot quand on n’est pas au début (daé / laé).
-" (attention, cela diminue la réactivité du {A}…)
-noremap aé aw
-noremap aÉ aW
-" Corollaire, pour effacer/remplacer un mot quand on n’est pas au début (dié / lié).
-noremap ié iw
-noremap iÉ iW
 " Pour faciliter les manipulations de fenêtres, on utilise {è} comme un Ctrl+W :
 noremap è <c-w>
 noremap èè <c-w><c-w>
@@ -72,14 +60,4 @@ noremap gs k
 noremap gt j
 " onglet précédant / suivant
 noremap gb gT
-noremap gé gt
-" optionnel : {gB} / {gÉ} pour aller au premier / dernier onglet
-noremap gB :exe "silent! tabfirst"<CR>
-noremap gÉ :exe "silent! tablast"<CR>
-" optionnel : {g"} pour aller au début de la ligne écran
-noremap g" g0
- 
-" <> en direct
-" ————————————
-noremap « <
-noremap » >
+noremap gw gt
