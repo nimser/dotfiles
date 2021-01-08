@@ -54,7 +54,7 @@ exec alacritty
 exec alacritty
 exec typora ~/Sync
 exec --no-startup-id nm-applet
-exec xrandr --output DP1 --mode 1920x1080 --above  eDP1 --primary --mode 1920x1080
+exec xrandr --output DP2 --auto --rotate left --left-of  eDP1
 #exec --no-startup-id fcitx -d
 exec --no-startup-id ibus-daemon --xim -d -r
 exec --no-startup-id compton --config ~/.config/compton.conf -b
@@ -63,18 +63,6 @@ exec --no-startup-id /usr/bin/blueman-applet
 
 ## Application keybindings
 # kill focused window
-bindsym $mod+Mod1+q kill
-bindsym $mod+Return exec alacritty
-bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
-bindsym $mod+Mod1+l exec i3lock
-bindsym $mod+Mod1+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# Floating windows - findout the classname using  `xprop`
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Kalu"] floating enable
-
-# Use Mouse+$mod to drag floating windows
-floating_modifier $mod
 
 # pulseaudio bindings
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -87,28 +75,16 @@ bindsym XF86MonBrightnessDown exec "xbacklight - 5"
 
 ## i3 keybindings
 # change focus
-bindsym $mod+c focus left
-bindsym $mod+t focus down
-bindsym $mod+s focus up
-bindsym $mod+r focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 # move focused window
-bindsym $mod+Mod1+c move left
-bindsym $mod+Mod1+t move down
-bindsym $mod+Mod1+s move up
-bindsym $mod+Mod1+r move right
 bindsym $mod+Mod1+Left move left
 bindsym $mod+Mod1+Down move down
 bindsym $mod+Mod1+Up move up
 bindsym $mod+Mod1+Right move right
 # move focused window
-bindsym $mod+mod1+Shift+c move workspace to output left
-bindsym $mod+mod1+Shift+t move workspace to output down
-bindsym $mod+mod1+Shift+s move workspace to output up
-bindsym $mod+mod1+Shift+r move workspace to output right
 bindsym $mod+mod1+Shift+left move workspace to output left
 bindsym $mod+mod1+Shift+down move workspace to output down
 bindsym $mod+mod1+Shift+up move workspace to output up
@@ -156,18 +132,14 @@ bindsym $mod+mod1+x reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+mod1+o restart
 mode "  " {
-  bindsym c resize shrink width 2 px or 2 ppt
-  bindsym t resize grow height 2 px or 2 ppt
-  bindsym s resize shrink height 2 px or 2 ppt
-  bindsym r resize grow width 2 px or 2 ppt
-  bindsym left resize shrink width 2 px or 2 ppt
-  bindsym down resize grow height 2 px or 2 ppt
-  bindsym up resize shrink height 2 px or 2 ppt
-  bindsym right resize grow width 2 px or 2 ppt
-  bindsym return mode "default"
-  bindsym escape mode "default"
+  bindsym Left resize shrink width 2 px or 2 ppt
+  bindsym Down resize grow height 2 px or 2 ppt
+  bindsym Up resize shrink height 2 px or 2 ppt
+  bindsym Right resize grow width 2 px or 2 ppt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
-bindsym $mod+o mode "  "
+bindsym $mod+r mode "  "
 
 ## i3ba_Lr
 bar {

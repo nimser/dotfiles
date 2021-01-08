@@ -59,9 +59,17 @@ call plug#end()
 
 " Load plugin-specific configurations
 source  ~/.config/nvim/plugins_config/coc.vim
+source  ~/.config/nvim/plugins_config/surround.vim
 " Load general configurations
 source ~/.config/nvim/general/settings.vim
 source ~/.config/nvim/general/mappings.vim
+" open/source neovim's main configuration file
+nnoremap <leader>sc :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>ec :tabe ~/.config/nvim/init.vim<CR>
+nnoremap <leader>ebc :tabe ~/.config/nvim/bepo.vim<CR>
+nnoremap <leader>i3 :tabe ~/.config/i3/config<CR>
+nnoremap <leader>ek :tabe ~/qmk_firmware/keyboards/centromere/keymaps/nimser/keymap.c<CR>
+nnoremap <leader>fk :!qmk flash -kb centromere -km nimser<CR>
 
 
 " TODO Get inspiration from previous .vimrc Sensible, spf13, janus
@@ -100,8 +108,3 @@ let g:airline_extensions = ['branch']
 "example:
 "au BufRead,BufNewFile *.vue set ft=html
 
-
-" --------------------------------
-"       BEPO LAYOUT
-" --------------------------------
-source ~/.config/nvim/bepo.vim
