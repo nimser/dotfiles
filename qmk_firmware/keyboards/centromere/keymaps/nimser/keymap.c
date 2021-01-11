@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [SPEC] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_DLR, KC_PIPE,   KC_LT,   KC_GT, KC_AMPR, XXXXXXX,                      XXXXXXX, KC_KP_PLUS, KC_MINS, KC_SLASH, KC_BSLS, XXXXXXX,\
+       KC_DLR, KC_PIPE,   KC_LT,   KC_GT, KC_AMPR, XXXXXXX,                      S(KC_6), KC_KP_PLUS, KC_MINS, KC_SLASH, KC_BSLS, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_HASH, KC_LPRN, KC_LCBR, KC_RCBR, KC_RPRN, KC_SCLN,                      KC_QUES, KC_EXLM, KC_UNDS,KC_PERC, KC_ASTR,  KC_EQL,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|

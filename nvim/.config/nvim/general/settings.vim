@@ -14,7 +14,7 @@ set noshowmode             "we don't need things like --INSERT-- anywore
 "set signcolumn=number      "merge signcolumn and numbercolumn into one
 set formatoptions-=cro     "Stop newline continution of comments
 set cursorline             "Highlights the current line
-set timeoutlen=500         "1000 by default
+set timeoutlen=5000         "1000 by default
 
 " Preserve absolute numbers in insert mode
 " TODO Fix lag in displaying absolute numbers

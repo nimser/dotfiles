@@ -63,6 +63,18 @@ exec --no-startup-id /usr/bin/blueman-applet
 
 ## Application keybindings
 # kill focused window
+bindsym $mod+Mod1+q kill
+bindsym $mod+Return exec alacritty
+bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
+bindsym $mod+Mod1+l exec i3lock
+bindsym $mod+Mod1+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Floating windows - findout the classname using  `xprop`
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Kalu"] floating enable
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
 
 # pulseaudio bindings
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume

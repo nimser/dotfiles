@@ -59,7 +59,6 @@ call plug#end()
 
 " Load plugin-specific configurations
 source  ~/.config/nvim/plugins_config/coc.vim
-source  ~/.config/nvim/plugins_config/surround.vim
 " Load general configurations
 source ~/.config/nvim/general/settings.vim
 source ~/.config/nvim/general/mappings.vim
