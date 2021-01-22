@@ -3,7 +3,7 @@
 noremap gf <c-w>gf
 nnoremap <leader>w :update<cr>
 nnoremap <leader>t :tabe<cr>
-nnoremap <leader>x :tabc<cr>
+nnoremap <leader>q :q<cr>
 " next / prev tab
 nnoremap gb gT
 nnoremap gw gt
