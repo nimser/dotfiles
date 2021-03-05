@@ -1,4 +1,4 @@
-set PATH $HOME/.cargo/bin $PATH
+set PATH $HOME/.cargo/bin $HOME/local/bin $PATH
 set -gx TERMINAL "alacritty"
 set -gx EDITOR "nvim"
 set -gx DIFFPROG "nvim -d"
@@ -8,3 +8,6 @@ set -gx GTK_IM_MODULE "xim"
 set -gx XMODIFIERS "@im=ibus"
 set -gx QT_IM_MODULE "xim"
 set -gx NIX_IGNORE_SYMLINK_STORE 1
+set -gx GOLDENDICT_DIR /home/owner/local/goldendict/lib
+set -gx TESSDATA_PREFIX /home/owner/local/goldendict/ocr
+set -gx LD_LIBRARY_PATH $GOLDENDICT_DIR/lib $LD_LIBRARY_PATH
