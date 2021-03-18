@@ -22,6 +22,16 @@ enum centromere_layers
   FUN   // FN keys and function controls
 };
 
+
+bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(FUN,KC_SPC):
+            return true;
+        default:
+            return false;
+    }
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LAYOUT_split_3x6_3( \

@@ -1,4 +1,5 @@
 #setxkbmap fr bepo
+setxkbmap us
 xmodmap ~/.Xmodmap
 xrdb -merge ~/.Xresources
 xinput --set-prop "Elan TrackPoint" "libinput Accel Profile Enabled" 0 1
