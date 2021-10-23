@@ -1,4 +1,4 @@
-set PATH $HOME/.cargo/bin $HOME/local/bin $PATH
+set PATH $HOME/local/bin $PATH
 set -gx TERMINAL "alacritty"
 set -gx EDITOR "nvim"
 set -gx DIFFPROG "nvim -d"

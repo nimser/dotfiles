@@ -60,7 +60,7 @@ exec --no-startup-id fcitx5 -d
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-exec --no-startup-id /home/owner/local/bin/goldendict
+#exec --no-startup-id /home/owner/local/bin/goldendict
 
 ## Application keybindings
 # kill focused window

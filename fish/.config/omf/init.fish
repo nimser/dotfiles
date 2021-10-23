@@ -8,6 +8,5 @@ if test -d ~/.local/bin
 end
 
 eval sh $HOME/.config/base16-shell/scripts/base16-default-dark.sh
-eval sh $HOME/.nix-profile/etc/profile.d/nix.sh                                                               00:09:50
 
 
