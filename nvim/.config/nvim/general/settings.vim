@@ -1,7 +1,7 @@
 let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
-let g:node_host_prog = expand("~/.nvm/versions/node/v12.19.0/bin/node")
+let g:node_host_prog = expand("~/.nvm/versions/node/v14.15.0/bin/node")
 
 let mapleader=","
 set number

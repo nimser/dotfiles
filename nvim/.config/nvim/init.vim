@@ -2,15 +2,14 @@
 "       PLUGIN MANAGEMENT
 " --------------------------------
 call plug#begin('~/.config/nvim/autoload/plugged')
-  Plug 'jiangmiao/auto-pairs'                   " Auto pairs for '(' '[' '{'
+  "Plug 'jiangmiao/auto-pairs'                   " Auto pairs for '(' '[' '{'
   "Plug 'romgrk/barbar.nvim'                     " Better tabline
   Plug 'chriskempson/base16-vim'                " A theming framework
   Plug 'norcalli/nvim-colorizer.lua'            " Colorizer
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
   Plug 'mattn/emmet-vim'                        " Snippets
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " FZF
-  Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
-  Plug 'junegunn/fzf.vim'
+  Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
   Plug 'junegunn/goyo.vim'                      " Clear up your interface from distractions
   Plug 'junegunn/gv.vim'                        " Git history viewer
   Plug 'junegunn/limelight.vim'                 " Highlight the current parts of a file you are working on
@@ -23,7 +22,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'kyazdani42/nvim-web-devicons'           " Cool Icons
   Plug 'AndrewRadev/tagalong.vim'               " Auto change html tags
   Plug 'mbbill/undotree'                        " undo time travel
-  Plug 'sheerun/vim-polyglot'                   " Better Syntax Support
+  "Plug 'sheerun/vim-polyglot'                   " Better Syntax Support
   Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
   Plug 'alvan/vim-closetag'                     " Closetags
   Plug 'tpope/vim-commentary'                   " Comments using vim's expressive language
@@ -36,6 +35,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'chilicuil/vim-sml-coursera'             " Sml plugin
   Plug 'bronson/vim-trailing-whitespace'        " Mark trailing spaces in red + add `!command` :FixWhitespace
   Plug 'liuchengxu/vim-which-key'               " See what keys do like in emacs
+  Plug 'evanleck/vim-svelte'                    " Svelte syntax highlighting and indentation
+  Plug 'pangloss/vim-javascript'                " Modern js hl
+  Plug 'HerringtonDarkholme/yats.vim'           " Typscript hl
 
 " Activate if need be...
   "Plug 'ChristianChiarulli/far.vim'             " Find and replace across files
@@ -91,6 +93,16 @@ let NERDTreeMapOpenVSplit='<leader>s'
 nmap <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = 'v'
+
+" Files where Closetags should be enabled
+let g:closetag_xhtml_filenames = '*.html,*.svelte,*.jsx'
+let g:closetag_xhtml_filetypes = 'html,svelte,jsx'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_shortcut = '>'
+" Add > at current position without closing the current tag, default is ''
+let g:closetag_close_shortcut = '<leader>>'
+
+let g:tagalong_filetypes = ['html','svelte','jsx']
 
 " Goyo.vim Limelight integration
 autocmd! User GoyoEnter Limelight
