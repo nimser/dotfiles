@@ -29,6 +29,8 @@ Elementary setup
 
 Manual configuration (optional)
 ---------
+yay colorfull summary with version number (+ uncomment Color in pacman.conf):
+- yay -Syu --combinedupgrade --save
 root:
 - `sudo stow -t /root` all root conf from `dotfiles`
 - `sudo ln -s /home/{user}/.ssh .`
