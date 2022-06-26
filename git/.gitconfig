@@ -1,6 +1,7 @@
 [user]
 	email = nicolas.wormser@gmail.com
 	name = Nicolas Wormser
+	signingkey = 03BC4AD253B82986
 [push]
 	default = simple
 [alias]
@@ -16,3 +17,5 @@
 ; ============================
 ; git stash show -p [stash@{0}]               ; shows a diff of the last stash with the current branch
 ; git diff --name-only stash@{0} master       ; lists files changed in the last stash compared to master's HEAD
+[commit]
+	gpgsign = true

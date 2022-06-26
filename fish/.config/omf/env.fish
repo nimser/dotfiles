@@ -11,3 +11,6 @@ set -gx NIX_IGNORE_SYMLINK_STORE 1
 set -gx GOLDENDICT_DIR /home/owner/local/goldendict/lib
 set -gx TESSDATA_PREFIX /home/owner/local/goldendict/ocr
 set -gx LD_LIBRARY_PATH $GOLDENDICT_DIR/lib $LD_LIBRARY_PATH
+set -gx SSH_AGENT_PID ""
+set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
+set -gx GPG_TTY (tty)
