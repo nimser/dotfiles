@@ -55,12 +55,12 @@ exec alacritty
 exec typora ~/Sync
 exec --no-startup-id nm-applet
 exec xrandr --output DP2 --auto --rotate left --left-of  eDP1
-exec --no-startup-id fcitx5 -d
+exec --no-startup-id "sh -c 'sleep 5; exec fcitx5 -d'"
 #exec --no-startup-id ibus-daemon --xim -d -r
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-#exec --no-startup-id /home/owner/local/bin/goldendict
+exec --no-startup-id /usr/bin/goldendict
 
 ## Application keybindings
 # kill focused window
