@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+// additonal settings in ~/qmk_firmware/keyboards/centromere/keymaps/nimser/config.h
 
 /* transparent template for putting keys
  [???] = LAYOUT_split_3x6_3( \
@@ -35,7 +36,7 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LAYOUT_split_3x6_3( \
-  // FIXME Use composition for accents and special charecters,
+  // Note: Use composition for accents and special charecters,
   // see https://math.dartmouth.edu/~sarunas/Linux_Compose_Key_Sequences.html
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_TAB,    KC_B,    KC_W,    KC_P,     KC_O,  KC_DEL,                      KC_BSPC,    KC_V,    KC_D,    KC_L,    KC_J,  KC_Z,\
