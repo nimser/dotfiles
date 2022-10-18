@@ -9,7 +9,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
   Plug 'mattn/emmet-vim'                        " Snippets
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " FZF
-  Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+  Plug 'junegunn/fzf.vim'                       " FZF
   Plug 'junegunn/goyo.vim'                      " Clear up your interface from distractions
   Plug 'junegunn/gv.vim'                        " Git history viewer
   Plug 'junegunn/limelight.vim'                 " Highlight the current parts of a file you are working on
@@ -22,13 +22,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'kyazdani42/nvim-web-devicons'           " Cool Icons
   Plug 'AndrewRadev/tagalong.vim'               " Auto change html tags
   Plug 'mbbill/undotree'                        " undo time travel
-  "Plug 'sheerun/vim-polyglot'                   " Better Syntax Support
+  Plug 'sheerun/vim-polyglot'                   " Better Syntax Support
   Plug 'vim-airline/vim-airline'                " A powerful status bar for vim
   Plug 'alvan/vim-closetag'                     " Closetags
   Plug 'tpope/vim-commentary'                   " Comments using vim's expressive language
-  Plug 'easymotion/vim-easymotion'              " Easymotion
+  Plug 'easymotion/vim-easymotion'              " Easymotion (navigation/browse through one file)
   Plug 'tpope/vim-fugitive'                     " A Git wrapper for vim (displays branch in airline)
   Plug 'airblade/vim-gitgutter'                 " Shows which lines have VC changes in the gutter column
+  Plug 'airblade/vim-rooter'                    " Scopes FZF within a project (sets root to where .git is)
   Plug 'tpope/vim-sleuth'                       " auto set indent settings
   Plug 'psliwka/vim-smoothie'                   " Smooth scroll
   Plug 'tpope/vim-surround'                     " Adds verb `surround` to target surrounding characters
@@ -61,6 +62,8 @@ call plug#end()
 
 " Load plugin-specific configurations
 source  ~/.config/nvim/plugins_config/coc.vim
+source  ~/.config/nvim/plugins_config/quickscope.vim
+source  ~/.config/nvim/plugins_config/fzf.vim
 " Load general configurations
 source ~/.config/nvim/general/settings.vim
 source ~/.config/nvim/general/mappings.vim
@@ -69,6 +72,7 @@ nnoremap <leader>sc :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>ec :tabe ~/.config/nvim/init.vim<CR>
 nnoremap <leader>ebc :tabe ~/.config/nvim/bepo.vim<CR>
 nnoremap <leader>i3 :tabe ~/.config/i3/config<CR>
+nnoremap <leader>vm :tabe ~/Sync/[M]\ Sys-admin/vim-memo.md<CR>
 nnoremap <leader>ek :tabe ~/qmk_firmware/keyboards/centromere/keymaps/nimser/keymap.c<CR>
 nnoremap <leader>fk :!qmk flash -kb centromere -km nimser<CR>
 

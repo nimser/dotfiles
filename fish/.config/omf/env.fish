@@ -2,6 +2,9 @@ set PATH $HOME/local/bin $PATH
 set -gx TERMINAL "alacritty"
 set -gx EDITOR "nvim"
 set -gx DIFFPROG "nvim -d"
+#set -gx FZF_DEFAULT_COMMAND "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
+#set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+#set -gx FZF_DEFAULT_OPTS '--height=70% --preview="bat {}" --preview-window=right:60%:wrap'
 set -gx JAVA_OPTS "-Xms512m -Xmx512m"
 set -gx UD_RUBY_VERSION "2.5.0"
 set -gx GTK_IM_MODULE "fcitx5"
