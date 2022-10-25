@@ -1,3 +1,4 @@
+!! FIXME DEPRECATED: urxvt isn't used anymore
 URxvt.scrollBar: false
 
 !! HiDPI settings. Disable if not on a Retina/HiDPI screen
@@ -13,10 +14,11 @@ Xcursor.theme: Vanilla-DMZ
 
 !! Prefered fonts: Hack, PragmataPro
 !! To know what fonts provide a glyph use `gucharmap`
-URxvt.font:                xft:Hack:size=11
-URxvt.boldFont:            xft:Hack:size=11:bold
-URxvt.italicFont:          xft:Hack:size=11:italic
-URxvt.boldItalicFont:      xft:Hack:size=11:bold:italic
+!! FIXME DEPRECATED: urxvt isn't used anymore
+URxvt.font:                xft:Hack Nerd Font:size=11
+URxvt.boldFont:            xft:Hack Nerd Font:size=11:bold
+URxvt.italicFont:          xft:Hack Nerd Font:size=11:italic
+URxvt.boldItalicFont:      xft:Hack Nerd Font:size=11:bold:italic
 URxvt.letterSpace:         -1
 
 URxvt.internalBorder:      0
@@ -40,6 +42,7 @@ URxvt.keysym.M-Delete:     perl:matcher:list
 URxvt.matcher.button:      1
 URxvt.colorUL:             #7780a1
 
+! FIXME colors - may conflict with what's in .config/alacritty/alacritty.yml or .config/i3/config
 ! Base16 Default Dark Scheme: Chris Kempson (http://chriskempson.com)
 
 #define base00 #181818

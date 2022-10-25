@@ -42,19 +42,19 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Hack
+    family: Hack Nerd Font
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
   bold:
-    family: Hack
+    family: Hack Nerd Font
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
   italic:
-    family: Hack
+    family: Hack Nerd Font
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
@@ -110,6 +110,7 @@ colors:
   #  cursor: '0xffffff'
 
   # Normal colors
+  # FIXME colors - may conflict with what's in ~/.Xressources or .config/i3/config
   normal:
     black:   '0x000000'
     red:     '0xd54e53'

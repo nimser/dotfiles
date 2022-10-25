@@ -5,7 +5,7 @@
 
 ## Constants definitions
 set $mod Mod4
-# Colors
+# FIXME colors - may conflict with what's in .config/alacritty/alacritty.yml or .Xressources
 set $base00 #101218
 set $base01 #1f222d
 set $base02 #252936
@@ -35,7 +35,7 @@ set $workspace9 "9: Chat "
 set $workspace10 "10: Notes "
 
 ## General Configuration
-font pango:Hack 11
+font pango:Hack Nerd Font 11
 floating_modifier $mod
 # borders
 hide_edge_borders smart
