@@ -1,5 +1,14 @@
 #include QMK_KEYBOARD_H
-// additonal settings in ~/qmk_firmware/keyboards/centromere/keymaps/nimser/config.h
+// This file is a work in progress. Layout based on bépo but optimised for programming and VIM use
+// NOTE: additonal settings in ~/qmk_firmware/keyboards/centromere/keymaps/nimser/config.h
+// TODO:
+// - FIXME appostrophes are not easily typeable when typing in locked all caps mode
+// - FIXME b/B is not easily triggereable in vim. The b/w sequence to navigate left/right a word should be seamless
+// - FIXME an accidental triggering of locked numerables happens once in a while, and I can't explain why so far
+// - FIXME , is reserved as the vim leader key which makes ;/, sequences in combination to f/F or t/T vim moves unidirectional
+// - FIXME moving splits to rearange them doesn't behave as expected because of remaping of hjkl to arrow keys
+//         original mapping is feks. <c-w><shift>K and <c-w><shift><up> won't work
+//         partial fix: use <c-w>r to rotate or <c-w>x see vim's `:help window-moving`
 
 /* transparent template for putting keys
  [???] = LAYOUT_split_3x6_3( \
