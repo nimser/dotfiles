@@ -3,7 +3,8 @@
 // NOTE: additonal settings in ~/qmk_firmware/keyboards/centromere/keymaps/nimser/config.h
 // TODO:
 // - FIXME appostrophes are not easily typeable when typing in locked all caps mode
-// - FIXME b/B is not easily triggereable in vim. The b/w sequence to navigate left/right a word should be seamless
+// - FIXME b/B sequences in vim use the pink finger
+// - FIXME ZZ ZQ sequences in vim use the pinky finger
 // - FIXME an accidental triggering of locked numerables happens once in a while, and I can't explain why so far
 // - FIXME , is reserved as the vim leader key which makes ;/, sequences in combination to f/F or t/T vim moves unidirectional
 // - FIXME moving splits to rearange them doesn't behave as expected because of remaping of hjkl to arrow keys

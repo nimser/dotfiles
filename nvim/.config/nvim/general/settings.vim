@@ -1,9 +1,7 @@
-let g:loaded_python_provider = 0
-let g:loaded_ruby_provider = 0
-let g:loaded_perl_provider = 0
-let g:node_host_prog = expand("~/.nvm/versions/node/v14.15.0/bin/node")
-
+" NOTE: keep this at the top to avoid mapping getting lost
+" if you set any mappings BEFORE doing this, they will be set to the OLD leader.
 let mapleader=","
+
 set number
 set nowrap
 set splitbelow
@@ -12,12 +10,12 @@ set pumheight=10           "makes the popup menu smaller
 set t_Co=256               "support 256 colors
 set noshowmode             "we don't need things like --INSERT-- anywore
 "set signcolumn=number      "merge signcolumn and numbercolumn into one
-set formatoptions-=cro     "Stop newline continution of comments
+"set formatoptions-=cro     "Stop newline continution of comments
 set cursorline             "Highlights the current line
-set timeoutlen=5000         "1000 by default
+set cursorcolumn           "Highlights the current column
+set timeoutlen=2000         "1000 by default
 
 " Preserve absolute numbers in insert mode
-" TODO Fix lag in displaying absolute numbers
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
