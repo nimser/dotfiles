@@ -2,6 +2,7 @@
 " if you set any mappings BEFORE doing this, they will be set to the OLD leader.
 let mapleader=","
 
+set termguicolors
 set number
 set nowrap
 set splitbelow

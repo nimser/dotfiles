@@ -4,7 +4,13 @@ if not status_ok then
   return
 end
 configs.setup {
-  ensure_installed = "all", -- A list of parser names, maintained (parsers with maintainers) or "all"
+  ensure_installed = {-- A list of parser names, or "all"
+    "javascript","html","css","yaml","json","json5", --web basics
+    "typescript","tsx","svelte","graphql","vue", --web addons
+    "c","cpp","rust","go","haskell","ocaml",--backend
+    "git_rebase","gitattributes","gitignore",--vcs
+    "lua","fish","bash","vim", --conf, terminals, scripting etc...
+  },
   sync_install = false, -- Install parsers synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing (for "all")
   auto_install = true, -- Automatically install missing parsers when entering buffer. Set to false if no tree-sitter cli is installed

@@ -1,11 +1,14 @@
+local status_ok, cmp = pcall(require, 'cmp')
+if not status_ok then
+  print("can't require cmp")
+  return
+end
 -- Nvim CMP config
-vim.opt.completeopt = {"menu", "menuone", "noselect"}
-local cmp = require'cmp'
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users. FIXME: what is that for?
     end,
   },
   window = {
@@ -31,7 +34,7 @@ cmp.setup({
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    { name = 'cmp_git' }, -- FIXME What's this for exactly?
   }, {
       { name = 'buffer' },
     })

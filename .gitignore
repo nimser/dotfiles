@@ -1,4 +1,5 @@
 ssh/.ssh/id_rsa
 nvim/.config/nvim/runtime/undodir/*
 nvim/.config/nvim/plugged/*
+nvim/.config/nvim/undo/*
 tags

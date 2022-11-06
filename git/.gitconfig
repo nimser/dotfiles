@@ -8,6 +8,9 @@
     signingkey = 03BC4AD253B82986
 [push]
     default = simple
+[url "git@github.com:"]
+    insteadOf = git://github.com/
+    insteadOf = https://github.com/
 [alias]
     co = checkout
     br = branch
