@@ -3,12 +3,13 @@
 vim.g.mapleader = ","
 
 -- Helper function for mappings
-local function map(mode, lhs, rhs, opts)
+local M = {}
+local map = function(mode, lhs, rhs, opts)
   local options = { noremap = true } -- set mappings to non-recursive by default
   if opts then
     options = vim.tbl_extend("force", options, opts)
   end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- Command line abbreviations
@@ -20,7 +21,7 @@ local cnoreabbrev = vim.cmd.cnoreabbrev
 -- Command        +------+-----+-----+-----+-----+-----+------+------+ ~
 -- [nore]map  ""  | yes  |  -  |  -  | yes | yes | yes |  -   |  -   |
 -- n[nore]map "n" | yes  |  -  |  -  |  -  |  -  |  -  |  -   |  -   |
--- [nore]map! ??? |  -   | yes | yes |  -  |  -  |  -  |  -   |  -   |
+-- [nore]map! "!" |  -   | yes | yes |  -  |  -  |  -  |  -   |  -   |
 -- i[nore]map "i" |  -   | yes |  -  |  -  |  -  |  -  |  -   |  -   |
 -- c[nore]map "c" |  -   |  -  | yes |  -  |  -  |  -  |  -   |  -   |
 -- v[nore]map "v" |  -   |  -  |  -  | yes | yes |  -  |  -   |  -   |
@@ -34,7 +35,7 @@ local cnoreabbrev = vim.cmd.cnoreabbrev
 -- open the file under cursor in a new tab
 map("", "gf", "<c-w>gf")
 -- mapping for :norm to help comment/uncomment, see https://stackoverflow.com/a/23063140/378253
-map("", "<c-n>", ":norm") --if this conflict with completion menu <c-n><c-p> then restrict to visual mode
+--map("", "<c-n>", ":norm") -- FIXME if this conflict with completion menu <c-n><c-p> then restrict to visual mode
 -----> Normal mappings <------
 map("n", "<leader>w", ":update<cr>")
 map("n", "<c-w>t", ":tabe<cr>")
@@ -43,6 +44,38 @@ map("n", "gb", "gT")
 map("n", "gw", "gt")
 -----> Command mappings and abbrevs <------
 cnoreabbrev("W", "w")
---open help in a vsplit by default FIXME won't work with K and should use existing help buffer when one is open
-cnoreabbrev('help', 'vert help')
-cnoreabbrev('h', 'vert h')
+--open help in a vsplit by default
+--FIXME won't work with K and should use existing help buffer when one is open
+--cnoreabbrev('help', 'vert help')
+--cnoreabbrev('h', 'vert h')
+
+M.set_telescope_mappings = function()
+  local telescope = require('telescope')
+  local telescope_builtin = require('telescope.builtin')
+  map('n', '<leader>ff', require('setup.telescope.helpers').project_files, {desc="Find VC files / cwd files if no VC"})
+  map('n', '<leader>en', function()
+    telescope_builtin.find_files({cwd='~/.config/nvim/'})
+  end, {desc="Edit neovim config"})
+  map('n', '<leader>fh', function()
+    telescope_builtin.find_files({cwd='~/', hidden=true})
+  end, {desc="Search all (hidden) files in ~/"})
+  map('n', '<leader>fbh', function()
+    telescope.extensions.file_browser.file_browser({cwd='~/', hidden=true, respect_gitignore=false})
+  end, {desc="Browse anything (hidden) from ~/"})
+  map('n', '<leader>fbd', function()
+    telescope.extensions.file_browser.file_browser({files=false, hidden=true, respect_gitignore=false})
+  end, {desc="Browse (hidden) folders from cwd"})
+  map('n', '<leader>lg', telescope_builtin.live_grep, {desc="Live grep (cwd)"})
+  map('n', '<leader>gs', function()
+    telescope_builtin.grep_string({shorten_path = true, word_match = "-w", only_sort_text = true, search = ''})
+  end, {desc="Grep string in cwd"})
+  map('n', '<leader>/', require('setup.telescope.helpers').curr_buf, {desc="Search current buffer"})
+end
+
+M.set_pounce_mappings = function()
+  map("n", "<leader>?", "<cmd>PounceRepeat<CR>")
+  map("v", "?", "<cmd>Pounce<CR>")
+  map("o", "?", "<cmd>Pounce<CR>")
+end
+
+return M

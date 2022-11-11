@@ -47,18 +47,11 @@ lua require('options')
 
 " key shortcuts FIXME
 nnoremap <F5> :lua package.loaded = nil<cr>:source ~/.config/nvim/init.vim<cr>
-nnoremap <leader>ff <cmd>lua require('setup.telescope').project_files()<cr>
-nnoremap <leader>en <cmd>lua require('telescope.builtin').find_files({cwd='~/.config/nvim/'})<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').find_files({cwd='~/',hidden=true})<cr>
-nnoremap <leader>fbh <cmd>lua require('telescope').extensions.file_browser.file_browser({cwd='~/',hidden=true,respect_gitignore=false})<cr>
-nnoremap <leader>fbd <cmd>lua require('telescope').extensions.file_browser.file_browser({respect_gitignore=false,hidden=true,files=false})<cr>
-nnoremap <leader>fbn <cmd>lua require('telescope').extensions.file_browser.file_browser({cwd='~/.config/nvim/',hidden=true,respect_gitignore=false})<cr>
 
 nnoremap <leader>ei3 :tabe ~/.config/i3/config<cr>
 nnoremap <leader>evm :tabe ~/Sync/[M]\ Sys-admin/vim-memo.md<cr>
 nnoremap <leader>ewi :tabe ~/Sync/Freelance/workflow-improvement.md<cr>
 nnoremap <leader>ek :tabe ~/qmk_firmware/keyboards/centromere/keymaps/nimser/keymap.c<cr>
-nnoremap <leader>/ <cmd>lua require('setup.telescope').curr_buf()<cr>
 
 
 

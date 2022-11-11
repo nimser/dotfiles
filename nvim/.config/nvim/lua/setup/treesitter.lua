@@ -1,8 +1,4 @@
-local status_ok, configs = pcall(require, 'nvim-treesitter.configs')
-if not status_ok then
-  print("can't require nvim-treesitter")
-  return
-end
+local configs = require 'nvim-treesitter.configs'
 configs.setup {
   ensure_installed = {-- A list of parser names, or "all"
     "javascript","html","css","yaml","json","json5", --web basics
@@ -29,3 +25,4 @@ configs.setup {
     -- termcolors = {} -- table of colour name strings
   },
 }
+

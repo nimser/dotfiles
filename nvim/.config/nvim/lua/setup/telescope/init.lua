@@ -1,22 +1,14 @@
 -- Telescope config
 -- for reference, here's tjdevries' (author of telescope) config:
 -- https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/lua/tj/telescope/init.lua
+-- Cool tips:
+-- - refine your search over the live_grep results in a fuzzy environment after pressing <c-space>
 -- also :help telescope.nvim is great!
 local telescope = require("telescope")
 
 telescope.setup({
   defaults = {
     -- We use table.insert above because `hidden = true` is not supported in text grep commands.
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--hidden",
-      "--smart-case"
-    },
     prompt_prefix = ' ',
   },
 
@@ -64,24 +56,6 @@ telescope.setup({
 })
 telescope.load_extension('fzf')
 telescope.load_extension('file_browser')
--- mappings
-local mappings = {}
-mappings.curr_buf = function()
-  local opt = require('telescope.themes').get_dropdown({
-    previewer=false,
-    winblend=40,
-    sorting_strategy="ascending",
-  })
-  require('telescope.builtin').current_buffer_fuzzy_find(opt)
-end
-mappings.project_files = function()
-  local opts = {}
-  local git_opts = {show_untracked=true}
-  local in_git_repo = vim.fn.systemlist"git rev-parse --is-inside-work-tree"[1] == 'true'
-  if in_git_repo then
-    require("telescope.builtin").git_files(git_opts)
-  else
-    require("telescope.builtin").find_files(opts)
-  end
-end
-return mappings
+-- import telescope related keyboard mappings
+require('mappings').set_telescope_mappings()
+

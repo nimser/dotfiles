@@ -5,10 +5,11 @@ if not status_ok then
 end
 -- Nvim CMP config
 
+local has_luasnip, luasnip = pcall(require, 'luasnip')
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users. FIXME: what is that for?
+      if has_luasnip then luasnip.lsp_expand(args.body) end -- FIXME: default to something else if no luasnip? What's that for exactly?
     end,
   },
   window = {
@@ -57,3 +58,4 @@ cmp.setup.cmdline(':', {
       { name = 'cmdline' }
     })
 })
+

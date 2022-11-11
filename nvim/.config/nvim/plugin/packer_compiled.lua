@@ -14,7 +14,7 @@ _G._packer.inside_compile = true
 
 local time
 local profile_info
-local should_profile = false
+local should_profile = true
 if should_profile then
   local hrtime = vim.loop.hrtime
   profile_info = {}
@@ -79,10 +79,11 @@ _G.packer_plugins = {
     path = "/home/owner/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["base16-vim"] = {
+  catppuccin = {
+    config = { 'require"setup/catppuccin"' },
     loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/base16-vim",
-    url = "https://github.com/chriskempson/base16-vim"
+    path = "/home/owner/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -109,6 +110,20 @@ _G.packer_plugins = {
     path = "/home/owner/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
+  ["indent-blankline.nvim"] = {
+    config = { 'require"setup/indent-blankline"' },
+    loaded = true,
+    path = "/home/owner/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lualine.nvim"] = {
+    config = { 'require"setup/lualine"' },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/owner/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-cmp"] = {
     config = { 'require"setup/cmp"' },
     loaded = true,
@@ -133,11 +148,6 @@ _G.packer_plugins = {
     path = "/home/owner/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/owner/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -153,10 +163,11 @@ _G.packer_plugins = {
     path = "/home/owner/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["quick-scope"] = {
+  ["pounce.nvim"] = {
+    config = { 'require"setup/pounce"' },
     loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/quick-scope",
-    url = "https://github.com/unblevable/quick-scope"
+    path = "/home/owner/.local/share/nvim/site/pack/packer/start/pounce.nvim",
+    url = "https://github.com/rlane/pounce.nvim"
   },
   ["tagalong.vim"] = {
     loaded = true,
@@ -179,35 +190,15 @@ _G.packer_plugins = {
     path = "/home/owner/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-airline"] = {
+  ["vim-abolish"] = {
     loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
+    path = "/home/owner/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
   },
   ["vim-closetag"] = {
     loaded = true,
     path = "/home/owner/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
-  },
-  ["vim-easymotion"] = {
-    loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/vim-easymotion",
-    url = "https://github.com/easymotion/vim-easymotion"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
-  },
-  ["vim-sleuth"] = {
-    loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/vim-sleuth",
-    url = "https://github.com/tpope/vim-sleuth"
   },
   ["vim-smoothie"] = {
     loaded = true,
@@ -228,6 +219,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+require"setup/catppuccin"
+time([[Config for catppuccin]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require"setup/telescope"
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require"setup/colorizer"
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: pounce.nvim
+time([[Config for pounce.nvim]], true)
+require"setup/pounce"
+time([[Config for pounce.nvim]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 require"setup/lspconfig"
@@ -236,22 +243,25 @@ time([[Config for nvim-lspconfig]], false)
 time([[Config for nvim-cmp]], true)
 require"setup/cmp"
 time([[Config for nvim-cmp]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require"setup/indent-blankline"
+time([[Config for indent-blankline.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require"setup/treesitter"
 time([[Config for nvim-treesitter]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require"setup/colorizer"
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require"setup/telescope"
-time([[Config for telescope.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require"setup/which-key"
 time([[Config for which-key.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'lualine.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
@@ -259,7 +269,7 @@ if _G._packer.needs_bufread == true then
 end
 _G._packer.needs_bufread = false
 
-if should_profile then save_profiles() end
+if should_profile then save_profiles(1) end
 
 end)
 

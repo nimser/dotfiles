@@ -37,7 +37,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.tabstop = 4 -- Number of spaces tabs count for
 opt.termguicolors = true -- You will have bad experience for diagnostic messages when it's default 4000.
-opt.timeoutlen = 500 -- 1000 by default
+opt.timeoutlen = 1500 -- 1000 by default
 opt.title = true -- Allows neovim to send the Terminal details of the current window, instead of just getting 'v'
 opt.undodir = vim.fn.stdpath("config") .. "/undo"
 opt.undofile = true
@@ -55,10 +55,10 @@ augroup END
 
 -- highlight yanked text for 200ms using the "Visual" highlight group
 vim.cmd[[
-augroup highlight_yank
-autocmd!
-au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
-augroup END
+  augroup highlight_yank
+  autocmd!
+  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=400})
+  augroup END
 ]]
 
 -- This is global settings for diagnostics
@@ -71,11 +71,3 @@ vim.diagnostic.config({
   severity_sort = false,
 })
 
---[[
-
-" -----> Indentation <------
-" Note: (expandtab,softtabstop,shiftwidth,smarttab etc...) managed by vim-sleuth
-
-" Force saving even when the editor isn't open with sudo
-cmap w!! w !sudo tee %
-]]--

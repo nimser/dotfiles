@@ -8,45 +8,55 @@
 --  augroup end
 --]])
 
+-- returns the require for use in `config` parameter of packer's use
+-- expects the name of the config file
 local get_setup = function(name)
   return string.format('require"setup/%s"', name)
 end
 
--- vim.cmd [[packadd packer.nvim]] -- only needed if installing packer with opt = true
-return require('packer').startup(function(use)
-  -- Please order by alphabetic order, ignoring non-specific (e.g. vim) prefixes
+-- vim.api.nvim_command("packadd packer.nvim") -- only needed if installing packer with opt = true
+return require('packer').startup({function(use)
+  -- PACKER ITSELF
   use 'wbthomason/packer.nvim'
 
-  use { 'lukas-reineke/indent-blankline.nvim', config = get_setup('indent-blankline') } -- adds indentation guides to all lines (including empty lines)
   -- LSP
   use { 'neovim/nvim-lspconfig',                  -- Basic LSP conf for common LSP servers
     config = get_setup('lspconfig'),
   }
--- ESTHETICS
+
+  -- ESTHETICS
+  use { "catppuccin/nvim", as = "catppuccin", config = get_setup("catppuccin") }
   use 'kyazdani42/nvim-web-devicons'           -- Web font
   use { 'norcalli/nvim-colorizer.lua',         -- Colorizer to preview actual colors when typing their hexa vals
     config = get_setup('colorizer'),
   }
-  use 'vim-airline/vim-airline'                -- DEPREC A powerful status bar for vim
--- VERSION CONTROL
-  use 'airblade/vim-gitgutter'                 -- DEPREC? Shows which lines have VC changes in the gutter column
-  use 'tpope/vim-fugitive'                     -- DEPREC? A Git wrapper for vim (displays branch in airline)
--- SYNTAX & HIGHLIGHTING
+  use({
+    "nvim-lualine/lualine.nvim",
+    config = get_setup("lualine"),
+    event = "VimEnter",
+    requires = { "kyazdani42/nvim-web-devicons" },
+  })
+  use { 'lukas-reineke/indent-blankline.nvim', config = get_setup('indent-blankline') } -- adds indentation guides to all lines (including empty lines)
+  --use 'usestevearc/dressing.nvim'              -- override core UI hooks
+  -- VERSION CONTROL
+  --use 'airblade/vim-gitgutter'                 -- DEPREC? Shows which lines have VC changes in the gutter column
+  --use { "kdheepak/lazygit.nvim" } -- use lazygit from vim: (see jesseduffield/lazygit)
+  -- SYNTAX & HIGHLIGHTING
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
     config = get_setup('treesitter'),
   } -- NOTE Packer gotchas see https://github.com/nvim-treesitter/nvim-treesitter/wiki/Installation
-  use { 'p00f/nvim-ts-rainbow',                -- Sets different colors for parenths in different scopes
-    requires = {{'nvim-treesitter/nvim-treesitter'}}
-  }
- -- use 'sheerun/vim-polyglot'                   -- DEPREC?(check if needed with LSP) Better Syntax Support
+  --use { 'p00f/nvim-ts-rainbow',                -- Sets different colors for parenths in different scopes. Disabled because some inconsistencies, at least in lua files (same line {} are sometimes not the same color)
+  --  requires = {{'nvim-treesitter/nvim-treesitter'}}
+  --}
+  -- use 'sheerun/vim-polyglot'                   -- DEPREC?(check if needed with LSP) Better Syntax Support
   --use 'chilicuil/vim-sml-coursera'             -- Sml plugin
   --use 'evanleck/vim-svelte'                    -- Svelte syntax highlighting and indentation
   --use 'HerringtonDarkholme/yats.vim'           -- Typscript hl
   --use 'pangloss/vim-javascript'                -- Modern js hl
   --use 'tomlion/vim-solidity'                   -- Syntax highlighting for solidity
--- NAVIGATION
+  -- NAVIGATION
   use { 'nvim-telescope/telescope.nvim',       -- Fuzzy search through files, git history, commands and more
     branch = '0.1.x',
     requires = {
@@ -56,9 +66,12 @@ return require('packer').startup(function(use)
     },
     config = get_setup('telescope'),
   }
-  use 'unblevable/quick-scope'                 -- Highlighting hints for navigation within a single line
-  use 'easymotion/vim-easymotion'              -- Easymotion (navigation/browse through one file)
--- AUTO COMPLETION & AUTO INSERTION/DELETION/FORMATTING
+  use {
+    'rlane/pounce.nvim',                       -- Easymotion replacement, also see phaazon/hop.nvim
+    config = get_setup('pounce'),
+  }
+  -- AUTO COMPLETION & AUTO INSERTION/DELETION/FORMATTING
+  use 'tpope/vim-abolish' -- for case-sensitive replacements including word variations and more
   use { 'hrsh7th/nvim-cmp',                      -- Auto completion
     requires = {
       { 'hrsh7th/cmp-nvim-lsp' },
@@ -75,7 +88,7 @@ return require('packer').startup(function(use)
   use 'psliwka/vim-smoothie'                   -- Smooth scroll, useful for <c-f>/<c-b>, <c-u>/<c-b>, zz motions
   use 'tpope/vim-surround'                     -- Adds verb `surround` to target surrounding characters
   --use 'windwp/nvim-autopairs'                  -- Auto pairs for e.g.'(' '[' '{'
--- HELPING MEMORY
+  -- HELPING MEMORY
   use { 'folke/which-key.nvim',                  -- See what keys do like in emacs
     config = get_setup('which-key'),
   }
@@ -102,5 +115,14 @@ return require('packer').startup(function(use)
   --use 'skywind3000/asyncrun.vim'                       -- async tasks
   --use 'moll/vim-bbye'                                  -- Intuitive buffer closing, e.g. prevents closing window on :bdelete
   --use 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "Neovim in Browser's textareas etc...
-end)
-
+  end,
+  config = {
+    display = {
+      open_fn = require("packer.util").float,
+    },
+    profile = {
+      enable = true,
+      threshold = 1, -- the amount in ms that a plugins load time must be over for it to be included in the profile
+    },
+  }
+})
