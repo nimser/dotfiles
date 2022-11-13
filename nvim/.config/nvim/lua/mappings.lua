@@ -31,9 +31,10 @@ local cnoreabbrev = vim.cmd.cnoreabbrev
 -- t[nore]map "t" |  -   |  -  |  -  |  -  |  -  |  -  | yes  |  -   |
 -- l[nore]map "l" |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
 
+-----> Command mappings and abbrevs <------
+cnoreabbrev("W", "w")
 -----> Multi-mode mappings <------
--- open the file under cursor in a new tab
-map("", "gf", "<c-w>gf")
+map("", "gf", "<c-w>gf") -- open the file under cursor in a new tab
 -- mapping for :norm to help comment/uncomment, see https://stackoverflow.com/a/23063140/378253
 --map("", "<c-n>", ":norm") -- FIXME if this conflict with completion menu <c-n><c-p> then restrict to visual mode
 -----> Normal mappings <------
@@ -42,8 +43,11 @@ map("n", "<c-w>t", ":tabe<cr>")
 -- next / prev tab
 map("n", "gb", "gT")
 map("n", "gw", "gt")
------> Command mappings and abbrevs <------
-cnoreabbrev("W", "w")
+-- key shortcuts
+map('n', '<leader>ei3', ':tabe ~/.config/i3/config<cr>')
+map('n', '<leader>evm', ':tabe ~/Sync/[M] Sys-admin/vim-memo.md<cr>')
+map('n', '<leader>ewi', ':tabe ~/Sync/Freelance/workflow-improvement.md<cr>')
+map('n', '<leader>ek', ':tabe ~/qmk_firmware/keyboards/centromere/keymaps/nimser/keymap.c<cr>')
 --open help in a vsplit by default
 --FIXME won't work with K and should use existing help buffer when one is open
 --cnoreabbrev('help', 'vert help')
@@ -62,6 +66,9 @@ M.set_telescope_mappings = function()
   map('n', '<leader>fbh', function()
     telescope.extensions.file_browser.file_browser({cwd='~/', hidden=true, respect_gitignore=false})
   end, {desc="Browse anything (hidden) from ~/"})
+  map('n', '<leader>fbc', function()
+    telescope.extensions.file_browser.file_browser({hidden=true, respect_gitignore=false})
+  end, {desc="Browse anything (hidden) from cwd"})
   map('n', '<leader>fbd', function()
     telescope.extensions.file_browser.file_browser({files=false, hidden=true, respect_gitignore=false})
   end, {desc="Browse (hidden) folders from cwd"})

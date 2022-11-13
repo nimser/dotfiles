@@ -50,7 +50,6 @@ return require('packer').startup({function(use)
   --use { 'p00f/nvim-ts-rainbow',                -- Sets different colors for parenths in different scopes. Disabled because some inconsistencies, at least in lua files (same line {} are sometimes not the same color)
   --  requires = {{'nvim-treesitter/nvim-treesitter'}}
   --}
-  -- use 'sheerun/vim-polyglot'                   -- DEPREC?(check if needed with LSP) Better Syntax Support
   --use 'chilicuil/vim-sml-coursera'             -- Sml plugin
   --use 'evanleck/vim-svelte'                    -- Svelte syntax highlighting and indentation
   --use 'HerringtonDarkholme/yats.vim'           -- Typscript hl
@@ -82,7 +81,7 @@ return require('packer').startup({function(use)
     },
     config = get_setup('cmp'),
   }
-  use 'mattn/emmet-vim'                        -- HTML Snippets typing chains like e.g. ul>li>span*a
+  use { 'mattn/emmet-vim', setup = require('setup.emmet') } -- HTML Snippets typing chains like e.g. ul>li>span*a
   use 'AndrewRadev/tagalong.vim'               -- Auto change html tags
   use 'alvan/vim-closetag'                     -- Closetags
   use 'psliwka/vim-smoothie'                   -- Smooth scroll, useful for <c-f>/<c-b>, <c-u>/<c-b>, zz motions
