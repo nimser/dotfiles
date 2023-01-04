@@ -6,6 +6,7 @@ end
 -- Nvim CMP config
 
 local has_luasnip, luasnip = pcall(require, 'luasnip')
+local has_lspkind, lspkind = pcall(require, 'lspkind')
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -23,13 +24,21 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' }, -- For luasnip users.
-  },
+  sources = cmp.config.sources(
     {
-      { name = 'buffer' },
-    })
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' }, -- For luasnip users.
+    }
+  ),
+  formatting = {
+    format = has_lspkind and lspkind.cmp_format(
+      {
+        mode = "symbol_text",
+        wirth_text = false,
+        maxwidth = 100,
+        ellipsis_char = '……'
+      })
+  }
 })
 
 -- Set configuration for specific filetype.

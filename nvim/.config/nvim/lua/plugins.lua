@@ -69,6 +69,8 @@ return require('packer').startup({function(use)
     'rlane/pounce.nvim',                       -- Easymotion replacement, also see phaazon/hop.nvim
     config = get_setup('pounce'),
   }
+  -- FORMATTING
+  --use { 'junegunn/vim-easy-align' } -- What bashbunny might be using here: https://youtu.be/YEVL3-5n8LI?t=550
   -- AUTO COMPLETION & AUTO INSERTION/DELETION/FORMATTING
   use 'tpope/vim-abolish' -- for case-sensitive replacements including word variations and more
   use { 'hrsh7th/nvim-cmp',                      -- Auto completion
@@ -77,13 +79,14 @@ return require('packer').startup({function(use)
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
       { 'hrsh7th/cmp-cmdline' },
-      { 'L3MON4D3/LuaSnip' },                  -- LSP-compatible snippet engine FIXME determine if I really need this
+      { 'L3MON4D3/LuaSnip' },
+      { 'onsails/lspkind.nvim' },
     },
     config = get_setup('cmp'),
   }
   use { 'mattn/emmet-vim', setup = require('setup.emmet') } -- HTML Snippets typing chains like e.g. ul>li>span*a
-  use 'AndrewRadev/tagalong.vim'               -- Auto change html tags
-  use 'alvan/vim-closetag'                     -- Closetags
+  use 'AndrewRadev/tagalong.vim'               -- Auto change html tags TODO: switch to windwp/nvim-ts-autotag
+  use 'alvan/vim-closetag'                     -- Closetags TODO: switch to windwp/nvim-ts-autotag
   use 'psliwka/vim-smoothie'                   -- Smooth scroll, useful for <c-f>/<c-b>, <c-u>/<c-b>, zz motions
   use 'tpope/vim-surround'                     -- Adds verb `surround` to target surrounding characters
   --use 'windwp/nvim-autopairs'                  -- Auto pairs for e.g.'(' '[' '{'
@@ -103,6 +106,7 @@ return require('packer').startup({function(use)
   --use 'tpope/vim-repeat'                       -- Repeat stuff
 
 -- Seen on other's config, to try out maybe:
+  --use 'svrana/neosolarized.nviml'                      -- a Truecolor, Solarized dark theme
   --use 'christianchiarulli/nvcode-color-schemes.vim'    -- Themes
   --use 'tpope/vim-speeddating'                          -- Change dates fast
   --use 'glts/vim-radical'                               -- Convert binary, hex, etc..

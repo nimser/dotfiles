@@ -107,7 +107,8 @@ _G.packer_plugins = {
   },
   ["emmet-vim"] = {
     loaded = true,
-    path = "/home/owner/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    needs_bufread = false,
+    path = "/home/owner/.local/share/nvim/site/pack/packer/opt/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
   ["indent-blankline.nvim"] = {
@@ -115,6 +116,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/owner/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/owner/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lualine.nvim"] = {
     config = { 'require"setup/lualine"' },
@@ -219,42 +225,49 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: catppuccin
-time([[Config for catppuccin]], true)
-require"setup/catppuccin"
-time([[Config for catppuccin]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require"setup/telescope"
-time([[Config for telescope.nvim]], false)
+-- Setup for: emmet-vim
+time([[Setup for emmet-vim]], true)
+try_loadstring("\27LJ\2\n—\6\0\0\6\0\20\0\0286\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\6\0005\2\5\0=\2\a\0015\2\b\0005\3\f\0005\4\n\0006\5\0\0009\5\t\5=\5\v\4=\4\r\0035\4\14\0006\5\0\0009\5\t\5=\5\15\0046\5\0\0009\5\t\5=\5\16\4=\4\17\3=\3\18\2=\2\19\1=\1\4\0K\0\1\0\thtml\23default_attributes\rtextarea\tname\aid\1\0\2\trows\3\n\tcols\3\n\voption\1\0\0\nvalue\1\0\0\bNIL\1\0\3\20inline_elements√\1li,a,abbr,acronym,applet,b,basefont,bdo,big,br,button,cite,code,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,small,span,strike,strong,sub,sup,textarea,tt,u,var\19empty_elements^area,base,basefont,br,col,frame,hr,img,input,isindex,link,meta,param,embed,keygen,command\19block_elements€\1address,applet,blockquote,button,center,dd,del,dir,div,dl,dt,fieldset,form,frameset,hr,iframe,ins,isindex,link,map,menu,noframes,noscript,object,ol,p,pre,script,table,tbody,td,tfoot,th,thead,tr,ul,h1,h2,h3,h4,h5,h6\14variables\1\0\0\1\0\1\tlang\afr\24user_emmet_settings$body,head,html,tbody,p,li,dt,dd\24html_indent_inctags\6g\bvim\0", "setup", "emmet-vim")
+time([[Setup for emmet-vim]], false)
+time([[packadd for emmet-vim]], true)
+vim.cmd [[packadd emmet-vim]]
+time([[packadd for emmet-vim]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 require"setup/colorizer"
 time([[Config for nvim-colorizer.lua]], false)
--- Config for: pounce.nvim
-time([[Config for pounce.nvim]], true)
-require"setup/pounce"
-time([[Config for pounce.nvim]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+require"setup/catppuccin"
+time([[Config for catppuccin]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 require"setup/lspconfig"
 time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require"setup/cmp"
-time([[Config for nvim-cmp]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 require"setup/indent-blankline"
 time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require"setup/cmp"
+time([[Config for nvim-cmp]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require"setup/treesitter"
 time([[Config for nvim-treesitter]], false)
+-- Config for: pounce.nvim
+time([[Config for pounce.nvim]], true)
+require"setup/pounce"
+time([[Config for pounce.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require"setup/which-key"
 time([[Config for which-key.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require"setup/telescope"
+time([[Config for telescope.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

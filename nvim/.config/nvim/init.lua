@@ -9,6 +9,9 @@ require('plugins')
 require('options')
 
 -- TODO:
+-- #### BUGs
+-- -[ ] autocomplete starts only if we type the term from the start. feks, placing the cursor on an existing class="font-ita_" won't suggest font-italic
+-- -[ ] Typescript types diagnosis not permformed in astro files
 -- #### Things to grok and improvements
 -- - [ ] make config mostly reloadable without retart
 --   - restructure module so that everything is under a user namespace, just
