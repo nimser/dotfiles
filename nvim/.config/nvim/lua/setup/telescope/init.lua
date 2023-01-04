@@ -10,6 +10,7 @@ telescope.setup({
   defaults = {
     -- We use table.insert above because `hidden = true` is not supported in text grep commands.
     prompt_prefix = ' ',
+    --path_display = { shorten = { len = 2, exclude = {1,-1}} }, -- customize path display
   },
 
   pickers = {
