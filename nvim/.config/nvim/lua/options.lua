@@ -7,7 +7,7 @@ opt.formatoptions:append'ro'    -- defaults to "tcqj"
 
 -- +nostop -eol -indent forces me to use vim-specific commands more. 
 -- e.g. <bs>/<del> won't erase autoindent & line breaks
-opt.backspace = {"nostop"} -- defaults to {"indent", "eol", "start"}
+opt.backspace = {"indent", "eol", "start"}--{"nostop"} -- defaults to {"indent", "eol", "start"}
 opt.completeopt = {"menu", "menuone", "noselect"} -- could add preview for additional info of selected option
 opt.cursorline = true -- Highlights the current line
 opt.cursorcolumn = true -- Highlights the current column
