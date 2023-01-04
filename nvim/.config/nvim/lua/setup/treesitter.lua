@@ -2,7 +2,7 @@ local configs = require 'nvim-treesitter.configs'
 configs.setup {
   ensure_installed = {-- A list of parser names, or "all"
     "javascript","html","css","yaml","json","json5", --web basics
-    "typescript","tsx","svelte","graphql","vue", --web addons
+    "typescript","tsx","svelte","graphql","vue", "astro",--web addons
     "c","cpp","rust","go","haskell","ocaml",--backend
     "git_rebase","gitattributes","gitignore",--vcs
     "lua","fish","bash","vim", --conf, terminals, scripting etc...
