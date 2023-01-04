@@ -1,4 +1,5 @@
 set PATH $HOME/local/bin $PATH
+set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx TERMINAL "alacritty"
 set -gx EDITOR "nvim"
 set -gx DIFFPROG "nvim -d"
@@ -15,3 +16,4 @@ set -gx GPGID "03BC4AD253B82986"
 set -gx SSH_AGENT_PID ""
 set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
 set -gx GPG_TTY (tty)
+set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/config"
