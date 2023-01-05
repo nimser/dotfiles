@@ -80,13 +80,13 @@ return require('packer').startup({function(use)
       { 'hrsh7th/cmp-path' },
       { 'hrsh7th/cmp-cmdline' },
       { 'L3MON4D3/LuaSnip' },
-      { 'onsails/lspkind.nvim' },
+      { 'onsails/lspkind.nvim' }, -- vscode-like pictograms in cmp list
+      -- FIXME add hrsh7th/cmp-nvim-lsp-signature-help to display signature while typing params or use the solution shipped by lspsaga
     },
     config = get_setup('cmp'),
   }
   use { 'mattn/emmet-vim', setup = require('setup.emmet') } -- HTML Snippets typing chains like e.g. ul>li>span*a
-  use 'AndrewRadev/tagalong.vim'               -- Auto change html tags TODO: switch to windwp/nvim-ts-autotag
-  use 'alvan/vim-closetag'                     -- Closetags TODO: switch to windwp/nvim-ts-autotag
+  use 'windwp/nvim-ts-autotag'               -- Auto close and change html matching tags
   use 'psliwka/vim-smoothie'                   -- Smooth scroll, useful for <c-f>/<c-b>, <c-u>/<c-b>, zz motions
   use 'tpope/vim-surround'                     -- Adds verb `surround` to target surrounding characters
   --use 'windwp/nvim-autopairs'                  -- Auto pairs for e.g.'(' '[' '{'

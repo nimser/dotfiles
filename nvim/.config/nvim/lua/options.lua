@@ -8,7 +8,7 @@ opt.formatoptions:append'ro'    -- defaults to "tcqj"
 -- +nostop -eol -indent forces me to use vim-specific commands more. 
 -- e.g. <bs>/<del> won't erase autoindent & line breaks
 opt.backspace = {"indent", "eol", "start"}--{"nostop"} -- defaults to {"indent", "eol", "start"}
-opt.completeopt = {"menu", "menuone", "noselect"} -- could add preview for additional info of selected option
+opt.completeopt = {"menuone", "noinsert", "noselect"} -- could add preview for additional info of selected option
 opt.cursorline = true -- Highlights the current line
 opt.cursorcolumn = true -- Highlights the current column
 opt.clipboard = "unnamedplus"
@@ -61,6 +61,13 @@ vim.cmd[[
   augroup END
 ]]
 
+-- Quote from :h hi-link: "When you want to use the same highlighting for several syntax groups,
+-- you can do this more easily by linking the groups into one common highlight
+-- group, and give the color attributes only for that group.
+vim.cmd[[
+  highlight! default link CmpItemKind CmpItemMenuDefault
+]]
+
 -- This is global settings for diagnostics
 vim.o.updatetime = 250
 vim.diagnostic.config({
@@ -70,4 +77,3 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = false,
 })
-
