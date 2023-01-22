@@ -2,10 +2,13 @@
 // This file is a work in progress. Layout based on bépo but optimised for programming and VIM use
 // NOTE: additonal settings in ~/qmk_firmware/keyboards/centromere/keymaps/nimser/config.h
 // TODO:
+// - FIXME Can't use SHIFT while holding the modifier used for arrows, as it's the same modifier for numbers. The SHIFT key is also the 7 key, and it means can't press SHIFT while using arrows. (has impact on using Lunacy stepped scaling or stepped movements.)
+// - FIXME consider putting hjkl back where it belongs or moving arrow modifier to other hand to type faster
 // - FIXME appostrophes are not easily typeable when typing in locked all caps mode
 // - FIXME b/B sequences in vim use the pink finger
 // - FIXME ZZ ZQ sequences in vim use the pinky finger
 // - FIXME an accidental triggering of locked numerables happens once in a while, and I can't explain why so far
+// - FIXME an accidental t is sometimes inputted after enter (typing fast), still need to debug the exact entry sequence causing that
 // - FIXME , is reserved as the vim leader key which makes ;/, sequences in combination to f/F or t/T vim moves unidirectional
 // - FIXME moving splits to rearange them doesn't behave as expected because of remaping of hjkl to arrow keys
 //         original mapping is feks. <c-w><shift>K and <c-w><shift><up> won't work
