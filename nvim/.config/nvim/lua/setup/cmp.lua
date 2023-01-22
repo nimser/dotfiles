@@ -10,7 +10,7 @@ local has_lspkind, lspkind = pcall(require, 'lspkind')
 cmp.setup({
   snippet = {
     expand = function(args)
-      if has_luasnip then luasnip.lsp_expand(args.body) end -- FIXME: default to something else if no luasnip? What's that for exactly?
+      if has_luasnip then luasnip.lsp_expand(args.body) end
     end,
   },
   window = {
@@ -27,8 +27,12 @@ cmp.setup({
   sources = cmp.config.sources(
     {
       { name = 'nvim_lsp' },
+      { name = 'nvim_lua' },
+      { name = 'nvim_lsp_signature_help' },
+      { name = 'luasnip', option = { use_show_condition = false, show_autosnippets = true } },
+    },
+    {
       { name = 'buffer' },
-      { name = 'luasnip' },
     }
   ),
   formatting = {
@@ -36,9 +40,9 @@ cmp.setup({
       {
         mode = "symbol_text",
         wirth_text = false,
-        maxwidth = 100,
+        maxwidth = 40,
         ellipsis_char = '……'
-      })
+      }) or nil
   }
 })
 

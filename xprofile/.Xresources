@@ -11,6 +11,7 @@ URxvt.scrollBar: false
 !!Xft.rgba: rgb
 
 Xcursor.theme: Vanilla-DMZ
+Xcursor.size: 16
 
 !! Prefered fonts: Hack, PragmataPro
 !! To know what fonts provide a glyph use `gucharmap`
