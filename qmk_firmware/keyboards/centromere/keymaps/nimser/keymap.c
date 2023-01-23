@@ -2,6 +2,10 @@
 // This file is a work in progress. Layout based on bépo but optimised for programming and VIM use
 // NOTE: additonal settings in ~/qmk_firmware/keyboards/centromere/keymaps/nimser/config.h
 // TODO:
+// - FIXME Cna't press ctrl-shift-f1 one handed (search for shortcuts in Lunacy)
+// - FIXME Allow access to right hand letters/special chars layer from left hand so that I can leave right hand on mouse in Lunacy
+// - FIXME Need to be able to hit Ctrl+2, Alt+1-7, left-handed (one hand) with ease in Lunacy while using the mouse
+// - FIXME Very unatural position pressing Ctrl+Shift+[, Ctrl+Alt+[ and the like in Lunacy.
 // - FIXME Can't use SHIFT while holding the modifier used for arrows, as it's the same modifier for numbers. The SHIFT key is also the 7 key, and it means can't press SHIFT while using arrows. (has impact on using Lunacy stepped scaling or stepped movements.)
 // - FIXME consider putting hjkl back where it belongs or moving arrow modifier to other hand to type faster
 // - FIXME appostrophes are not easily typeable when typing in locked all caps mode
@@ -16,26 +20,25 @@
 
 /* transparent template for putting keys
  [???] = LAYOUT_split_3x6_3( \
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,\
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,\
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,\
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, _______, _______ \
-                                      //`--------------------------'  `--------------------------'
+  //,-----------------------------------------------------.  ,-----------------------------------------------------.
+      _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,\
+  //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
+      _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,\
+  //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
+      _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,\
+  //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
+                                 _______, _______, _______,    _______, _______, _______ \
+                             //`--------------------------'  `--------------------------'
 */
 
 enum centromere_layers
 {
-	BASE, // Base layer
-	SHFT, // Shifted letters
+  BASE, // Base layer
+  SHFT, // Shifted letters
   NNUM, // Navigation and numbers
-	SPEC, // Special characters
+  SPEC, // Special characters
   FUN   // FN keys and function controls
 };
-
 
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
