@@ -29,6 +29,11 @@ require('lspconfig').svelte.setup{
 require('lspconfig').astro.setup{
   capabilities = has_cmp and cmp_lsp.default_capabilities() or nil,
   on_attach = on_attach,
+  init_options = {
+    typescript = {
+      serverPath = vim.fs.normalize "~/.local/share/pnpm/global/5/node_modules/typescript/lib/tsserverlibrary.js"
+    }
+  }
 }
 require('lspconfig').sumneko_lua.setup{
   capabilities = has_cmp and cmp_lsp.default_capabilities() or nil,

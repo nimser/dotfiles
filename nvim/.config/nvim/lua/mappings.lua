@@ -45,7 +45,7 @@ map("n", "gb", "gT")
 map("n", "gw", "gt")
 -- key shortcuts
 map('n', '<leader>ei3', ':tabe ~/.config/i3/config<cr>')
-map('n', '<leader>evm', ':tabe ~/Sync/[M] Sys-admin/vim-memo.md<cr>')
+map('n', '<leader>evm', ':tabe ~/Sync/Sys-admin/vim-memo.md<cr>')
 map('n', '<leader>ewi', ':tabe ~/Sync/Freelance/workflow-improvement.md<cr>')
 map('n', '<leader>ek', ':tabe ~/qmk_firmware/keyboards/centromere/keymaps/nimser/keymap.c<cr>')
 --open help in a vsplit by default
