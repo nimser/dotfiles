@@ -15,6 +15,12 @@ configs.setup {
   },
   autotag = {
     enable = true,
+    filetypes = {
+      'html', 'xml', 'php', 'javascript',
+      'typescript', 'javascriptreact', 'typescriptreact', 'tsx', 'jsx',
+      'astro', 'svelte',
+      'markdown', 'mdx'
+    },
   },
   sync_install = false, -- Install parsers synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing (for "all")
