@@ -5,6 +5,8 @@
 -- - refine your search over the live_grep results in a fuzzy environment after pressing <c-space>
 -- also :help telescope.nvim is great!
 local telescope = require("telescope")
+local Path = require "plenary.path"
+local actions = require("telescope.actions")
 
 telescope.setup({
   defaults = {
@@ -33,13 +35,12 @@ telescope.setup({
         "--exclude",
         ".local/share/Steam/**",
       },
-      attach_mappings = function(_, map)
-        map("n", "<Leader>c", function(prompt_bufnr)
-          local selection = require("telescope.actions.state").get_selected_entry()
-          local dir = vim.fn.fnamemodify(selection.path, ":p:h")
-          require("telescope.actions").close(prompt_bufnr)
-          -- Depending on what you want put `cd`, `lcd`, `tcd`
-          vim.cmd(string.format("silent lcd %s", dir))
+      attach_mappings = function(prompt_bufnr, map)
+        map("n", "<Leader>b", function(_)
+          local new_cwd = Path:new(vim.loop.cwd())
+          actions.close(prompt_bufnr)
+          -- FIXME cwd value not pointing to right dir. this is BROKEN
+          telescope.extensions.file_browser.file_browser({cwd=new_cwd:absolute()})
         end)
         return true
       end,
