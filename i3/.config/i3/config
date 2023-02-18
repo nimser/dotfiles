@@ -45,29 +45,28 @@ focus_on_window_activation focus
 
 ## Workspace-specific apps - findout the classname using  `xprop`
 assign [class="chromium"] $workspace1
-assign [class="firefox"] $workspace1
 assign [class="Alacritty"] $workspace3
 assign [class="Typora"] $workspace10
 # Make some apps launch when i3 first starts
-exec firefox
+exec chromium
 exec alacritty
 exec alacritty
-exec typora ~/Sync
 exec --no-startup-id nm-applet
-exec xrandr --output DP2 --auto --rotate left --left-of  eDP1
-exec --no-startup-id fcitx5 -d
+#- exec --no-startup-id fcitx5 -d
 #exec --no-startup-id ibus-daemon --xim -d -r
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id gromit-mpx
+#-exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-exec --no-startup-id /usr/bin/goldendict
+exec --no-startup-id setxkbmap -option compose:prsc
+exec xrandr --output HDMI-2 --auto --above eDP-1
+#-exec --no-startup-id /usr/bin/goldendict
 
 ## Application keybindings
 # kill focused window
 bindsym $mod+Mod1+q kill
 bindsym $mod+Return exec alacritty
 bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
-bindsym $mod+Mod1+l exec i3lock
+bindsym $mod+Mod1+l exec i3lock -c 00000
 bindsym $mod+Mod1+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Floating windows - findout the classname using  `xprop`
