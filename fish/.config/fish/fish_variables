@@ -2,8 +2,22 @@
 # VERSION: 3.0
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_initialized:3400
-SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e\x7e/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e\x7e/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
-SETUVAR _fisher_plugins:patrickf1/fzf\x2efish
+SETUVAR _fish_abbr_dbxex:\x2d\x2dset\x2dcursor\x20distrobox\x2dexport\x20\x2d\x2dbin\x20/usr/sbin/\x25\x20\x2d\x2dexport\x2dpath\x20\x7e/\x2elocal/distrobox/bin
+SETUVAR _fish_abbr_gaci:\x2d\x2dset\x2dcursor\x20git\x20add\x20\x2dA\x3bgit\x20commit\x20\x2dm\x20\x27\x25\x27
+SETUVAR _fish_abbr_gbr:git\x20branch
+SETUVAR _fish_abbr_gci:git\x20commit
+SETUVAR _fish_abbr_gcia:git\x20commit\x20\x2d\x2damend\x20\x2d\x2dno\x2dedit
+SETUVAR _fish_abbr_gciam:\x2d\x2dset\x2dcursor\x20git\x20commit\x20\x2d\x2damend\x20\x2dm\x20\x27\x25\x27
+SETUVAR _fish_abbr_gcim:\x2d\x2dset\x2dcursor\x20git\x20commit\x20\x2dm\x20\x27\x25\x27
+SETUVAR _fish_abbr_gco:git\x20checkout
+SETUVAR _fish_abbr_gst:git\x20status
+SETUVAR _fish_abbr_pn:pnpm
+SETUVAR _fish_abbr_vim:nvim\x20\x2dp
+SETUVAR _fish_abbr_xrb:\x2d\x2dset\x2dcursor\x20xrandr\x20\x2d\x2doutput\x20HDMI\x2d1\x25\x20\x2d\x2dbelow\x20eDP\x2d1\x20\x2d\x2dprimary
+SETUVAR _fish_abbr_xrl:\x2d\x2dset\x2dcursor\x20xrandr\x20\x2d\x2doutput\x20HDMI\x2d1\x25\x20\x2d\x2dleft\x2dof\x20eDP\x2d1\x20\x2d\x2dprimary
+SETUVAR _fish_abbr_xrlist:xrandr\x20\x2d\x2dlistmonitors
+SETUVAR _fish_abbr_xrr:\x2d\x2dset\x2dcursor\x20xrandr\x20\x2d\x2doutput\x20HDMI\x2d1\x25\x20\x2d\x2dright\x2dof\x20eDP\x2d1\x20\x2d\x2dprimary
+SETUVAR _fish_abbr_xrt:\x2d\x2dset\x2dcursor\x20xrandr\x20\x2d\x2doutput\x20HDMI\x2d1\x25\x20\x2d\x2dabove\x20eDP\x2d1\x20\x2d\x2dprimary
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr

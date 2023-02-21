@@ -57,9 +57,14 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 #-exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-exec --no-startup-id setxkbmap -option compose:prsc
+exec --no-startup-id setxkbmap -layout us -option compose:prsc
+exec --no-startup-id setxkbmap -layout us -option terminate:ctrl_alt_bksp
 exec xrandr --output HDMI-2 --auto --above eDP-1
 #-exec --no-startup-id /usr/bin/goldendict
+exec keepassxc
+bindsym $mod+Mod1+p [instance="keepassxc"] scratchpad show, move position center
+for_window [instance="keepassxc"] floating enable, resize set 900 900, move scratchpad, border pixel 5
+
 
 ## Application keybindings
 # kill focused window
@@ -67,7 +72,7 @@ bindsym $mod+Mod1+q kill
 bindsym $mod+Return exec alacritty
 bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
 bindsym $mod+Mod1+l exec i3lock -c 00000
-bindsym $mod+Mod1+p exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym Ctrl+$mod+Backspace exec i3-msg exit"
 
 # Floating windows - findout the classname using  `xprop`
 for_window [class="Pavucontrol"] floating enable
