@@ -1,3 +1,30 @@
+# catppuccin mocha theme
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
+
 ########################
 # Tips to configure i3 can be found in the Code Cast youtube tutorial
 #
@@ -5,23 +32,6 @@
 
 ## Constants definitions
 set $mod Mod4
-# FIXME colors - may conflict with what's in .config/alacritty/alacritty.yml or .Xressources
-set $base00 #101218
-set $base01 #1f222d
-set $base02 #252936
-set $base03 #7780a1
-set $base04 #C0C5CE
-set $base05 #d1d4e0
-set $base06 #C9CCDB
-set $base07 #ffffff
-set $base08 #ee829f
-set $base09 #f99170
-set $base0A #ffefcc
-set $base0B #a5ffe1
-set $base0C #97e0ff
-set $base0D #97bbf7
-set $base0E #c0b7f9
-set $base0F #fcc09e
 # Workspaces
 set $workspace1 "1: Web "
 set $workspace2 "2: Code "
@@ -35,7 +45,7 @@ set $workspace9 "9: Chat "
 set $workspace10 "10: Notes "
 
 ## General Configuration
-font pango:Hack Nerd Font 11
+font pango:Hack Nerd Font Mono 12
 floating_modifier $mod
 # borders
 hide_edge_borders smart
@@ -49,8 +59,8 @@ assign [class="Alacritty"] $workspace3
 assign [class="Typora"] $workspace10
 # Make some apps launch when i3 first starts
 exec chromium
-exec alacritty
-exec alacritty
+exec alacritty -e distrobox enter Arch
+exec alacritty -e distrobox enter Arch
 exec --no-startup-id nm-applet
 #- exec --no-startup-id fcitx5 -d
 #exec --no-startup-id ibus-daemon --xim -d -r
@@ -69,7 +79,8 @@ for_window [instance="keepassxc"] floating enable, resize set 900 900, move scra
 ## Application keybindings
 # kill focused window
 bindsym $mod+Mod1+q kill
-bindsym $mod+Return exec alacritty
+bindsym $mod+t exec alacritty -e distrobox enter Arch
+bindsym $mod+Return exec alacritty --config-file /home/owner/.config/alacritty/alacritty-host.yml
 bindsym $mod+i exec dmenu_run -nb black -sb tomato -l 10
 bindsym $mod+Mod1+l exec i3lock -c 00000
 bindsym Ctrl+$mod+Backspace exec i3-msg exit"
@@ -161,22 +172,23 @@ bindsym $mod+r mode "  "
 ## i3ba_Lr
 bar {
   colors {
-    separator $base03
-    background $base01
-    statusline $base05
+    separator $rosewater
+    background $base
+    statusline $mauve
 #                      border  background text
-    focused_workspace  $base01 $base01    $base07
-    active_workspace   $base01 $base02    $base03
-    inactive_workspace $base01 $base01    $base03
-    urgent_workspace   $base01 $base01    $base08
+    focused_workspace  $mauve $base    $text
+    active_workspace   $pink $base    $text
+    inactive_workspace $base $base    $text
+    urgent_workspace   $peach $base    $peach
   }
   status_command i3status
 }
 
 ## Colors
 # class                   border  backgr. text    indicator
-  client.focused          $base03 $base01    $base07 $base0F
-  client.focused_inactive $base01 $base01    $base07 $base0F
-  client.unfocused        $base01 $base02    $base03 $base0F
-  client.urgent           $base02 $base08    $base00 $base0F
-
+client.focused           $pink     $base $text  $rosewater $pink
+client.focused_inactive  $mauve    $base $text  $rosewater $mauve
+client.unfocused         $mauve    $base $text  $rosewater $mauve
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base

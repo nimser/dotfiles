@@ -1,0 +1,11 @@
+# Import the main config
+import:
+  - ~/.config/alacritty/alacritty.yml
+
+# Colors specific to the host term
+colors:
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xeaeaea'
+
