@@ -1,3 +1,7 @@
+########################
+# Tips to configure i3 can be found in the Code Cast youtube tutorial
+#
+
 # catppuccin mocha theme
 set $rosewater #f5e0dc
 set $flamingo  #f2cdcd
@@ -25,13 +29,11 @@ set $base      #1e1e2e
 set $mantle    #181825
 set $crust     #11111b
 
-########################
-# Tips to configure i3 can be found in the Code Cast youtube tutorial
-#
-###
-
-## Constants definitions
+# Constants definitions
+set $fm eDP1
+set $sm HDMI2
 set $mod Mod4
+
 # Workspaces
 set $workspace1 "1: Web "
 set $workspace2 "2: Code "
@@ -43,6 +45,17 @@ set $workspace7 "7: Wild "
 set $workspace8 "8: Tea "
 set $workspace9 "9: Chat "
 set $workspace10 "10: Notes "
+
+workspace $workspace1 output $sm
+workspace $workspace2 output $sm
+workspace $workspace4 output $sm
+workspace $workspace5 output $sm
+workspace $workspace7 output $sm
+workspace $workspace8 output $sm
+workspace $workspace3 output $fm
+workspace $workspace6 output $fm
+workspace $workspace9 output $fm
+workspace $workspace10 output $fm
 
 ## General Configuration: Do not use a mono Nerd font, or the icons will look too small!
 font pango:Hack Nerd Font 11
@@ -67,13 +80,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 #-exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-exec --no-startup-id setxkbmap -layout us -option compose:prsc
-exec --no-startup-id setxkbmap -layout us -option terminate:ctrl_alt_bksp
-exec xrandr --output HDMI-2 --auto --above eDP-1
+exec xrandr --output $sm --auto --above $fm
 #-exec --no-startup-id /usr/bin/goldendict
 exec keepassxc
 bindsym $mod+Mod1+p [instance="keepassxc"] scratchpad show, move position center
 for_window [instance="keepassxc"] floating enable, resize set 900 900, move scratchpad, border pixel 5
+exec --no-startup-id setxkbmap -layout us -option compose:prsc
+exec --no-startup-id setxkbmap -layout us -option terminate:ctrl_alt_bksp
 
 
 ## Application keybindings
@@ -169,15 +182,15 @@ mode "  " {
 }
 bindsym $mod+r mode "  "
 
-## i3ba_Lr
+## i3bar
 bar {
   colors {
     separator $rosewater
     background $base
-    statusline $mauve
+    statusline $text
 #                      border  background text
     focused_workspace  $mauve $base    $text
-    active_workspace   $pink $base    $text
+    active_workspace   $base $base    $mauve
     inactive_workspace $base $base    $text
     urgent_workspace   $peach $base    $peach
   }
@@ -186,9 +199,9 @@ bar {
 
 ## Colors
 # class                   border  backgr. text    indicator
-client.focused           $pink     $base $text  $rosewater $pink
-client.focused_inactive  $mauve    $base $text  $rosewater $mauve
-client.unfocused         $mauve    $base $text  $rosewater $mauve
+client.focused           $mauve     $base $text  $rosewater $pink
+client.focused_inactive  $base    $base $text  $rosewater $mauve
+client.unfocused         $base    $base $text  $rosewater $mauve
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base

@@ -19,9 +19,9 @@ abbr --add gbr git branch
 # Shortcuts
 abbr --add eabbr nvim -p ~/.config/fish/conf.d/abbrevs.fish  
 # Display / output
-abbr --add xrt --set-cursor "xrandr --output HDMI-1% --above eDP-1 --primary"
-abbr --add xrb --set-cursor "xrandr --output HDMI-1% --below eDP-1 --primary"
-abbr --add xrl --set-cursor "xrandr --output HDMI-1% --left-of eDP-1 --primary"
-abbr --add xrr --set-cursor "xrandr --output HDMI-1% --right-of eDP-1 --primary"
+abbr --add xrt --set-cursor "xrandr --output $SECOND_MONITOR% --above $FIRST_MONITOR --primary"
+abbr --add xrb --set-cursor "xrandr --output $SECOND_MONITOR% --below $FIRST_MONITOR --primary"
+abbr --add xrl --set-cursor "xrandr --output $SECOND_MONITOR% --left-of $FIRST_MONITOR --primary"
+abbr --add xrr --set-cursor "xrandr --output $SECOND_MONITOR% --right-of $FIRST_MONITOR --primary"
 abbr --add xrlist xrandr --listmonitors
 

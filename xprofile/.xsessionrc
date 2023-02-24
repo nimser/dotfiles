@@ -1,3 +1,5 @@
 # execute i3 with log (visible with the i3-dump-log command)
 # see https://i3wm.org/docs/debugging.html
+export FIRST_MONITOR=eDP1
+export SECOND_MONITOR=HDMI2
 exec i3 --shmlog-size=26214400
