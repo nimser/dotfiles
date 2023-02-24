@@ -44,8 +44,8 @@ set $workspace8 "8: Tea "
 set $workspace9 "9: Chat "
 set $workspace10 "10: Notes "
 
-## General Configuration
-font pango:Hack Nerd Font Mono 12
+## General Configuration: Do not use a mono Nerd font, or the icons will look too small!
+font pango:Hack Nerd Font 11
 floating_modifier $mod
 # borders
 hide_edge_borders smart
