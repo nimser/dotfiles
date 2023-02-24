@@ -1,3 +1,5 @@
+# Override reboot
+abbr --add reboot sudo shutdown -r now
 # Development
 abbr --add pn pnpm
 abbr --add vim nvim -p
