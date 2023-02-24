@@ -189,10 +189,10 @@ bar {
     background $base
     statusline $text
 #                      border  background text
-    focused_workspace  $mauve $base    $text
+    focused_workspace  $base $base    $mauve
     active_workspace   $base $base    $mauve
     inactive_workspace $base $base    $text
-    urgent_workspace   $peach $base    $peach
+    urgent_workspace   $base $base    $peach
   }
   status_command i3status
 }

@@ -11,7 +11,9 @@ abbr --add gci git commit
 abbr --add gcim --set-cursor "git commit -m '%'"
 abbr --add gaci --set-cursor "git add -A;git commit -m '%'"
 abbr --add gcia git commit --amend --no-edit
+abbr --add gacia "git add -A;git commit --amend --no-edit"
 abbr --add gciam --set-cursor "git commit --amend -m '%'"
+abbr --add gaciam --set-cursor "gat add -A;git commit --amend -m '%'"
 abbr --add gpo git push origin
 abbr --add glg git lg
 abbr --add gco git checkout
