@@ -8,7 +8,7 @@ require('mappings')
 require('plugins')
 require('options')
 -- DEBUG: set true to fill logs in ~/.local/state/nvim/lsp.log
-local debug = true
+local debug = false
 if debug then
   vim.lsp.set_log_level("DEBUG")
   print("Warning: lsp debug is ON")
