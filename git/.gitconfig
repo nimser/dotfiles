@@ -3,39 +3,39 @@
 ; git stash show -p [stash@{0}]               ; shows a diff of the last stash with the current branch
 ; git diff --name-only stash@{0} master       ; lists files changed in the last stash compared to master's HEAD
 [user]
-    email = nicolas@codewithflair.org
-    name = Nicolas Wormser
-    signingkey = 03BC4AD253B82986
+  email = nicolas@codewithflair.org
+  name = Nicolas Wormser
+  signingkey = 03BC4AD253B82986
 [push]
-    default = simple
+  default = simple
 [url "git@github.com:"]
-    insteadOf = git://github.com/
-    insteadOf = https://github.com/
+  insteadOf = git://github.com/
+  insteadOf = https://github.com/
 [alias]
-    co = checkout
-    br = branch
-    ci = commit
-    st = status
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  lg = log --oneline --decorate --graph --all
 [color]
-    ui = true
-	pager = no
+  ui = true
+  pager = no
 #FIXME gpgsign creates TTY issues with distrobox
 #[commit]
 #    gpgsign = true
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [add.interactive]
-    useBuiltin = false # required for git 2.37.0
+  useBuiltin = false # required for git 2.37.0
 [merge]
-    conflictstyle = diff3
+  conflictstyle = diff3
 [diff]
-    colorMoved = default
+  colorMoved = default
 [init]
-    defaultBranch = main
+  defaultBranch = main
 [pager]
-	branch = false
+  branch = false
 [pull]
-	ff = only
+  ff = only
 [core]
-	pager = nvim -R
+  pager = nvim -R

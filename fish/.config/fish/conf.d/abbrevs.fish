@@ -12,16 +12,16 @@ abbr --add dbxex --set-cursor "distrobox-export --bin /usr/sbin/% --export-path 
 abbr --add gst git status
 abbr --add gita git add
 abbr --add gaa git add -A
-abbr --add gci git commit
-abbr --add gcim --set-cursor "git commit -m '%'"
+abbr --add gci --set-cursor "git commit -m '%'"
 abbr --add gaci --set-cursor "git add -A;git commit -m '%'"
-abbr --add gcia git commit --amend --no-edit
-abbr --add gacia "git add -A;git commit --amend --no-edit"
-abbr --add gciam --set-cursor "git commit --amend -m '%'"
-abbr --add gaciam --set-cursor "gat add -A;git commit --amend -m '%'"
+abbr --add gcia --set-cursor "git commit --amend -m '%'"
+abbr --add gacia --set-cursor "gat add -A;git commit --amend -m '%'"
+abbr --add gciane git commit --amend --no-edit
+abbr --add gaciane "git add -A;git commit --amend --no-edit"
 abbr --add gpo git push origin
 abbr --add glg git lg
 abbr --add gco git checkout
+abbr --add gsw git switch
 abbr --add gbr git branch
 # Shortcuts
 abbr --add eabbr nvim -p ~/.config/fish/conf.d/abbrevs.fish  
