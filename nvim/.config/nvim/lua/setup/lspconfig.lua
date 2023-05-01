@@ -35,7 +35,7 @@ require('lspconfig').astro.setup{
     }
   }
 }
-require('lspconfig').sumneko_lua.setup{
+require('lspconfig').lua_ls.setup{
   capabilities = has_cmp and cmp_lsp.default_capabilities() or nil,
   on_attach = on_attach,
   settings = {
