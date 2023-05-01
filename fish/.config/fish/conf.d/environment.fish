@@ -8,4 +8,7 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx TERMINAL "alacritty"
 set -gx EDITOR "nvim"
 set -gx DIFFPROG "nvim -d"
-set -gx BROWSER "chromium"
+set -gx BROWSER "google-chrome"
+# remember: an awesome feature of `nvim +Man!` is `gO` (gee-Oh) to open an browsable index of the manpage in the quickfix list
+set -gx PAGER "nvim +Man!"
+set -gx LANG "en_US.UTF-8"

@@ -71,7 +71,7 @@ assign [class="chromium"] $workspace1
 assign [class="Alacritty"] $workspace3
 assign [class="Typora"] $workspace10
 # Make some apps launch when i3 first starts
-exec chromium
+exec google-chrome 
 exec alacritty -e distrobox enter Arch
 exec alacritty -e distrobox enter Arch
 exec --no-startup-id nm-applet
