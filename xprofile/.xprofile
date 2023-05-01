@@ -3,7 +3,5 @@ xrdb -merge ~/.Xresources
 xinput --set-prop "Elan TrackPoint" "libinput Accel Profile Enabled" 0 1
 xinput --set-prop "Elan TrackPoint" "libinput Accel Speed" 1.0
 
-if [ "$XDG_CURRENT_DESKTOP" = "i3" ]; then
-    export QT_QPA_PLATFORMTHEME="qt5ct"
-    export QT_PLUGIN_PATH=/usr/lib/qt/plugins/
-fi
+# setting path globally
+export PATH="${PATH}:/home/owner/.local/bin/"

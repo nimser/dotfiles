@@ -9,3 +9,10 @@ if status is-interactive
     set -gx fish_user_paths $fish_user_paths ~/.local/distrobox/bin
   end
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/owner/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

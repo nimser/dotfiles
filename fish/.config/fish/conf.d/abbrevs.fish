@@ -2,6 +2,9 @@
 abbr --add reboot sudo shutdown -r now
 # Development
 abbr --add pn pnpm
+abbr --add pni pnpm install
+abbr --add pnd pnpm run dev 
+abbr --add pnr --set-cursor "pnpm create vite % --template react"
 abbr --add vim nvim -p
 # Distrobox
 abbr --add dbxex --set-cursor "distrobox-export --bin /usr/sbin/% --export-path ~/.local/distrobox/bin"
@@ -23,9 +26,9 @@ abbr --add gbr git branch
 # Shortcuts
 abbr --add eabbr nvim -p ~/.config/fish/conf.d/abbrevs.fish  
 # Display / output
-abbr --add xrt --set-cursor "xrandr --output $SECOND_MONITOR% --above $FIRST_MONITOR --primary"
-abbr --add xrb --set-cursor "xrandr --output $SECOND_MONITOR% --below $FIRST_MONITOR --primary"
-abbr --add xrl --set-cursor "xrandr --output $SECOND_MONITOR% --left-of $FIRST_MONITOR --primary"
-abbr --add xrr --set-cursor "xrandr --output $SECOND_MONITOR% --right-of $FIRST_MONITOR --primary"
+abbr --add xrt --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --above $FIRST_MONITOR --primary"
+abbr --add xrb --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --below $FIRST_MONITOR --primary"
+abbr --add xrl --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --left-of $FIRST_MONITOR --primary"
+abbr --add xrr --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --right-of $FIRST_MONITOR --primary"
 abbr --add xrlist xrandr --listmonitors
 
