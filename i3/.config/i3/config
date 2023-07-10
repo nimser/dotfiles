@@ -30,8 +30,8 @@ set $mantle    #1e2030
 set $crust     #181926
 
 # Constants definitions
-set $fm eDP1
-set $sm HDMI2
+set $firstMonitor eDP1
+set $secondaryMonitor HDMI2
 set $mod Mod4
 
 # Workspaces
@@ -46,16 +46,16 @@ set $workspace8 "8: Tea "
 set $workspace9 "9: Chat "
 set $workspace10 "10: Notes "
 
-workspace $workspace1 output $sm
-workspace $workspace2 output $sm
-workspace $workspace4 output $sm
-workspace $workspace5 output $sm
-workspace $workspace7 output $sm
-workspace $workspace8 output $sm
-workspace $workspace3 output $fm
-workspace $workspace6 output $fm
-workspace $workspace9 output $fm
-workspace $workspace10 output $fm
+workspace $workspace1 output $firstMonitor
+workspace $workspace2 output $firstMonitor
+workspace $workspace3 output $firstMonitor
+workspace $workspace10 output $firstMonitor
+workspace $workspace4 output $secondaryMonitor
+workspace $workspace5 output $secondaryMonitor
+workspace $workspace6 output $secondaryMonitor
+workspace $workspace7 output $firstMonitor
+workspace $workspace8 output $firstMonitor
+workspace $workspace9 output $firstMonitor
 
 ## General Configuration: Do not use a mono Nerd font, or the icons will look too small!
 font pango:Hack Nerd Font 11
@@ -80,7 +80,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 #-exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-exec xrandr --output $sm --auto --above $fm
+exec xrandr --output $firstMonitor --auto --below $secondaryMonitor
 #-exec --no-startup-id /usr/bin/goldendict
 exec keepassxc
 bindsym $mod+Mod1+p [instance="keepassxc"] scratchpad show, move position center
