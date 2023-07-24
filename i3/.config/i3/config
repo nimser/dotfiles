@@ -80,13 +80,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 #-exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-exec xrandr --output $firstMonitor --auto --below $secondaryMonitor
+exec xrandr --output $firstMonitor --below $secondaryMonitor 
 #-exec --no-startup-id /usr/bin/goldendict
 exec keepassxc
 bindsym $mod+Mod1+p [instance="keepassxc"] scratchpad show, move position center
 for_window [instance="keepassxc"] floating enable, resize set 900 900, move scratchpad, border pixel 5
-exec --no-startup-id setxkbmap -layout us -option compose:prsc
-exec --no-startup-id setxkbmap -layout us -option terminate:ctrl_alt_bksp
+exec --no-startup-id setxkbmap -model pc105 -layout us -option compose:prsc,terminate:ctrl_alt_bksp
+exec --no-startup-id xmodmap -e 'pointer = 1 9 3 4 5 6 7 8 2'
 
 
 ## Application keybindings

@@ -3,7 +3,11 @@ abbr --add reboot sudo shutdown -r now
 # Development
 abbr --add pn pnpm
 abbr --add pni pnpm install
+abbr --add pns pnpm run setup
+abbr --add pnm pnpm run migrate
 abbr --add pnd pnpm run dev 
+abbr --add pnl pnpm run lint
+abbr --add pnf pnpm run fix
 abbr --add pnt pnpm run test 
 abbr --add pcr --set-cursor "pnpm create vite % --template react"
 abbr --add pcv --set-cursor "pnpm create vite %"
@@ -12,7 +16,7 @@ abbr --add vim nvim -p
 abbr --add dbxex --set-cursor "distrobox-export --bin /usr/sbin/% --export-path ~/.local/distrobox/bin"
 # Git
 abbr --add gst git status
-abbr --add gita git add
+abbr --add ga git add
 abbr --add gaa git add -A
 abbr --add gci --set-cursor "git commit -m '%'"
 abbr --add gaci --set-cursor "git add -A;git commit -m '%'"
@@ -22,6 +26,7 @@ abbr --add gciane git commit --amend --no-edit
 abbr --add gaciane "git add -A;git commit --amend --no-edit"
 abbr --add gpo git push origin
 abbr --add glg git lg
+abbr --add gstash git stash
 abbr --add gco git checkout
 abbr --add gsw git switch
 abbr --add gsc --set-cursor "git switch -c '%'"
@@ -34,4 +39,5 @@ abbr --add xrb --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESO
 abbr --add xrl --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --left-of $FIRST_MONITOR --primary"
 abbr --add xrr --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --right-of $FIRST_MONITOR --primary"
 abbr --add xrlist xrandr --listmonitors
-
+# servers
+abbr --add sshwild ssh ubuntu@151.80.149.28
