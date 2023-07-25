@@ -80,7 +80,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 #-exec --no-startup-id gromit-mpx
 exec --no-startup-id /usr/bin/blueman-applet
-exec xrandr --output $firstMonitor --below $secondaryMonitor 
+exec xrandr --output $secondaryMonitor --auto --above $firstMonitor 
 #-exec --no-startup-id /usr/bin/goldendict
 exec keepassxc
 bindsym $mod+Mod1+p [instance="keepassxc"] scratchpad show, move position center
