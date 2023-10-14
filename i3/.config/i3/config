@@ -31,7 +31,7 @@ set $crust     #181926
 
 # Constants definitions
 set $firstMonitor eDP1
-set $secondaryMonitor DP1
+set $secondaryMonitor DP2
 set $mod Mod4
 
 # Workspaces
@@ -85,7 +85,6 @@ exec xrandr --output $secondaryMonitor --auto --above $firstMonitor
 exec keepassxc
 bindsym $mod+Mod1+p [instance="keepassxc"] scratchpad show, move position center
 for_window [instance="keepassxc"] floating enable, resize set 900 900, move scratchpad, border pixel 5
-exec --no-startup-id setxkbmap -model pc105 -layout us -option compose:prsc,terminate:ctrl_alt_bksp
 exec --no-startup-id xmodmap -e 'pointer = 1 9 3 4 5 6 7 8 2'
 
 
