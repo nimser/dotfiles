@@ -1,8 +1,14 @@
 # Override reboot
 abbr --add reboot sudo shutdown -r now
 # Development
+abbr --add dob docker build
+abbr --add dor docker run -dp 8080:80 
+abbr --add dop docker ps 
+abbr --add dok docker kill
 abbr --add pn pnpm
 abbr --add pni pnpm install
+abbr --add pna pnpm add
+abbr --add pnad "pnpm add --save-dev"
 abbr --add pns pnpm run setup
 abbr --add pnm pnpm run migrate
 abbr --add pnd pnpm run dev 
@@ -18,6 +24,7 @@ abbr --add dbxex --set-cursor "distrobox-export --bin /usr/sbin/% --export-path 
 abbr --add gst git status
 abbr --add ga git add
 abbr --add gaa git add -A
+abbr --add gcl git clone
 abbr --add gci --set-cursor "git commit -m '%'"
 abbr --add gaci --set-cursor "git add -A;git commit -m '%'"
 abbr --add gcia --set-cursor "git commit --amend -m '%'"
@@ -27,6 +34,7 @@ abbr --add gaciane "git add -A;git commit --amend --no-edit"
 abbr --add gpo git push origin
 abbr --add glg git lg
 abbr --add gstash git stash
+abbr --add gdi git diff
 abbr --add gco git checkout
 abbr --add gsw git switch
 abbr --add gsc --set-cursor "git switch -c '%'"
@@ -34,6 +42,7 @@ abbr --add gbr git branch
 # Shortcuts
 abbr --add eabbr nvim -p ~/.config/fish/conf.d/abbrevs.fish  
 # Display / output
+abbr --add xra xrandr --auto
 abbr --add xrt --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --above $FIRST_MONITOR --primary"
 abbr --add xrb --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --below $FIRST_MONITOR --primary"
 abbr --add xrl --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESOLUTION% --left-of $FIRST_MONITOR --primary"

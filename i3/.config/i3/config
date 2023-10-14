@@ -31,7 +31,7 @@ set $crust     #181926
 
 # Constants definitions
 set $firstMonitor eDP1
-set $secondaryMonitor HDMI2
+set $secondaryMonitor DP1
 set $mod Mod4
 
 # Workspaces

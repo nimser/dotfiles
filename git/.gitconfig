@@ -12,17 +12,20 @@
   insteadOf = git://github.com/
   insteadOf = https://github.com/
 [alias]
+  cl = clone
   co = checkout
   br = branch
   ci = commit
   st = status
   lg = log --oneline --decorate --graph --all
+  r = remote
+  re = remote
+  sw = switch
 [color]
   ui = true
   pager = no
-#FIXME gpgsign creates TTY issues with distrobox
 #[commit]
-#    gpgsign = true
+#  gpgsign = true
 [interactive]
   diffFilter = delta --color-only
 [add.interactive]
