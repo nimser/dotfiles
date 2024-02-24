@@ -1,5 +1,6 @@
 # Override reboot
 abbr --add reboot sudo shutdown -r now
+abbr --add powerdown sudo shutdown now
 # Development
 abbr --add dob docker build
 abbr --add dor docker run -dp 8080:80 
@@ -21,6 +22,8 @@ abbr --add vim nvim -p
 # Distrobox
 abbr --add dbxex --set-cursor "distrobox-export --bin /usr/sbin/% --export-path ~/.local/distrobox/bin"
 # Git
+abbr --add gsm git switch main
+abbr --add gsd git switch dev
 abbr --add gst git status
 abbr --add ga git add
 abbr --add gaa git add -A

@@ -1,7 +1,7 @@
 # execute i3 with log (visible with the i3-dump-log command)
 # see https://i3wm.org/docs/debugging.html
 export FIRST_MONITOR=eDP1
-export SECOND_MONITOR=DP2
+export SECOND_MONITOR=DP1
 export OUTPUT_RESOLUTION=2560x1440
 setxkbmap -model pc105 -layout us -option compose:prsc,terminate:ctrl_alt_bksp
 exec i3 --shmlog-size=26214400

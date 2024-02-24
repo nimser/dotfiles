@@ -31,7 +31,7 @@ set $crust     #181926
 
 # Constants definitions
 set $firstMonitor eDP1
-set $secondaryMonitor DP2
+set $secondaryMonitor DP1
 set $mod Mod4
 
 # Workspaces
@@ -75,7 +75,7 @@ exec google-chrome
 exec alacritty -e distrobox enter Arch
 exec alacritty -e distrobox enter Arch
 exec --no-startup-id nm-applet
-#- exec --no-startup-id fcitx5 -d
+exec --no-startup-id fcitx5 -d
 #exec --no-startup-id ibus-daemon --xim -d -r
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 #-exec --no-startup-id gromit-mpx

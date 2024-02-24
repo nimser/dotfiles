@@ -3,7 +3,7 @@ local M = {}
 M.curr_buf = function()
   local opt = require('telescope.themes').get_dropdown({
     previewer=false,
-    winblend=40,
+    winblend=10,
     sorting_strategy="ascending",
   })
   require('telescope.builtin').current_buffer_fuzzy_find(opt)
