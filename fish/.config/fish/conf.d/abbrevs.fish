@@ -42,6 +42,9 @@ abbr --add gco git checkout
 abbr --add gsw git switch
 abbr --add gsc --set-cursor "git switch -c '%'"
 abbr --add gbr git branch
+# RipGrep
+abbr --add rg --set-cursor "rg --hidden --follow % --glob '*'"
+abbr --add rgf --set-cursor "rg --hidden --follow --files-with-matches % --glob '*'"
 # Shortcuts
 abbr --add eabbr nvim -p ~/.config/fish/conf.d/abbrevs.fish  
 # Display / output
