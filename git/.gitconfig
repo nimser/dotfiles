@@ -47,3 +47,4 @@
   ff = only
 [core]
   pager = nvim -R
+  editor = nvim

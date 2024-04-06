@@ -37,7 +37,8 @@ abbr --add gaciane "git add -A;git commit --amend --no-edit"
 abbr --add gpo git push origin
 abbr --add glg git lg
 abbr --add gstash git stash
-abbr --add gdi git diff
+# pathspec used here. Usage info: https://git-scm.com/docs/gitglossary#Documentation/gitglossary.txt-aiddefpathspecapathspec
+abbr --add gdi --set-cursor "git diff -- % ':(exclude)pnpm-lock.yaml' ':(exclude)package-lock.json'"
 abbr --add gco git checkout
 abbr --add gsw git switch
 abbr --add gsc --set-cursor "git switch -c '%'"
@@ -56,3 +57,9 @@ abbr --add xrr --set-cursor "xrandr --output $SECOND_MONITOR --mode $OUTPUT_RESO
 abbr --add xrlist xrandr --listmonitors
 # servers
 abbr --add sshwild ssh ubuntu@151.80.149.28
+# torrents
+abbr --add tsm transmission-daemon
+abbr --add trl transmission-remote --list
+abbr --add trt transmission-remote --torrent
+abbr --add tra --set-cursor "transmission-remote --add % --download-dir ~/Videos/Torrent"
+
