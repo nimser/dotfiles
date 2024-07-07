@@ -43,9 +43,13 @@
   },
   "window.menuBarVisibility": "toggle",
   "workbench.editor.revealIfOpen": true,
-  "workbench.editor.enablePreview": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.showTabs": "single",
+  "workbench.editor.limit.value": 1,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.enabled": true,
   "workbench.editor.openPositioning": "last",
+  "workbench.editor.closeEmptyGroups": false,
   "workbench.activityBar.location": "hidden"
 }
