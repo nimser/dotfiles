@@ -158,5 +158,21 @@
   {
     "key": "ctrl+k up",
     "command": "-workbench.action.moveActiveEditorGroupUp"
+  },
+  {
+    "key": "ctrl+w numpad_add",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "ctrl+w -",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "ctrl+w s",
+    "command": "workbench.action.toggleEditorWidths"
+  },
+  {
+    "key": "ctrl+w =",
+    "command": "workbench.action.evenEditorWidths"
   }
 ]
