@@ -43,8 +43,8 @@
   },
   "window.menuBarVisibility": "toggle",
   "workbench.editor.revealIfOpen": true,
-  "prisma.showPrismaDataPlatformNotification": false,
-  "workbench.activityBar.location": "hidden",
-  "workbench.editor.enablePreview": true,
-  "workbench.editor.enablePreviewFromQuickOpen": true
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.showTabs": "single",
+  "workbench.editor.openPositioning": "last"
 }
