@@ -90,7 +90,7 @@
     "command": "-workbench.action.splitEditorDown"
   },
   {
-    "key": "ctrl+w ctrl+w",
+    "key": "ctrl+w q",
     "command": "workbench.action.closeActiveEditor"
   },
   {
@@ -122,5 +122,9 @@
   {
     "key": "ctrl+pagedown",
     "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+w ctrl+w",
+    "command": "workbench.action.focusNextGroup"
   }
 ]

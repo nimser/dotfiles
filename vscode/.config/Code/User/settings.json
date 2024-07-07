@@ -46,5 +46,6 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.showTabs": "single",
-  "workbench.editor.openPositioning": "last"
+  "workbench.editor.openPositioning": "last",
+  "workbench.activityBar.location": "hidden"
 }
