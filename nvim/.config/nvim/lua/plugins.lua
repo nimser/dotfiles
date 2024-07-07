@@ -20,7 +20,10 @@ return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
 
   -- LSP
-  use { 'neovim/nvim-lspconfig',                  -- Basic LSP conf for common LSP servers
+  use { 
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',                  -- Basic LSP conf for common LSP servers
     config = get_setup('lspconfig'),
   }
 
@@ -84,6 +87,9 @@ return require('packer').startup({function(use)
       { 'L3MON4D3/LuaSnip' },
       { 'saadparwaiz1/cmp_luasnip' }, -- Expand LSP snippets
       { 'onsails/lspkind.nvim' }, -- vscode-like pictograms in cmp list
+      -- TODO format_on_save: { 'lukas-reineke/lsp-format.nvim' },
+      -- TODO format_on_save: { 'mattn/efm-langserver' }
+      -- TODO linting/format_on_save: { 'creativenull/efmls-configs-nvim' }
       -- FIXME add hrsh7th/cmp-nvim-lsp-signature-help to display signature while typing params or use the solution shipped by lspsaga
     },
     config = get_setup('cmp'),

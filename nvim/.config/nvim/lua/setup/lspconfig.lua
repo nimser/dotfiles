@@ -1,3 +1,8 @@
+
+-- necessary with mason
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 -- LSP config
 local opts = { noremap=true, silent=true }
 vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, opts)
@@ -26,6 +31,10 @@ require('lspconfig').svelte.setup{
   capabilities = has_cmp and cmp_lsp.default_capabilities() or nil,
   on_attach = on_attach,
 }
+require('lspconfig').eslint.setup{
+  capabilities = has_cmp and cmp_lsp.default_capabilities() or nil,
+  on_attach = on_attach,
+}
 require('lspconfig').astro.setup{
   capabilities = has_cmp and cmp_lsp.default_capabilities() or nil,
   on_attach = on_attach,
@@ -35,15 +44,15 @@ require('lspconfig').astro.setup{
     }
   }
 }
-require('lspconfig').lua_ls.setup{
-  capabilities = has_cmp and cmp_lsp.default_capabilities() or nil,
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-}
+--require('lspconfig').lua_ls.setup{
+--  capabilities = has_cmp and cmp_lsp.default_capabilities() or nil,
+--  on_attach = on_attach,
+--  settings = {
+--    Lua = {
+--      diagnostics = {
+--        globals = { 'vim' }
+--      }
+--    }
+--  }
+--}
 
