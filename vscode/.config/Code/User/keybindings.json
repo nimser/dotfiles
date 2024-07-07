@@ -126,5 +126,37 @@
   {
     "key": "ctrl+w q",
     "command": "workbench.action.closeEditorsAndGroup"
+  },
+  {
+    "key": "ctrl+w left",
+    "command": "workbench.action.moveActiveEditorGroupLeft"
+  },
+  {
+    "key": "ctrl+k left",
+    "command": "-workbench.action.moveActiveEditorGroupLeft"
+  },
+  {
+    "key": "ctrl+w down",
+    "command": "workbench.action.moveActiveEditorGroupDown"
+  },
+  {
+    "key": "ctrl+k down",
+    "command": "-workbench.action.moveActiveEditorGroupDown"
+  },
+  {
+    "key": "ctrl+w right",
+    "command": "workbench.action.moveActiveEditorGroupRight"
+  },
+  {
+    "key": "ctrl+k right",
+    "command": "-workbench.action.moveActiveEditorGroupRight"
+  },
+  {
+    "key": "ctrl+w up",
+    "command": "workbench.action.moveActiveEditorGroupUp"
+  },
+  {
+    "key": "ctrl+k up",
+    "command": "-workbench.action.moveActiveEditorGroupUp"
   }
 ]
