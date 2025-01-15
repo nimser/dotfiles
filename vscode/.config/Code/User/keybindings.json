@@ -174,5 +174,17 @@
   {
     "key": "ctrl+w =",
     "command": "workbench.action.evenEditorWidths"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.toggleEditorGroupLock"
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "workbench.action.files.saveAll"
+  },
+  {
+    "key": "ctrl+w ctrl+e",
+    "command": "workbench.action.showEditorsInActiveGroup"
   }
 ]
