@@ -65,5 +65,5 @@ abbr --add sshwild ssh ubuntu@151.80.149.28
 abbr --add tsm transmission-daemon
 abbr --add trl transmission-remote --list
 abbr --add trt transmission-remote --torrent
-abbr --add tra --set-cursor "transmission-remote --add % --download-dir ~/Videos/Torrent"
+abbr --add tra --set-cursor "transmission-remote --add \"%\" --download-dir ~/Videos/Torrent"
 
