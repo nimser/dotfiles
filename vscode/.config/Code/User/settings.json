@@ -34,7 +34,10 @@
     "any-type",
     "non-null-expression",
     "typeof",
-    "partial-utility-type"
+    "partial-utility-type",
+    "tuple-type",
+    "null-keyword",
+    "in-operator-narrowing"
   ],
   "prettier.documentSelectors": ["**/*.svg", "**/*.sql"],
   "editor.minimap.enabled": false,
