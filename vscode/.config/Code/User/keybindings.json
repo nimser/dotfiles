@@ -15,7 +15,7 @@
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   {
-    "key": "ctrl+alt+p",
+    "key": "ctrl+o",
     "command": "workbench.action.navigateBack",
     "when": "canNavigateBack"
   },
@@ -54,7 +54,7 @@
     "when": "inFilesPicker && inQuickOpen"
   },
   {
-    "key": "ctrl+alt+n",
+    "key": "ctrl+i",
     "command": "workbench.action.navigateForward",
     "when": "canNavigateForward"
   },
@@ -186,5 +186,25 @@
   {
     "key": "ctrl+w ctrl+e",
     "command": "workbench.action.showEditorsInActiveGroup"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFile",
+    "when": "true"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFolderViaWorkspace",
+    "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFileFolder",
+    "when": "isMacNative && openFolderWorkspaceSupport"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openLocalFile",
+    "when": "remoteFileDialogVisible"
   }
 ]
