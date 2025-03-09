@@ -1,6 +1,6 @@
 return {
   -- add gruvbox
-  { "f4z3r/gruvbox-material.nvim" },
+  { "sainnhe/gruvbox-material" },
 
   -- Configure LazyVim to load gruvbox
   {

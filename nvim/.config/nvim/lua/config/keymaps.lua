@@ -3,7 +3,6 @@
 -- Add any additional keymaps here
 
 -- Helper function for mappings
-local M = {}
 local map = function(mode, lhs, rhs, opts)
   local options = { noremap = true } -- set mappings to non-recursive by default
   if opts then
@@ -72,4 +71,74 @@ map("n", "<S-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 map("n", "<S-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<S-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 map("n", "<S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+-- PLUGINS mappings
+local M = {}
+M.set_snacks_mappings = function()
+  return {
+    -- invert Root Dir / cwd trigger logic (small caps for cwd, caps for Root Dir)
+    { "<leader>fF", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+    { "<leader>ff", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+    { "<leader>sG", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
+    { "<leader>sg", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
+    { "<leader>sW", LazyVim.pick("grep_word"), desc = "Visual selection or word (Root Dir)", mode = { "n", "x" } },
+    {
+      "<leader>fE",
+      function()
+        Snacks.explorer({ cwd = LazyVim.root() })
+      end,
+      desc = "Explorer Snacks (root dir)",
+    },
+    {
+      "<leader>fe",
+      function()
+        Snacks.explorer()
+      end,
+      desc = "Explorer Snacks (cwd)",
+    },
+    { "<leader>E", "<leader>fE", desc = "Explorer Snacks (root dir)", remap = true },
+    { "<leader>e", "<leader>fe", desc = "Explorer Snacks (cwd)", remap = true },
+    {
+      "<leader>sw",
+      LazyVim.pick("grep_word", { root = false }),
+      desc = "Visual selection or word (cwd)",
+      mode = { "n", "x" },
+    },
+
+    -- Switch from Root Dir to cwd for these
+    { "<leader>/", LazyVim.pick("grep", { root = false }), desc = "Grep (cwd)" },
+    { "<leader><space>", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+    -- personal shortcuts
+    {
+      "<leader>fh",
+      LazyVim.pick("files", { cwd = "~/", hidden = true }),
+      desc = "Find (hidden) files in ~/",
+    },
+    {
+      "<leader>feh",
+      function()
+        Snacks.explorer({ cwd = "~/" })
+      end,
+      desc = "Browse ~/",
+    },
+    {
+      "<leader>e",
+      function()
+        Snacks.explorer({ root = false })
+      end,
+      desc = "Browse ~/",
+    },
+    {
+      "<leader>fc",
+      LazyVim.pick("files", { cwd = "~/code", hidden = true }),
+      desc = "Find (hidden) files in ~/code",
+    },
+    {
+      "<leader>fec",
+      LazyVim.pick("files", { cwd = "~/code", hidden = true }),
+      desc = "Find (hidden) files in ~/code",
+    },
+    { "<leader>fn", LazyVim.pick.config_files(), desc = "Find Neovim Config File" },
+  }
+end
 return M
