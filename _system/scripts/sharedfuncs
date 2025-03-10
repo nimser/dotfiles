@@ -1,0 +1,32 @@
+#!/bin/bash
+check_archlinux() {
+  if [[ ! -e /etc/arch-release ]]; then
+    error_msg "ERROR! You must execute the script on Arch Linux."
+  fi
+}
+check_user() {
+  if [[ "$(id -u)" == "0" ]]; then
+    error_msg "ERROR! You must execute the script as a normal user."
+  fi
+}
+is_package_installed() {
+  #check if a package is already installed
+  for PKG in $1; do
+    pacman -Q $PKG &> /dev/null && return 0;
+  done
+  return 1
+}
+aur_package_install() {
+  #install package from aur
+  for PKG in $1; do
+    if ! is_package_installed "${PKG}" ; then
+      yay --noconfirm -S ${PKG}
+    else
+      echo -e "Warning: ${PKG} is up to date --skipping"
+    fi
+  done
+}
+package_install() {
+  #install packages using pacman
+  sudo pacman -S --needed --noconfirm ${1}
+}
