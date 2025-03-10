@@ -70,6 +70,10 @@ map("n", "<S-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<S-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 map("n", "<S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
+-- Add empty lines before and after cursor line
+vim.keymap.set("n", "gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
+vim.keymap.set("n", "go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
+
 -- PLUGINS mappings
 local M = {}
 M.set_snacks_mappings = function()
