@@ -5,7 +5,7 @@ return {
     spec = {
       {
         mode = { "n", "v" },
-        require("config.mappings").set_whichkey_group_names(),
+        require("config.keymaps").set_whichkey_group_names(),
       },
     },
   },
