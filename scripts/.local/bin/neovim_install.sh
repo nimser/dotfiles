@@ -6,7 +6,8 @@ set -e
 
 NVIM_PATH="/usr/local/bin/nvim"
 TEMP_DIR=$(mktemp -d)
-APPIMAGE_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-$(uname -m).appimage"
+ARCH=$(uname -m)
+APPIMAGE_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-$ARCH.appimage"
 
 echo "Downloading latest Neovim nightly AppImage"
 curl -sL "$APPIMAGE_URL" -o "$TEMP_DIR/nvim.appimage"
