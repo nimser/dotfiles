@@ -5,7 +5,11 @@ return {
     spec = {
       {
         mode = { "n", "v" },
-        require("config.keymaps").set_whichkey_group_names(),
+        {
+          { "<localleader>f", group = "+Find files in specific locations" },
+          { "<localleader>fe", group = "+Browse specific locations" },
+          { "<localleader>g", group = "+Grep in specific locations" },
+        },
       },
     },
   },
