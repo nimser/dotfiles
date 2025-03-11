@@ -46,7 +46,7 @@ return {
   keys = {
     -- invert Root Dir / cwd trigger logic (small caps for cwd, caps for Root Dir). A
     { "<leader>fF", function() Snacks.picker.files({ cwd = LazyVim.root() }) end, desc = "Find Files (Root Dir)" },
-    { "<leaderff", function() Snacks.picker.files() end, desc = "Find Files (cwd)" },
+    { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files (cwd)" },
     { "<leader>sG", function() Snacks.picker.grep({ cwd = LazyVim.root() }) end, desc = "Grep (Root Dir)" },
     { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep (cwd)" },
     { "<leader>sW", function() Snacks.picker.grep_word({ cwd = LazyVim.root() }) end, desc = "Visual selection or word (Root Dir)", mode = { "n", "x" } },
