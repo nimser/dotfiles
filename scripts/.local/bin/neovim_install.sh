@@ -21,6 +21,6 @@ sudo mkdir -p "$NVIM_EXTRACTED_DIR"
 sudo cp -r squashfs-root/* "$NVIM_EXTRACTED_DIR/"
 sudo ln -sf "$NVIM_EXTRACTED_DIR/AppRun" "$NVIM_PATH"
 
-rm -rf "$TEMP_DIR"
 echo "Installed $(nvim --version | head -n 1)"
+rm -rf "$TEMP_DIR"
 echo "Done."
